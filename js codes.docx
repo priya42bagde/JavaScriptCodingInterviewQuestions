@@ -1,1 +1,57 @@
-Hello
+Code 1: Remove Duplicate characters from String
+function removeDuplicateCharacters() {
+  var string='priya riya supriya'
+  let result= string.split('').filter((item, index, arr)=> {
+               return arr.indexOf(item) == index;
+               }).join('');
+  return result;
+}
+console.log(removeDuplicateCharacters());
+================================================================================================================================================================================
+Code 2:String reverse without reversing of individual words
+function removeDuplicates(){
+   var string ="India is my country"
+   let result = string.split('').reverse().join('').split(' ').reverse().join(' ')
+   return result
+}
+console.log(removeDuplicates())
+output = "aidnI si ym yrtnuoc"
+================================================================================================================================================================================
+Code 3:String reverse with reversing of individual words
+function withoutReverse(){
+   var string ="India is my country"
+   let result = string.split('').reverse().join('')
+   return result
+}
+console.log(withoutReverse())
+output = "yrtnuoc ym si aidnI"
+================================================================================================================================================================================
+Code 4: Find factorial of user input number
+const number = parseInt(prompt('Enter a positive integer: '));
+if (number < 0) { console.log('Error! Factorial for negative number does not exist.')}
+else if (number === 0) { console.log(`The factorial is 1.`)}
+else {
+    let fact = 1;
+    for (i = 1; i <= number; i++) {
+        fact *= i;
+    }
+    console.log(`The factorial is ${fact}.`);
+}
+================================================================================================================================================================================
+Code 5:Anagram
+function checkStringsAnagram() {
+var a="Army";
+var b="Mary"
+   let str1 =  a.toLowerCase().split('').sort().join('');
+   let str2 =  b.toLowerCase().split('').sort().join('');
+   if(str1 === str2){
+      console.log("True");
+   } 
+   else { 
+      console.log("False");
+   }
+}
+================================================================================================================================================================================
+
+
+
