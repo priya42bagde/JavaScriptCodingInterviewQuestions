@@ -52,6 +52,91 @@ var b="Mary"
    }
 }
 ================================================================================================================================================================================
-
+Code 6: Swapping of 2 numbers with third variable
+let a=10;
+let b=20;
+let c;
+   c=a;
+   a=b;
+   b=c;
+console.log (a,b,c)
+================================================================================================================================================================================
+Code 7: Swapping of 2 numbers without third variable
+let a=10; 
+let b=20;
+   a=a+b //30
+   b=a-b //10
+   a=a-b //20
+console.log (a,b)
+================================================================================================================================================================================
+Code 8: To check the string or number is palindrome or not( ex: 121,madam,anna) using reverse method
+function checkPalindrome(){
+  const string = "anmna"
+  let arr= string.split('').reverse().join('')
+  //console.log(arr)
+  if (string==arr){
+      console.log("Palindrome")
+  }
+  else{
+      console.log("Not Palindrome")
+  }
+}
+checkPalindrome()
+================================================================================================================================================================================
+Code 9: To check the string or number is palindrome or not( ex: 121,madam,anna) using diving length by 2 and then comparing
+function checkPalindrome(){
+   const string = "12321"
+   let len = string.length;
+   for (i=0; i<len/2;i++){
+   if (string[i]!==string[len-1-i]){
+   console.log("Not Palindrome")
+}
+else{
+   console.log(" Palindrome")
+}
+}
+}
+checkPalindrome()
+================================================================================================================================================================================
+Code 10: To find longest word from a string using (for of)
+function longestWord(){
+   let string = "supriya is a masooooom good girl"
+   var words= string.split(' ')
+   var longest=" "
+   for(var word of words){
+        console.log(word)
+        if (word.length > longest.length)
+        {
+            longest=word;
+         }
+   return longest.length
+   }
+}
+longestWord()
+================================================================================================================================================================================
+Code 11: To find longest word from a string using functions
+function findLongestWord() {
+  var str = "Priya is a goog girl and having hardworking skill"
+  var longestWord = str.split(' ').sort((a, b) => {return b.length - a.length });
+     console.log(longestWord[0]);
+     console.log(longestWord[0].length); 
+}
+findLongestWord();
+================================================================================================================================================================================
+Code 12: To find longest word from a string using custom code
+function longest() {
+  var str ="Priya is a good girl and having hardworking skills"
+  var words = str.split(' ');
+  var longest = ''; 
+  for (var i = 0; i < words.length; i++) {
+    if (words[i].length > longest.length) {
+      longest = words[i]; 
+    }
+  }
+  console.log(longest)
+  return longest;
+}
+longest();
+================================================================================================================================================================================
 
 
