@@ -1,3 +1,5 @@
+For Theorytical questions: "https://github.com/sudheerj/javascript-interview-questions"
+================================================================================================================================================================================
 Code 1: Remove Duplicate characters from String
 function removeDuplicateCharacters() {
   var string='priya riya supriya'
@@ -88,13 +90,13 @@ function checkPalindrome(){
    const string = "12321"
    let len = string.length;
    for (i=0; i<len/2;i++){
-   if (string[i]!==string[len-1-i]){
-   console.log("Not Palindrome")
-}
-else{
-   console.log(" Palindrome")
-}
-}
+     if (string[i]!==string[len-1-i]){
+         console.log("Not Palindrome")
+     }
+     else{
+         console.log(" Palindrome")
+    }
+   }
 }
 checkPalindrome()
 ================================================================================================================================================================================
@@ -138,5 +140,54 @@ function longest() {
 }
 longest();
 ================================================================================================================================================================================
+Code 13: To find longest common string from array of strings
+function longestCommonString(){
+  array=["go","google","gosh"]
+  var arr = array.sort()
+  var i=0;
+  while(arr[0].length>0 && arr[0].charAt(i)===arr[arr.length-1].charAt(i)){
+    i++;
+  }
+  console.log(arr[0].substring(0,i)) // "go"
+  return arr[0].substring(0,i)
+}
+longestCommonString() 
+================================================================================================================================================================================
+Code 14: To find vowels and its count in a given string
+function vowelCounts(){
+  vowels=["a","i","e","o","u"]
+  var str ="priya"
+  count=0;
+  for(var letter of str.toLowerCase())
+  {
+    if(vowels.includes(letter))
+    {
+      count++;
+      console.log(letter)
+    }
+  }
+  console.log(count)
+  return count
+}
+vowelCounts()
+================================================================================================================================================================================
+Code 15:To find character occurance fro the string
+function characterOccurance(str,letter){
+   let count =0;
+  for(var i=0; i<str.length-1; i++){
+    if(str.charAt(i)===letter)
+      {
+        count++
+      }
+  }
+  console.log(count)
+  return count
+}
+characterOccurance("priyapri", "p")
+================================================================================================================================================================================
 
+================================================================================================================================================================================
 
+================================================================================================================================================================================
+
+================================================================================================================================================================================
