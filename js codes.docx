@@ -10,7 +10,17 @@ function removeDuplicateCharacters() {
 }
 console.log(removeDuplicateCharacters());
 ================================================================================================================================================================================
-Code 2:String reverse without reversing of individual words
+Code 2: Remove Duplicate characters from array of element and find the count of an elements using set object
+var arr = [55, 44, 55,67,67,67,67,8,8,8,8,8,65,1,2,3,3,34,5];
+var unique = [...new Set(arr)]
+console.log(unique) //output: [55, 44, 67, 8, 65, 1, 2, 3, 34, 5]
+console.log(unique.length) //output: 10
+================================================================================================================================================================================
+Code 3: Remove Duplicate characters from array of element using filter
+var myArray = ['a', 1, 'a', 2, '1'];
+var unique = myArray.filter((value, index, arr) => arr.indexOf(value) === index);
+================================================================================================================================================================================
+Code 4:String reverse without reversing of individual words
 function removeDuplicates(){
    var string ="India is my country"
    let result = string.split('').reverse().join('').split(' ').reverse().join(' ')
@@ -19,7 +29,7 @@ function removeDuplicates(){
 console.log(removeDuplicates())
 output = "aidnI si ym yrtnuoc"
 ================================================================================================================================================================================
-Code 3:String reverse with reversing of individual words
+Code 5:String reverse with reversing of individual words
 function withoutReverse(){
    var string ="India is my country"
    let result = string.split('').reverse().join('')
@@ -28,7 +38,7 @@ function withoutReverse(){
 console.log(withoutReverse())
 output = "yrtnuoc ym si aidnI"
 ================================================================================================================================================================================
-Code 4: Find factorial of user input number
+Code 6: Find factorial of user input number
 const number = parseInt(prompt('Enter a positive integer: '));
 if (number < 0) { console.log('Error! Factorial for negative number does not exist.')}
 else if (number === 0) { console.log(`The factorial is 1.`)}
@@ -40,7 +50,7 @@ else {
     console.log(`The factorial is ${fact}.`);
 }
 ================================================================================================================================================================================
-Code 5:Anagram
+Code 7:Anagram
 function checkStringsAnagram() {
 var a="Army";
 var b="Mary"
@@ -54,7 +64,7 @@ var b="Mary"
    }
 }
 ================================================================================================================================================================================
-Code 6: Swapping of 2 numbers with third variable
+Code 8: Swapping of 2 numbers with third variable
 let a=10;
 let b=20;
 let c;
@@ -63,7 +73,7 @@ let c;
    b=c;
 console.log (a,b,c)
 ================================================================================================================================================================================
-Code 7: Swapping of 2 numbers without third variable
+Code 9: Swapping of 2 numbers without third variable
 let a=10; 
 let b=20;
    a=a+b //30
@@ -71,7 +81,7 @@ let b=20;
    a=a-b //20
 console.log (a,b)
 ================================================================================================================================================================================
-Code 8: To check the string or number is palindrome or not( ex: 121,madam,anna) using reverse method
+Code 10: To check the string or number is palindrome or not( ex: 121,madam,anna) using reverse method
 function checkPalindrome(){
   const string = "anmna"
   let arr= string.split('').reverse().join('')
@@ -85,7 +95,7 @@ function checkPalindrome(){
 }
 checkPalindrome()
 ================================================================================================================================================================================
-Code 9: To check the string or number is palindrome or not( ex: 121,madam,anna) using diving length by 2 and then comparing
+Code 11: To check the string or number is palindrome or not( ex: 121,madam,anna) using diving length by 2 and then comparing
 function checkPalindrome(){
    const string = "12321"
    let len = string.length;
@@ -100,7 +110,7 @@ function checkPalindrome(){
 }
 checkPalindrome()
 ================================================================================================================================================================================
-Code 10: To find longest word from a string using (for of)
+Code 12: To find longest word from a string using (for of)
 function longestWord(){
    let string = "supriya is a masooooom good girl"
    var words= string.split(' ')
@@ -116,7 +126,7 @@ function longestWord(){
 }
 longestWord()
 ================================================================================================================================================================================
-Code 11: To find longest word from a string using functions
+Code 13: To find longest word from a string using functions
 function findLongestWord() {
   var str = "Priya is a goog girl and having hardworking skill"
   var longestWord = str.split(' ').sort((a, b) => {return b.length - a.length });
@@ -125,7 +135,7 @@ function findLongestWord() {
 }
 findLongestWord();
 ================================================================================================================================================================================
-Code 12: To find longest word from a string using custom code
+Code 14: To find longest word from a string using custom code
 function longest() {
   var str ="Priya is a good girl and having hardworking skills"
   var words = str.split(' ');
@@ -140,7 +150,7 @@ function longest() {
 }
 longest();
 ================================================================================================================================================================================
-Code 13: To find longest common string from array of strings
+Code 15: To find longest common string from array of strings
 function longestCommonString(){
   array=["go","google","gosh"]
   var arr = array.sort()
@@ -153,7 +163,7 @@ function longestCommonString(){
 }
 longestCommonString() 
 ================================================================================================================================================================================
-Code 14: To find vowels and its count in a given string
+Code 16: To find vowels and its count in a given string
 function vowelCounts(){
   vowels=["a","i","e","o","u"]
   var str ="priya"
@@ -171,7 +181,7 @@ function vowelCounts(){
 }
 vowelCounts()
 ================================================================================================================================================================================
-Code 15:To find character occurance fro the string
+Code 17:To find character occurance fro the string
 function characterOccurance(str,letter){
    let count =0;
   for(var i=0; i<str.length-1; i++){
@@ -185,9 +195,65 @@ function characterOccurance(str,letter){
 }
 characterOccurance("priyapri", "p")
 ================================================================================================================================================================================
-
+Code 18: To find a first pair whose sum is zero
+function getSumPairZero(array)
+{
+  for(let number of array)
+  {
+     for(let i=1; i<array.length; i++)
+     {
+         if(number+array[i]===0)
+         {
+            return [number, array[i]]
+         }
+     }
+  }
+}
+const result = getSumPairZero([-5,-4,-3,-2,-1,0,1,2,3,4,5])
+console.log(result)
 ================================================================================================================================================================================
-
+Code 19: To find a first pair whose sum is zero using indexing
+function getSumPairZero(array)
+{
+  let left = 0;
+  let right = array.length-1;
+  while(left<right)
+  {
+    sum = array[left]+array[right]
+    if(sum===0){
+       return [array[left],array[right]]
+    }else if(sum>0){
+      right--;
+    }else{
+      left++;
+    }
+  }
+}
+const result = getSumPairZero([-5,-4,-3,-2,-1,0,2,4,6,8])
+console.log(result)
 ================================================================================================================================================================================
-
+Code 20: To find the largest pair of the 2 elements using indexing with unsorted elements
+function largestPairSumofTwo(numbers){
+    const num = numbers.sort((a, b) => b - a);
+    console.log(num)
+    return num[0] + num[1];
+}
+const result = largestPairSumofTwo([9,7,8,4,5,6,1,2,3])
+console.log(result)
+================================================================================================================================================================================
+Code 21: To find the largest pair of the 2 elements using indexing with sorted elements
+function largestPairSumofTwo(num){   
+    return num[num.length-1] + num[num.length-2];
+}
+const result = largestPairSumofTwo([1,2,3,4,5,6,7,8,9])
+console.log(result)
+================================================================================================================================================================================
+Code 22: To find the index of an element from an array
+const letters = ['a', 'b', 'c']
+const index = letters.indexOf('b')
+console.log(index) // `1`
+================================================================================================================================================================================
+================================================================================================================================================================================
+================================================================================================================================================================================
+================================================================================================================================================================================
 ================================================================================================================================================================================
