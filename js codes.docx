@@ -459,17 +459,61 @@ function largestFromArray(arr){
 }
 largestFromArray([[1,2,3,4],[5,6,7,9],[45,76,2,1],[89,90,87,9]])
 ================================================================================================================================================================================
-Code 41:
+Code 41: Print string n times using inbuilt function
+function repeatStrinNumTimes(str, num){
+if (num<1) return ""
+return str.repeat(num)
+}
+console.log(repeatStrinNumTimes("priya",3))
 ================================================================================================================================================================================
-Code 42:
+Code 42: Print string n times in custom way
+function repeatStrinNumTimes(str, num){
+var final="";
+if(num<0) return ""
+for(var i=0; i<num;i++)
+{
+  final=final+str
+}
+return final
+}
+console.log(repeatStrinNumTimes("priya",3))
 ================================================================================================================================================================================
-Code 43:
+Code 43:Print string n times in custom way
+function repeatStrinNumTimes(str, num){
+if(num<0) return ""
+if(num===1) return str
+return str+ repeatStrinNumTimes(str, num-1)
+}
+console.log(repeatStrinNumTimes("priya",3))
 ================================================================================================================================================================================
-Code 44:
+Code 44: Truncate the string
+function truncateString(str, num){
+if(num<=3) return str.slice(0,num)
+return str.slice(0,num-3)+"..." //retuen only 4 digits thats why subtracted from 3
+}
+console.log(truncateString("priyabagde",2)) //pr
+console.log(truncateString("priyabagde",4)) //p... //retuen only 4 digits
 ================================================================================================================================================================================
-Code 45:
+Code 45: Converting one dimensional array into n dimensional array using slice
+function chunkArrayInGroup(arr, size){
+  var group=[]
+  while(arr.length>0){
+  group.push(arr.slice(0, size))
+  arr = arr.slice(size)
+  }
+  return group
+}
+console.log (chunkArrayInGroup(['a','b','c','d'],2)) //[["a", "b"], ["c", "d"]]
 ================================================================================================================================================================================
-Code 46:
+Code 46: Converting one dimensional array into n dimensional array using splice
+function chunkArrayInGroup(arr, size){
+  var group=[]
+  while(arr.length>0){
+  group.push(arr.splice(0, size))
+  }
+  return group
+}
+console.log (chunkArrayInGroup(['a','b','c','d'],2)) //[["a", "b"], ["c", "d"]]
 ================================================================================================================================================================================
 Code 47:
 ================================================================================================================================================================================
@@ -491,7 +535,6 @@ code 55:
 ================================================================================================================================================================================
 ================================================================================================================================================================================
 ================================================================================================================================================================================
-
 JAVASCRIPTS Inbuilt Functions:
 
 Code : JAVASCRIPT substr concept
@@ -502,3 +545,25 @@ console.log(sentence.substr(2))   //m priya and having sounds kowledge.
 console.log(sentence.substr(4))   //priya and having sounds kowledge.
 console.log(sentence.substr(-4))  //Negative goes From ending of the string //dge.
 console.log(sentence.substr(-5)) //edge.
+
+================================================================================================================================================================================
+Code : JAVASCRIPT slice concept i.e, it doesn't change the original array
+var sentence ="I'm priya and having sounds kowledge."
+console.log(sentence.slice(0,5)) //"I'm p"
+console.log(sentence.slice(2,5)) //"m p"
+console.log(sentence.slice(2))   //"m priya and having sounds kowledge."
+console.log(sentence.slice(4))   //"priya and having sounds kowledge."
+console.log(sentence.slice(-4))  //"dge."
+console.log(sentence.slice(-5))  //"edge."
+
+var sentence =['a','b','c','d']
+console.log(sentence.slice(0,2)) //['a','b']
+console.log(sentence) //['a','b','c','d']
+
+================================================================================================================================================================================
+Code : JAVASCRIPT splice concept i.e, it changes the original array
+var sentence =['a','b','c','d']
+console.log(sentence.splice(0,2)) //['a','b']
+console.log(sentence) //['c','d']
+================================================================================================================================================================================
+
