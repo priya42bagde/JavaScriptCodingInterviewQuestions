@@ -573,11 +573,51 @@ function characterPresent(arr){
 }
 console.log(characterPresent(["hello","he"]))
 ================================================================================================================================================================================
-Code 53:
+Code 53: Unique values only from 2 arrays
+function diffArrayElement(arr1, arr2){
+var result =[]
+for(var i=0; i<arr1.length; i++){
+  if(arr2.indexOf(arr1[i]) === -1){
+    result.push(arr1[i])
+  }
+}
+for(var j=0; j<arr2.length; j++){
+  if(arr1.indexOf(arr2[j]) === -1){
+    result.push(arr2[j])
+  }
+}
+return result
+}
+console.log(diffArrayElement([1,2,3,4], [2,3,4,5])) //[1,5]
 ================================================================================================================================================================================
-Code 54:
+Code 54: Unique values only from 2 arrays
+function diffArrayElement(arr1, arr2){
+var combine = arr1.concat(arr2)
+return combine.filter( (num)=>{
+  if(arr1.indexOf(num)== -1 || arr2.indexOf(num)== -1 ) return num
+})
+}
+console.log(diffArrayElement([1,2,3,4], [2,3,4,5])) [1,5]
 ================================================================================================================================================================================
-code 55:
+Code 55: Remove Duplicates from 2 arrays using Set
+function uniquefromArrays(arr1, arr2){
+ let arr = [...arr1, ...arr2]
+ let unique = [...new Set(arr)];
+ return unique
+}
+console.log(uniquefromArrays([1,2,3,4], [2,3,4,5])) //[1,2,3,4,5]
+================================================================================================================================================================================
+code 56: Sum of all numbers from start to end given number
+function sumFromStartToEnd(arr){
+  var start = Math.min(arr[0], arr[1])
+  var end = Math.max(arr[0], arr[1])
+  sum =0
+  for(var i= start; i<=end; i++){
+    sum+=i
+  }
+  return sum
+}
+console.log(sumFromStartToEnd([1,4]))
 ================================================================================================================================================================================
 ================================================================================================================================================================================
 ================================================================================================================================================================================
