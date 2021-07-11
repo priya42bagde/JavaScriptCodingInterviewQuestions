@@ -515,15 +515,63 @@ function chunkArrayInGroup(arr, size){
 }
 console.log (chunkArrayInGroup(['a','b','c','d'],2)) //[["a", "b"], ["c", "d"]]
 ================================================================================================================================================================================
-Code 47:
+Code 47: To find only truthy values
+function removeFalseValue(arr){
+ var trueth = []
+ for (var item of arr){
+   if(item){
+      trueth.push(item)
+   }
+ }
+ return trueth
+}
+console.log(removeFalseValue(["priya", 0 ,"", false, null,undefined, "ate", Nan ,9 ])) //["priya","ate",9]
 ================================================================================================================================================================================
-Code 49:
+Code 49:  To find only truthy values using filter
+function removeFalseValue(arr){
+  return arr.filter((item)=>{
+                return item})
+}
+console.log(removeFalseValue(["priya", 0 ,"", false, null,undefined, "ate", 9 ]))
 ================================================================================================================================================================================
-Code 50:
+Code 50: Checking all letters of second words should present in first word, in the same order using include function
+function characterPresent(arr){
+  var first = arr[0].toLowerCase()
+  var second = arr[1].toLowerCase()
+  for (var letter of second){
+    if(!first.includes(letter)){
+      return false
+    }
+  }
+  return true
+}
+console.log(characterPresent(["hello","hey"]))
 ================================================================================================================================================================================
-Code 51:
+Code 51: Checking all letters of second words should present in first word, in the same order using indexOf without indexing i.e for-of loop
+function characterPresent(arr){
+  var first = arr[0].toLowerCase()
+  var second = arr[1].toLowerCase()
+  for (var letter of second){
+    if(first.indexOf(letter)== -1){ //-1 means not found in array
+      return false
+    }
+  }
+  return true
+}
+console.log(characterPresent(["hello","he"]))
 ================================================================================================================================================================================
-Code 52:
+Code 52: Checking all letters of second words should present in first word, in the same order using indexOf with indexing
+function characterPresent(arr){
+  var first = arr[0].toLowerCase()
+  var second = arr[1].toLowerCase()
+  for (var i=0; i<second.length; i++){
+    if(first.indexOf(second)== -1){ //-1 means not found in array
+      return false
+    }
+  }
+  return true
+}
+console.log(characterPresent(["hello","he"]))
 ================================================================================================================================================================================
 Code 53:
 ================================================================================================================================================================================
@@ -566,4 +614,6 @@ var sentence =['a','b','c','d']
 console.log(sentence.splice(0,2)) //['a','b']
 console.log(sentence) //['c','d']
 ================================================================================================================================================================================
-
+ Code: JAVASCRIPT indexOf concept
+ var greeting = "Hello"
+console.log(greeting.indexOf("e")) //1
