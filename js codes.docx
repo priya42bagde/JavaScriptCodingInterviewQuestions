@@ -619,7 +619,98 @@ function sumFromStartToEnd(arr){
 }
 console.log(sumFromStartToEnd([1,4]))
 ================================================================================================================================================================================
+code 57: Remove or Delete elements from an array using various ways
+Way 1: Removing Elements from End of a JavaScript Array
+       var ar = [1, 2, 3, 4, 5, 6]; 
+       ar.length = 4; // set length to remove elements
+       console.log( ar ); // [1, 2, 3, 4]
+    
+Way 2: Removing Elements from Beginning of a JavaScript Array
+        var ar = ['zero', 'one', 'two', 'three'];
+        ar.shift(); // returns "zero"
+        console.log( ar ); // ["one", "two", "three"]
+        
+Way 3: Using Splice to Remove Array Elements in JavaScript
+        var list = ["bar", "baz", "foo", "qux"];
+        list.splice(0, 2); // Starting at index position 0, remove two elements ["bar", "baz"] and retains ["foo", "qux"].
+        
+Way 4: Removing Array Items By Value Using Splice
+       var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+       for( var i = 0; i < arr.length; i++){ 
+           if ( arr[i] === 5) { 
+              arr.splice(i, 1); 
+           }
+       } // [1, 2, 3, 4, 6, 7, 8, 9, 0]
+       
+       OR
+       
+        var arr = [1, 2, 3, 4, 5, 5, 6, 7, 8, 5, 9, 0];
+        for( var i = 0; i < arr.length; i++){                             
+        if ( arr[i] === 5) { 
+            arr.splice(i, 1); 
+            i--; 
+          }
+        } // [1, 2, 3, 4, 6, 7, 8, 9, 0]
+        
+Way 5: Using the Array filter Method to Remove Items By Value
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        var filtered = array.filter(function(value, index, arr){ 
+        return value > 5;
+        }); //filtered => [6, 7, 8, 9]
+   
+Way 6: Making a Remove Method
+       function arrayRemove(arr, value) { 
+        return arr.filter(function(ele){ 
+            return ele != value; 
+        });
+    }
+    var result = arrayRemove(array, 6); // result = [1, 2, 3, 4, 5, 7, 8, 9, 0]
+    
+Way 7: Explicitly Remove Array Elements Using the Delete Operator
+         var ar = [1, 2, 3, 4, 5, 6];
+         delete ar[4]; // delete element with index 4
+         console.log( ar ); // [1, 2, 3, 4, undefined, 6]
 ================================================================================================================================================================================
+Code 58 : Spiral Matrix Printing | Print the elements of a matrix in spiral form
+var input = [[1,  2,   3,  4],
+             [5,  6,   7,  8],
+             [9,  10, 11, 12],
+             [13, 14, 15, 16]];
+function run(input, result) {
+    // add the first row to result
+    result = result.concat(input.shift());
+    console.log("res1", result) //[1, 2, 3, 4] //[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7]
+    console.log("in1", input)   //[[5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]] // [[10, 11]]
+
+    // add the last element of each remaining row
+    input.forEach(function(rightEnd) {
+        result.push(rightEnd.pop());
+    });
+    console.log("res2", result) //[1, 2, 3, 4, 8, 12, 16] //[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11]
+    console.log("in2", input)   //[[5, 6, 7], [9, 10, 11], [13, 14, 15]] // [[10]]
+
+    // add the last row in reverse order
+    result = result.concat(input.pop().reverse());
+    console.log("res3", result) //[1, 2, 3, 4, 8, 12, 16, 15, 14, 13] //[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]
+    console.log("in3", input)   //[[5, 6, 7], [9, 10, 11]]
+
+    // add the first element in each remaining row (going upwards)
+    var tmp = [];
+    input.forEach(function(leftEnd) {    
+        tmp.push(leftEnd.shift());
+    });
+    console.log("res4", result) //[1, 2, 3, 4, 8, 12, 16, 15, 14, 13]
+    console.log("in4", input)   //[[6, 7], [10, 11]]
+    
+    result = result.concat(tmp.reverse());
+    console.log("temp", temp) //[9, 5]
+    console.log("res5", result) //[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5]
+    console.log("in5", input)   //[[6, 7], [10, 11]]
+    
+    //again start the function
+    return run(input, result); 
+}
+console.log('result', run(input, [])); // [1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]
 ================================================================================================================================================================================
 ================================================================================================================================================================================
 ================================================================================================================================================================================
