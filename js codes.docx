@@ -840,13 +840,30 @@ function secondLargestNum(arr){
 }
 console.log(secondLargestNum(['1', '2', '3', '4', '9']))
 ================================================================================================================================================================================
-code 67: To check whether particular word present in sentence or not
+code 67: To check whether particular word/number present in sentence or not using inbuilt function
 function wordInSentence(str){
   return str.includes("world"); //true
 }
 console.log(wordInSentence("Hello world, welcome to the universe."))
+OR
+var nums =[0,1,3,5,6,7,8,9,7]
+console.log(nums.includes(9)) //true
+OR
+var item=3
+console.log(nums.some(x => x === item)) //true
 ================================================================================================================================================================================
-code 68: 
+code 68: To check whether particular word/number present in sentence or not using custom function
+function checkValueExist(arr, item){
+  var status = "Not Exist"
+  for(var i=0; i<arr.length; i++){
+    if(arr[i]===item){
+      status = "Exist"
+      break;
+    }
+  }
+  return status
+}
+console.log(checkValueExist(['priya', 'riya', 'supriya'], 'priya'))
 ================================================================================================================================================================================
 code 69: 
 ================================================================================================================================================================================
