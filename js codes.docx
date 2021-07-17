@@ -1,4 +1,6 @@
 For Theorytical questions: "https://github.com/sudheerj/javascript-interview-questions"
+For Google, Facebook, Microsoft coding challenges: https://youtube.com/c/KevinNaughtonJr
+
 ================================================================================================================================================================================
 Code 1: Remove Duplicate characters from String
 function removeDuplicateCharacters() {
