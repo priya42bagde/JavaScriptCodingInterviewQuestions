@@ -1093,13 +1093,49 @@ Code 82: To find the maximum repetation of the character in a string
     }
 maxRepeating("aaaabbaaccccccccccccccccccde");
 ================================================================================================================================================================================
-Code 83:
+Code 83: To find sll the missing numbers from an array
+function MissingElements(arr)
+{
+    for(let i = 0; i < arr.length; i++)
+    {
+        if (arr[i] - i != arr[0]) //1-0==1 //2-1==1 //6-2!=1 //checking for consecutive numbers
+        {
+            while (arr[0] < arr[i] - i)//1<4 //2<4 //3<4 //finding missing numbers
+            {
+                console.log(i + arr[0]);//2+1 //3+1 //3+1
+                arr[0]++; //2 //3 //4
+            }
+        }
+    }
+}
+MissingElements([1,2,6]); //3,4,5
 ================================================================================================================================================================================
-Code 84:
+Code 84: Adding an elements to the array when elements are consecutive numbers
+const as = [1,2,3,4];
+for (let index = 5; index <= 10; ++index) {
+    as.push(index);
+}
+console.log(as); //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ================================================================================================================================================================================
-Code 85:
+Code 85: Create a new array by adding one to each elements of the existing array
+function plusOne(arr){
+  var output=[]
+    for (let i = 0; i < arr.length; ++i) {
+        output.push(arr[i]+1);
+    }
+  return output
+}
+console.log(plusOne([1,2,3,4]));
 ================================================================================================================================================================================
-Code 86:
+Code 86: To find kth smallest or largest element in an array
+function findKthSmallestOrLargest(arr, num) {
+  arr.sort(function(a, b) { return a - b});
+  console.log(arr)
+  console.log("kth smallest", arr[num- 1]) //kth smallest
+  console.log("kth largest", arr[arr.length-num]) //kth smallest
+
+};
+console.log(findKthSmallestOrLargest([2,1,4,3,6,5,7], 3)); //kth is 3rd //3,5
 ====================================================================================================================================================================================
 Code 87:
 ================================================================================================================================================================================
