@@ -1177,10 +1177,13 @@ console.log(frequencySortArr([2,5,67,89,2,3,4,4,4]));  //[4,4,4,2,2,5,67,89,3]
 ================================================================================================================================================================================
 Code 89: Permutation // Need to debug
 let perm= (str, result)=> {
-          if(str.length==0){console.log("result", result)}
+  if(str.length==0){console.log("result", result)} //let //lte //elt //etl //tle //tel
+  
   for(var i=0; i<str.length; i++){
-    let rest= str.substring(0,i)+ str.substring(i+1) //taking first and add with rest of the character //et //t 
-    perm(rest, result+str[i]) //et,l //t, le //0, let
+    let rest= str.substring(0,i)+ str.substring(i+1) 
+   // console.log("rest", rest) //et//t//"" //e//"" //lt//t//"" //l//"" //le//e//"" //l//""
+    console.log("finalresult",result+str[i])  //l//le//let  //lt//lte  //e//el//elt  //et//etl  //t//tl//tle  //te//tel 
+    perm(rest, result+str[i]) 
   }
 }
 perm('let',''); 
