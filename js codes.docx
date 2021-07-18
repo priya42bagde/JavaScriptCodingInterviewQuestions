@@ -1093,7 +1093,7 @@ Code 82: To find the maximum repetation of the character in a string
     }
 maxRepeating("aaaabbaaccccccccccccccccccde");
 ================================================================================================================================================================================
-Code 83: To find sll the missing numbers from an array
+Code 83: To find all the missing numbers from an array
 function MissingElements(arr)
 {
     for(let i = 0; i < arr.length; i++)
@@ -1137,11 +1137,59 @@ function findKthSmallestOrLargest(arr, num) {
 };
 console.log(findKthSmallestOrLargest([2,1,4,3,6,5,7], 3)); //kth is 3rd //3,5
 ====================================================================================================================================================================================
-Code 87:
+Code 87: sort by frequency of the letters
+function frequencySort(str) {
+   let map = {}
+   for (const letter of str) {
+      map[letter] = (map[letter] || 0) + 1; //to count the occurance
+     };
+     console.log(map) //{a: 2,A: 2,b: 3,B: 3,c: 1,C: 1}
+   let res = "";
+   let sorted = Object.keys(map).sort((a, b) => map[b] - map[a])
+   console.log("sorted", sorted)// ["b", "B", "a", "A", "c", "C"]
+   for (let letter of sorted) {
+      for (let count = 0; count < map[letter]; count++) {
+         res += letter
+         console.log(res)
+      }
+   }
+   return res;
+};
+console.log(frequencySort("cCaaAAbbbBBB")); //"bbbBBBaaAAcC"
 ================================================================================================================================================================================
-Code 88:
+Code 88: To find the OCCURANCE of the character
+function frequencySort(str) {
+   let map = {}
+   for (var i=0; i<str.length; i++) 
+   {
+     map[str[i]] = map[str[i]] ? map[str[i]]+1 : 1;  //Adding an element to the object, if already present then incrementing by 1
+   }
+   console.log(map)////{"c":1, "C:1", "a":2, "A":2, "b":3, "B":3}
+};
+frequencySort("cCaaAAbbbBBB"); 
+OR
+function frequencySortArr(arr) {
+   let map = {}
+   arr.forEach((element)=>{map[element] = map[element]+1 || 1 }) // will get occurance of the number
+      return [...arr].sort((a,b)=> map[b]-map[a])
+};
+console.log(frequencySortArr([2,5,67,89,2,3,4,4,4]));  //[4,4,4,2,2,5,67,89,3]
 ================================================================================================================================================================================
-Code 89:
+Code 89: Permutation // Need to debug
+let perm= (str, result)=> {
+          if(str.length==0){console.log("result", result)}
+  for(var i=0; i<str.length; i++){
+    let rest= str.substring(0,i)+ str.substring(i+1) //taking first and add with rest of the character //et //t 
+    perm(rest, result+str[i]) //et,l //t, le //0, let
+  }
+}
+perm('let',''); 
+//"result" "let"
+//"result" "lte"
+//"result" "elt"
+//"result" "etl"
+//"result" "tle"
+//"result" "tel"
 ================================================================================================================================================================================
 Code 90:
 ================================================================================================================================================================================
