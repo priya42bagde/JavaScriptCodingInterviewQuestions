@@ -1237,9 +1237,44 @@ let collectAnagrams = (words) => {
 }
 console.log(collectAnagrams(['bag', 'gab', 'foo', 'abg', 'oof', 'ofo'])) //[["bag", "gab", "abg"], ["foo", "oof", "ofo"]]
 ================================================================================================================================================================================
-Code 93:
+Code 93: Sort an array of an element by parity means even then odd elements
+function sortByParity(arr){
+ let even =[]
+ let odd =[]
+ let result=[]
+ for(let i=0; i<arr.length; i++){
+   if(arr[i]%2 ===0 ) even.push(arr[i]) 
+   else odd.push(arr[i])
+ }
+result = even.concat(odd)
+return result
+}
+console.log(sortByParity([1,2,3,4,5,6,7,8,9]))
 ================================================================================================================================================================================
-Code 94:
+Code 94: Move all the zeroes at the end of an elements
+var array = [1,0,2,0,0,9,0,6,7];
+array.sort(function(a, b) {
+        if(a==0 && b!=0)
+            return 1;
+        else if (a!=0 && b==0)
+            return -1;
+        else 
+            return 0;
+    });
+console.log(array)
+OR
+var moveZeroes = function(arr) {
+    for ( var i = 0; i < arr.length-1; i++)
+    {
+        if(arr[i] === 0) { //if place x here then move x last to the array
+          var  temp = arr.splice(i, 1);
+          console.log(temp[0])
+            arr.push(temp[0]);
+        }
+    }
+    return arr; 
+};
+console.log(moveZeroes([1,0,4,8,6,0,8,3,39,0])) //[1,4,8,6,8,3,39,0,0,0]
 ================================================================================================================================================================================
 Code 95:
 ================================================================================================================================================================================
