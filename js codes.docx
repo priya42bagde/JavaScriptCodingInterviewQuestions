@@ -1218,7 +1218,24 @@ else {
     console.log("The number is odd.");
 }
 ================================================================================================================================================================================
-Code 92:
+Code 92: Grouping of an Anagram
+let collectAnagrams = (words) => {
+    let anagrams = {}
+    let collectedAnagrams = []
+    for (let word of words)
+    {
+        let sortedWord = word.split('').sort().join('') //arrange ervery word in alphabetical order
+        anagrams[sortedWord] = anagrams[sortedWord]  || [] //console.log(".",anagrams) //creating keys 
+        anagrams[sortedWord].push(word) // assigning exact values to keys //console.log("..", anagrams) 
+    }
+    console.log(anagrams)
+    for (let item in anagrams)
+    {
+        collectedAnagrams.push(anagrams[item])  // add their values as subarrays of the collectedAnagrams array
+    }
+    return collectedAnagrams
+}
+console.log(collectAnagrams(['bag', 'gab', 'foo', 'abg', 'oof', 'ofo'])) //[["bag", "gab", "abg"], ["foo", "oof", "ofo"]]
 ================================================================================================================================================================================
 Code 93:
 ================================================================================================================================================================================
