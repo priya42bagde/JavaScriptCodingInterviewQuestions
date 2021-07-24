@@ -1298,13 +1298,57 @@ var result= function(){while(arrayList.length) {
 }}
 console.log("4", arrayList)
 ================================================================================================================================================================================
-Code 97:
+Code 97: Create a function to calculate the sum of all the numbers in a jagged array
+function sumArray(ar)
+{
+    var sum = 0;
+    for(var el of ar)
+    {
+        if (Array.isArray(el))
+        {
+            el = sumArray(el); //recursion
+        }   
+        sum += el;
+    }   
+    return sum;
+}
+console.log(sumArray([1, 2, [3, [4], [5, 6]], [7]])) //28
 ================================================================================================================================================================================
-Code 98:
+Code 98: To check weather perfect number or not
+function is_perfect(number)
+{
+     var temp = 0;
+     for(var i=1;i<=number/2;i++)
+     {
+         if(number%i === 0)
+          {
+            console.log(i) //1,2,4,7,14
+            temp += i;
+          }
+     }
+     if(temp === number && temp !== 0)
+        {
+       console.log("It is a perfect number.");
+        } 
+     else
+        {
+       console.log("It is not a perfect number.");
+        }   
+ } 
+is_perfect(28); 
 ================================================================================================================================================================================
-Code 99:
+Code 99: Number of days between 2 dates calculation
+date1 = "2020-01-01", date2 = "2020-01-30"
+function daysBetweenDates (date1, date2) {
+  const days = (new Date(date2) - new Date(date1)) / (1000 * 60 * 60 * 24)
+  return days
+}
+console.log(daysBetweenDates(date1,date2))
 ================================================================================================================================================================================
-Code 100:
+Code 100: To find todays date
+var today = new Date();
+var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+console.log(date)
 ================================================================================================================================================================================
 ================================================================================================================================================================================
 ================================================================================================================================================================================
