@@ -1374,7 +1374,56 @@ stringCompression('aaaa'); //a4
 stringCompression('aaaabbc'); //a4b2c1
 stringCompression('aaaabbcaabb'); //a4b2c1a2b2
 ================================================================================================================================================================================
-Code 102: 
+Code 102: Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot and false otherwise.
+A subtree of a binary tree tree is a tree that consists of a node in tree and all of this node's descendants. The tree tree could also be considered as a subtree of itself.
+Given tree s:
+     3
+    / \
+   4   5
+  / \
+ 1   2
+Given tree t:
+   4 
+  / \
+ 1   2
+-----------------------
+class Node {
+	constructor(val) {
+		this.data = val;
+		this.left = null;
+		this.right = null;
+	}}
+    var root1,root2;
+		root1 = new Node(26); // TREE 1
+		root1.right = new Node(3);
+		root1.right.right = new Node(3);
+		root1.left = new Node(10);
+		root1.left.left = new Node(4);
+		root1.left.left.right = new Node(30);
+		root1.left.right = new Node(6);
+		root2 = new Node(10); 		// TREE 2
+		root2.right = new Node(6);
+		root2.left = new Node(4);
+		root2.left.right = new Node(30);
+	function areIdentical(root1, root2) //to check for same
+	{
+		if (root1 == null && root2 == null)
+			return true;
+		if (root1 == null || root2 == null)
+			return false;
+		return (root1.data == root2.data && areIdentical(root1.left, root2.left) && areIdentical(root1.right, root2.right));
+	}
+	function isSubtree(T, S) //main function
+	{
+		if (S == null)
+			return true;
+		if (T == null)
+			return false;
+		if (areIdentical(T, S))
+			return true;
+		return isSubtree(T.left, S) || isSubtree(T.right, S);
+	}
+ console.log(isSubtree(root1, root2))
 ================================================================================================================================================================================
 ================================================================================================================================================================================
 
