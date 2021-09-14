@@ -1481,5 +1481,87 @@ for(var i=0; i<arr.length; i++){
 "d"
 "e"
 ================================================================================================================================================================================
-Code: 
+Advance Interview Concepts
+
+
+1. Closures- 
+A closure is the combination of a function and the lexical environment within which that function was declared.
+OR
+When inner function can have access to the outer function variables and parameter.
+
+The return statement does not execute the inner function - function is only executed only when followed by ()parathesis, but rather than returns the entire
+body of the function.
+
+Uses/advantages of closures:
+-event handlers
+-callback functions
+-Encapsulation: can store data in separate store
+-Object data privacy
+-Module Design Pattern
+-Currying
+-Functions like once
+-memoize
+-setTimeouts
+-Iterators
+-maintaining state in async world
+
+Disadvantages of closures:
+1. Creating function inside a function leads to duplicate in memory and cause slowing down the application means use only when required privacy.
+2. As long as the clousers are active, the memory can't be garbage collected means if we are using clousers in ten places then untill all the 10 process complete 
+it hold the memory and can overcome to set closure to Null.
+
+const outerFunction =(a)=>{
+  let b=10;
+  const innerFunction =()=>{
+    let sum = a+b;
+    console.log(sum)
+  }
+  innerFunction()
+}
+outerFunction(5)// 15
+
+const outerFunction =(a)=>{
+  let b=10;
+  const innerFunction =()=>{
+    let sum = a+b;
+    console.log(sum)
+  }
+  return innerFunction
+}
+outerFunction(5) //output : 
+ ()=>{
+    let sum = a+b;
+    console.log(sum)
+  }
+
+const outerFunction =(a)=>{
+  let b=10;
+  const innerFunction =()=>{
+    let sum = a+b;
+    console.log(sum)
+  }
+  return innerFunction
+}
+let inner = outerFunction(5)
+console.log(inner)
+inner() //15
+================================================================================================================================================================================
+
+
+================================================================================================================================================================================
+
+
+================================================================================================================================================================================
+
+
+================================================================================================================================================================================
+
+
+================================================================================================================================================================================
+
+
+================================================================================================================================================================================
+
+
+================================================================================================================================================================================
 
