@@ -1546,7 +1546,60 @@ let inner = outerFunction(5)
 console.log(inner)
 inner() //15
 ================================================================================================================================================================================
+Prototype: 
+1. Javascript is a prototype based language, so, whenever we are creating a function using javascript, javascript engine adds a prototype property inside a function,
+Prototype property is basically an object (also known as Prototype object), where we can attach methods and properties in a prototype object, which enables all the
+other objects to inherit these methods and properties.
+2. We are creating prototype in constructor function. All the intances of objects can able to access properties and methods from constuctor function.
+3. The prototype is an object that is associated with every functions and objects by default in JavaScript, where function's prototype property is accessible and 
+modifiable and object's prototype property (aka attribute) is not visible.
+4. object's prototype property is invisible. Use Object.getPrototypeOf(obj) method instead of __proto__ to access prototype object.
+5. prototype is useful in keeping only one copy of functions for all the objects (instances).
+6. An Object has a prototype. A prototype is also an object. Hence Even it may have its own prototype object. This is referred to as prototype chain.
 
+<A>Several Types:
+1. Object.prototype- It is a prototype OBJECT of object(cunstruction function where it will inherit all properties of Object.protorype). 
+Prototype Object of Object.prototype is NULL.
+2. Array.prototype-Prototype Object of Array.prototype is Object.prototype and Prototype Object of Object.prototype is NULL.
+3. Function.prototype
+4. Example-
+var person = function(name){
+   this.name = name;
+}
+person.prototype.age = 21;
+var piya = new person("Piya");
+var priya = new person("Priya");
+console.log(piya.age) //21
+console.log(priya.age) //21
+
+<B>Purpose/Use of prototype:
+1) to find properties and methods of an object 
+2) to implement inheritance in JavaScript
+
+<C>Difference between Prototype and __proto__:
+1. In reality, the only true difference between prototype and __proto__ is that the former is a property of a class constructor, 
+   while the latter is a property of a class instance.
+2. Instances have __proto__, classes have prototype.
+3. Instances of a constructor function use __proto__ to access the prototype property of its constructor function.
+4. __proto__ is invisible property of an object. It returns prototype object of a function to which it links to. 
+5. __proto__ is Deprecated. 
+6. Example:
+function Person(name){
+    this.name = name
+ }; 
+var eve = new Person("Eve"); 
+eve.__proto__ == Person.prototype //true
+eve.prototype  //undefined
+7. Example:
+function Person() {
+    this.name = 'John'
+}
+// adding property 
+Person.prototype.name = 'Peter';
+Person.prototype.age = 23
+const person1 = new Person();
+console.log(person1.name); // John
+console.log(person1.age); // 23
 
 ================================================================================================================================================================================
 
