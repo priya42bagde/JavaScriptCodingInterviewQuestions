@@ -1616,7 +1616,16 @@ CSS Positions:
    You must also specify at least one of top, right, bottom or left for sticky positioning to work. Use for to create menu.
 
 ================================================================================================================================================================================
+Time based Event:
 
+SetTimeout: 1.
+2. Syntax- setTimeout(function, miliseconds, parameter1, parameter2, ....)
+
+SetInterval:
+
+ClearTimeout:
+
+ClearInterval:
 
 ================================================================================================================================================================================
 
