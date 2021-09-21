@@ -1618,15 +1618,36 @@ CSS Positions:
 ================================================================================================================================================================================
 Time based Event:
 
-SetTimeout: 1.
-2. Syntax- setTimeout(function, miliseconds, parameter1, parameter2, ....)
+SetTimeout: 
+1. allows us to run a FUNCTION ONCE, after the interval of time
+2. setTimeout() executes the passed function after given time. The id_value returned by setTimeout() function is stored in a variable and 
+   it’s passed into the clearTimeout() function to clear the timer. 
+3. Syntax- let timerId = setTimeout(function, milliseconds, [arg1], [arg2], ...)
+4. Don't make a mistake by adding brackets () after the function otherwise gives undefined and nothing will scheduled.
+5. Example-
+let timerId = function sayHi(phrase, who) {
+  console.log( phrase + who );
+}
+setTimeout(sayHi, 1000, "Hello", "John"); 
 
 SetInterval:
+1. allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+2. setInterval() executes the passed function for the given time interval. The number id value returned by setInterval() function is stored 
+   in a variable and it’s passed into the clearInterval() function to clear the interval.
+3. Syntax-
+4. Example
+let timerId = function sayHi(phrase, who) {
+  console.log( phrase + who );
+}
+setInterval(sayHi, 1000, "Hello", "John");
 
 ClearTimeout:
+1. This method is used to cancel a setTimeout().  Inside the method you have to reference the timeoutID.
+clearTimeout(timerId)
 
 ClearInterval:
-
+1. This method is used to cancel a setInterval().  Inside the method you have to reference the intervalID.
+clearInterval(timerId)
 ================================================================================================================================================================================
 
 
