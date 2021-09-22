@@ -1649,8 +1649,24 @@ ClearInterval:
 1. This method is used to cancel a setInterval().  Inside the method you have to reference the intervalID.
 clearInterval(timerId)
 ================================================================================================================================================================================
+Debouncing and Throttling in JavaScript:
+1. Create impact on performance of your website, but also prevent unnecessary API calls and load on the server.
+2. Debouncing and throttling techniques are used to limit the number of times a function can execute. ke button click, mouse move, search bar, window scrolling 
+   and window resize allow the user to decide when to execute.
+3. The main difference between throttling and debouncing is that throttling executes the function at a regular interval, while debouncing executes the function only 
+   after some cooling period.
+4. Example: If you're scrolling, throttle will slowly call your function while you scroll (every X milliseconds). Debounce will wait until after you're done scrolling 
+   to call your function.
 
+Throttling-
+Throttling is a technique in which, no matter how many times the user fires the event, the attached function will be executed only once in a given time interval.
 
+Debouncing- 
+No matter how many times the user fires the event, the attached function will be executed only after the specified time once the user stops firing the event.
+The Debounce technique allow us to “group” multiple sequential calls in a single one.
+var debounced_version = _.debounce(doSomething, 200);
+$(window).on('scroll', debounced_version);
+debounced_version.cancel();
 ================================================================================================================================================================================
 
 
