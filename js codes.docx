@@ -1668,8 +1668,45 @@ var debounced_version = _.debounce(doSomething, 200);
 $(window).on('scroll', debounced_version);
 debounced_version.cancel();
 ================================================================================================================================================================================
+CALL, APPLY and BIND method: These methods allow us to write a function once and invoke it in a different context. They all attach this into a function (or object) 
+and the difference is in the function invocation. Call and apply are pretty interchangeable. Just decide whether it’s easier to send in an array or a comma separated 
+list of arguments. I always remember which one is which by remembering that Call is for comma (separated list) and Apply is for Array. Bind is a bit different. 
+It returns a new function. Call and Apply execute the current function immediately. The main concept behind all this methods is Function burrowing.
 
+CALL:
+1. It is predefined javascript method.
+2. An object can use a method belonging to another object.
+3. Call invokes the function and allows you to pass in arguments one by one.
+APPLY:
+1. Apply invokes the function and allows you to pass in arguments as an array.
+BIND:
+1. We can bind an object to a common function, so that the function gives different results when its need.
+2. It takes an object as an first argument and creates a new function.
 
+Example1:
+const people={
+ fullName: function(){
+   return this.firstName+" "+this.lastName;
+ }
+}
+const person1={
+  firstName: "Priya",
+  lastName:"Bagde"
+ } 
+console.log(people.fullName.call(person1)); //Priya Bagde
+console.log(people.fullName.apply(person1)); //Priya Bagde
+let bound = people.fullName.bind(person1)
+console.log(bound()) //Priya Bagde
+
+Example2:
+const obj = {name:"Priya"}
+let greeting = function(a,b){
+  return a+" "+this.name+" "+b;
+}
+console.log(greeting.call(obj, "Hello", "How are you?"));
+console.log(greeting.apply(obj, ["Hello", "How are you?"]));
+let test=greeting.bind(obj);
+console.log(test("Hello", "How are you?"))
 ================================================================================================================================================================================
 
 
