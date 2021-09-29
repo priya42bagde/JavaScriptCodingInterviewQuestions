@@ -1708,7 +1708,48 @@ console.log(greeting.apply(obj, ["Hello", "How are you?"]));
 let test=greeting.bind(obj);
 console.log(test("Hello", "How are you?"))
 ================================================================================================================================================================================
+Hoisting:
+1. To move all of the variable and function declarations at the top of the current scope.
+2. Hoisting is JavaScript's default behavior of moving declarations to the top.
+3. A variable can be used before it has been declared.
+4. Note: JavaScript only hoists declarations, not the initializations.
+5. JavaScript allocates memory for all variables and functions defined in the program before execution.
+6. Due to the concept of hoisting in JavaScript, we can call a function even before we define the function definition in our program's code.
+7. Variables defined with let and const are hoisted to the top of the block, but not initialized.
 
+Examples:
+1. Hoisting Function: If i write below code then JS compiler auto move declaration first then call of a function.
+hello() //call
+function hello(){ //declaration
+  console.log("Hello world")
+} 
 
+2. Hoisting Var keyword:
+var x; //declaration
+console.log(x) //call //output will be undefined because if value is not assigned before call then always assign a "undefined" value. whereas it doesn't provide
+undefined for const and let keywords
+x=7; //assignment
+------------
+var x=7; //declaration and assignment
+console.log(x) //call //7
+------------
+x=7; //assignment
+console.log(x) //call //7
+var x; //declaration
+------------
+console.log(x) //call //undefined
+x=7; //assignment
+var x; //declaration
+------------
+console.log(x) //call //undefined
+var x=7; //declaration
+
+3. Let/const Hoising:
+let x=7; //declaration and assignment
+console.log(x) //call //7
+-------------
+const x; //declaration 
+console.log(x) //call //Missing initializer in const declaration 
+x=7; //assignment
 ================================================================================================================================================================================
 
