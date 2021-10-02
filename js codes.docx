@@ -1776,6 +1776,55 @@ console.log(window.a); //10
 console.log(a); //10
 console.log(this.a); //10
 ================================================================================================================================================================================
+Even Propogation an STOP Propogation: Bydefault event capturing happen first and then even bubbling happen.
+
+Event Bubbling:
+1. When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. With bubbling, the event is 
+   first captured and handled by the innermost element and then propagated to outer elements.
+2. Bydefault event bubbling execute. To run event bubbling required to mention 3rd argument as FALSE or nothing.
+3. "child clicked"
+"parent clicked"
+"grandparent clicked"
+
+Event Capturing or Event Trickling:
+1. With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+2. To run event capturing required to mention 3rd argument as TRUE.
+3. "grandparent clicked"
+"parent clicked"
+"child clicked"
+
+Example:
+html-
+<div id="grandparent">
+  <div id="parent">
+    <div id="child">
+      </div>
+</div>
+</div>
+
+css-
+div{
+  min-width: 10px;
+  min-height: 10px;
+  border: 1px solid red;
+  padding: 30px;
+}
+
+js-
+for bubbling:
+document.querySelector("#grandparent").addEventListener("click",()=> {console.log("grandparent clicked")}, false); or document.querySelector("#grandparent").addEventListener("click",()=> {console.log("grandparent clicked")});
+document.querySelector("#parent").addEventListener("click",()=> {console.log("parent clicked")}, false); or document.querySelector("#parent").addEventListener("click",()=> {console.log("parent clicked")});
+document.querySelector("#child").addEventListener("click",()=> {console.log("child clicked")}, false); or document.querySelector("#child").addEventListener("click",()=> {console.log("child clicked")})
+for capturing:
+document.querySelector("#grandparent").addEventListener("click",()=> {console.log("grandparent clicked")}, true);
+document.querySelector("#parent").addEventListener("click",()=> {console.log("parent clicked")},true);
+document.querySelector("#child").addEventListener("click",()=> {console.log("child clicked")},true); 
+stopPropogation:
+document.querySelector("#grandparent").addEventListener("click",()=> {console.log("grandparent clicked")}, false);
+
+document.querySelector("#parent").addEventListener("click",(e)=> {console.log("parent clicked"); e.stopPropogation()},false);
+
+document.querySelector("#child").addEventListener("click",()=> {console.log("child clicked")},false); 
 
 ================================================================================================================================================================================
 
