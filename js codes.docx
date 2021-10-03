@@ -1858,6 +1858,34 @@ One more counter: <input type="button" value="2" data-counter>
 Polyfill:
 
 1. With the help of polyfill can write own implementation of BIND function.
+2. Polyfills is a way to use modern features (usually JS) on browsers where it is currently unsupported.  We do this by mimicking the functionality using supported methods 
+along with our own logic.
+3. A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
+
+Example for bind:
+With Bind-
+let name ={
+  first: "Priya",
+  last: "Bagde"
+}
+let printName = function(){
+  console.log(this.first+this.last)
+}
+let printNameFinal= printName.bind(name)
+printNameFinal()
+
+Without Bind-
+let name ={ first: "Priya", last: "Bagde"}
+let printName = function(town, state){ console.log(this.first+" "+this.last+" "+town+" "+state)}
+Function.prototype.mybind= function(...args){ //printName arguments
+  let obj = this; //printName
+  params = args.slice(1)
+  return function(...args2){ //printNameFinal arguments
+   obj.apply(args[0], [...params, ...args2])
+  }
+}
+let printNameFinal= printName.mybind(name, "chhindwara")
+printNameFinal("MadyaPradesh")
 
 ================================================================================================================================================================================
 
