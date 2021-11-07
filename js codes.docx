@@ -1,6 +1,7 @@
 For JavaScript Theorytical questions: "https://github.com/sudheerj/javascript-interview-questions"
 For Reactjs theory questions: https://github.com/sudheerj/reactjs-interview-questions/tree/master/.github/workflows
 For Google, Facebook, Microsoft coding challenges: https://youtube.com/c/KevinNaughtonJr
+Jest: https://github.com/sapegin/jest-cheat-sheet
 ================================================================================================================================================================================
 Code 1: Remove Duplicate characters from String
 function removeDuplicateCharacters() {
