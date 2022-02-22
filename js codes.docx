@@ -137,10 +137,25 @@ function longestWord(){
         {
             longest=word;
          }
-   return longest.length
    }
+    return longest.length
 }
 longestWord()
+---------------------------
+function longestWord(){
+   let string = "supriya is a hahahahaha good girl"
+   var arr= string.split(' ')
+   var longest=" "
+   for(var i=0; i<arr.length; i++){
+      
+        if (arr[i].length > longest.length)
+        {
+            longest=arr[i];
+        }
+   }
+   return longest
+}
+console.log(longestWord())
 ================================================================================================================================================================================
 Code 14: To find longest word from a string using functions
 function findLongestWord() {
