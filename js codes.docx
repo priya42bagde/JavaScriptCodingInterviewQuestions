@@ -355,6 +355,15 @@ function missing(arr) {
     }
 }
 missing([1, 2, 3, 4, 5, 6, 7, 8, 10])
+-------------------------------------------
+function missing(arr) {
+    for (var i = 0, x=1; i < arr.length; x++,i++) {
+        if (arr[i] != x) { //index value comparing with pointer
+            return x; //9
+        }
+    }
+}
+console.log(missing([1, 2, 3, 4, 5, 6, 7, 8, 10]))
 ================================================================================================================================================================================
 Code 28: Sorting of an string/character
 function sorting(arr) {
