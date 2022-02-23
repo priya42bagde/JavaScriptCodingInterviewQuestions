@@ -621,6 +621,18 @@ function characterPresent(arr){
   return true
 }
 console.log(characterPresent(["hello","he"]))
+---------------------------------------------------
+function characterPresent(arr){
+  var first = arr[0].toLowerCase()
+  var second = arr[1].toLowerCase()
+  for (var i=0; i<second.length; i++){
+    if(!first.includes(second[i])){ //-1 means not found in array
+      return false
+    }
+  }
+  return true
+}
+console.log(characterPresent(["hello","he"]))
 ================================================================================================================================================================================
 Code 52: Checking all letters of second words should present in first word, in the same order using indexOf with indexing
 function characterPresent(arr){
