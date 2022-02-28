@@ -1982,9 +1982,39 @@ Function.prototype.mybind= function(...args){ //printName arguments
 }
 let printNameFinal= printName.mybind(name, "chhindwara")
 printNameFinal("MadyaPradesh")
-
 ================================================================================================================================================================================
+Promises:-
 
+👉Why do you need a promise?
+✌🏼Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks by reducing the callback hell and writing the cleaner code.
+
+👉What are the three states of promise ?
+✌🏼Promises have three states:
+Pending: This is an initial state of the Promise before an operation begins
+Fulfilled: This state indicates that the specified operation was completed.
+Rejected: This state indicates that the operation did not complete. In this case an error value will be thrown.
+
+👉What is promise chaining ?
+✌🏼The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.
+
+👉What is promise.all ?
+✌🏼Promise.all is a promise that takes an array of promises as an input (an iterable), and it gets resolved when all the promises get resolved or any one of them gets rejected. For example, the syntax of promise.all method is below,
+Promise.all([Promise1, Promise2, Promise3])
+.then(result) => { console.log(result) })
+.catch(error => console.log(`Error in promises ${error}`))
+
+👉What are the pros and cons of promises over callbacks ?
+✌🏼Pros:
+It avoids callback hell which is unreadable
+Easy to write sequential asynchronous code with .then()
+Easy to write parallel asynchronous code with Promise.all()
+Solves some of the common problems of callbacks(call the callback too late, too early, many times and swallow errors/exceptions)
+Cons:
+It makes little complex code
+You need to load a polyfill if ES6 is not supported
+
+👉How to cancel a fetch request ?
+✌🏼One shortcoming of native promises is no direct way to cancel a fetch request. But the new AbortController from js specification allows you to use a signal to abort one or multiple fetch calls. 
 ================================================================================================================================================================================
 
 ================================================================================================================================================================================
