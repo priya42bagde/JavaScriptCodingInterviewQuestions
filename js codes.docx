@@ -2016,7 +2016,56 @@ You need to load a polyfill if ES6 is not supported
 👉How to cancel a fetch request ?
 ✌🏼One shortcoming of native promises is no direct way to cancel a fetch request. But the new AbortController from js specification allows you to use a signal to abort one or multiple fetch calls. 
 ================================================================================================================================================================================
+👉What are default parameters?
+✌🏼In E5, we need to depend on logical OR operators to handle default values of function parameters. Whereas in ES6, Default function parameters feature allows parameters to be initialized with default values if no value or undefined is passed. Let's compare the behavior with an examples,
+//ES5
+var calculateArea = function(height, width) {
+   height =  height || 50;
+   width = width || 60;
+   return width * height;
+}
+console.log(calculateArea()); //300
+//ES6
+var calculateArea = function(height = 50, width = 60) {
+   return width * height;
+}
+console.log(calculateArea()); //300
 
+✌🏼After default parameters you should not have parameters without default value-
+function printValue(a=1, b) {
+    console.log("a = " + a + " and b = " + b);
+}
+printValue();    // Logs: a = 1 and b = undefined
+printValue(7);    // Logs: a = 7 and b = undefined
+printValue(7, 3);    // Logs: a = 7 and b = 3
+
+✌🏼Default values for parameters and calling it without arguments-
+function add(a=10, b=20)
+{
+	return a+b;
+}
+console.log(" Sum is : " + add());   // No argument //30
+console.log(" Sum is : " + add(1));   // with one argument //21
+console.log(" Sum is : " + add(5,6));   // with both argument  //11
+
+✌🏼JavaScript Default Parameters with null or empty Argument-
+function test(a = 1)
+{
+    console.log(typeof a);
+    console.log("Value of a: " + a);
+}
+test();    // number, Value of a: 1
+test(undefined);    // number, Value of a: 1
+test('');    // string, Value of a: 
+test(null);    // object, Value of a: null
+
+✌🏼Default Parameters are evaluated at Call time-
+function append(value, array = []) {
+    array.push(value)
+    return array
+}
+append(1)  // [1]
+append(2)  // [2], not [1, 2]
 ================================================================================================================================================================================
 
 ================================================================================================================================================================================
