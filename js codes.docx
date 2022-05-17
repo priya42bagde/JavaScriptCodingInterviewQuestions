@@ -1660,6 +1660,8 @@ console.log(inner)
 inner() //15
 ================================================================================================================================================================================
 Prototype: 
+Prototype allow to easily define methods to all the instances of object. It stored in the memory once but every object instances can access it.
+
 1. Javascript is a prototype based language, so, whenever we are creating a function using javascript, javascript engine adds a prototype property inside a function,
 Prototype property is basically an object (also known as Prototype object), where we can attach methods and properties in a prototype object, which enables all the
 other objects to inherit these methods and properties.
