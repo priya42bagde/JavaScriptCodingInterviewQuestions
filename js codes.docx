@@ -2113,7 +2113,29 @@ Function.prototype.mybind = function(...args){
 let printMyName2 = printName.mybind(name, "Mumbai", "MH")
 printMyName2("India"); //with polyfill of bind 
 ================================================================================================================================================================================
+Polyfill of Call:
+const myName = {
+  firstName: "Priya",
+  lastName : "Bagde"  
+}
 
+function printName(city, country){
+    console.log( `${this.firstName} ${this.lastName}, ${city}, ${country}` );
+}
+
+Function.prototype.myCall= function(context, ...args){
+  let currentContext = context || globalThis;
+  let randomProp = Math.random();
+  while(currentContext.randomProp !== undefined){
+    randomProp = Math.random();
+  }
+  currentContext.randomProp = this;
+  let result = currentContext.randomProp(...args);
+  delete currentContext.randomProp;
+  return result;
+}
+
+printName.myCall(myName, "MH", "India")
 ================================================================================================================================================================================
 
 ================================================================================================================================================================================
