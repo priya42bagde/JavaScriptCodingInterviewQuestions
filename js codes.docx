@@ -2137,7 +2137,29 @@ Function.prototype.myCall= function(context, ...args){
 
 printName.myCall(myName, "MH", "India")
 ================================================================================================================================================================================
+Polyfill of Apply:
+const myName = {
+  firstName: "Priya",
+  lastName : "Bagde"  
+}
 
+function printName(city, country){
+    console.log( `${this.firstName} ${this.lastName}, ${city}, ${country}` );
+}
+
+Function.prototype.myCall= function(context, args){
+  let currentContext = context || globalThis;
+  let randomProp = Math.random();
+  while(currentContext.randomProp !== undefined){
+    randomProp = Math.random();
+  }
+  currentContext.randomProp = this;
+  let result = currentContext.randomProp(...args);
+  delete currentContext.randomProp;
+  return result;
+}
+
+printName.myCall(myName, ["MH", "India"])
 ================================================================================================================================================================================
 
 ================================================================================================================================================================================
