@@ -2161,5 +2161,24 @@ Function.prototype.myCall= function(context, args){
 
 printName.myCall(myName, ["MH", "India"])
 ================================================================================================================================================================================
+Polyfill of Map:
+// Doing this will allow us to use arr.myMap() syntax
+Array.prototype.myMap =function(cb) {
+  // rseults results array that gets returned at the end
+  const results = [];
+  for (let i = 0; i < this.length; i++) {
+    // returned values of our cb are pushed in the reults[]
+    // 'this' referes to the passed array
+    results.push(cb(this[i], i, this));
+  }
 
+  return results;
+}
+
+const arr = [1, 2, 3, 4, 5, 6];
+const myMapResult = arr.myMap((el, _idx, _arr) => {
+  return el * 2;
+});
+
+console.log(myMapResult); //[2, 4, 6, 8, 10, 12];
 ================================================================================================================================================================================
