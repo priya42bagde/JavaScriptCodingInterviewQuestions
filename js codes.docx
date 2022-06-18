@@ -2205,3 +2205,28 @@ const myFilterResult = foo.myFilter((el, _idx, _arr) => {
 });
 console.log(myFilterResult); // [{ name: "V", age: 3 }]
 ======================================================================================================================================================================
+Polyfill of Reduce:
+// Doing this will allow us to use arr.myReduce() syntax
+Array.prototype.myReduce =function (cb, initialValue) {
+  let acc;let curr;
+  if (!this.length && !initialValue)
+    throw new Error("Can't reduce on empty array, provide initial value");
+  else {
+    //  If initialValue is given then acc is that or acc = is the 0th index of this
+    acc = initialValue ? initialValue : this[0];
+    for (let i = 1; i < this.length; i++) {
+      // current value of the array
+      curr = this[i];
+      // the retuned cb value is assigned to acc
+      acc = cb(acc, curr, i, this);
+    }
+  }
+  return acc;
+}
+const arr = [1, 2, 3, 4];
+const myReduceResult = arr.myReduce((acc, curr, _idx, _arr) => {
+  acc += curr;
+  return acc;
+});
+console.log(myReduceResult); // 10
+==========================================================================================================================================================================
