@@ -2182,3 +2182,26 @@ const myMapResult = arr.myMap((el, _idx, _arr) => {
 
 console.log(myMapResult); //[2, 4, 6, 8, 10, 12];
 ================================================================================================================================================================================
+Polyfill of Filter:
+// Doing this will allow us to use arr.myFilter() syntax
+Array.prototype.myFilter = function myFilter(cb) {
+  const results = [];
+  for (let i = 0; i < this.length; i++) {
+     if (cb(this[i])) {
+      results.push(this[i]);
+    }   
+  }
+  return results;
+}
+
+const arr = [1, 2, 3, 4, 5, 6];
+const foo = [
+  { name: "S", age: 2 },
+  { name: "V", age: 3 },
+];
+
+const myFilterResult = foo.myFilter((el, _idx, _arr) => {
+  return el.name !== "S";
+});
+console.log(myFilterResult); // [{ name: "V", age: 3 }]
+======================================================================================================================================================================
