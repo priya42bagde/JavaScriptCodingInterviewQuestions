@@ -2161,6 +2161,15 @@ Function.prototype.myCall= function(context, args){
 
 printName.myCall(myName, ["MH", "India"])
 ================================================================================================================================================================================
+Polyfill od forEach:
+Array.prototype.ourForEach = function (callBack) {
+  for (let i = 0; i < this.length; i++) {
+    callBack(this[i]);
+  }
+};
+const names = ["ali", "hamza", "jack"];
+names.ourForEach((x)=> console.log(x))
+================================================================================================================================================================================
 Polyfill of Map:
 // Doing this will allow us to use arr.myMap() syntax
 Array.prototype.myMap =function(cb) {
