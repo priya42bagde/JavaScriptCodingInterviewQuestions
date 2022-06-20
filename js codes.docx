@@ -2286,4 +2286,49 @@ Promise.all([p1, p2]).then(
   }
 );
 ========================================================================================================================================================================
+Polyfill of //let myPromiseAll
+Promise.all = (promises) => {
+  let responses = [];
+  let errorResp = [];
+  return new Promise((resolve, reject) => {
+    /** Loop over promises array **/
+    promises.forEach(async (singlePromise, i) => {
+      try {
+        /** wait for resolving 1 promise **/
+        let res = await singlePromise;
+        responses.push(res);
+        if (i == promises.length - 1) {
+          if (errorResp.length > 0) {
+            reject(errorResp);
+          } else {
+            // resolve(esponses)
+            // To know our cutom promise function returning result
+            resolve("custom promise ::" + responses);
+          }
+        }
+      } catch (err) {
+        errorResp.push(err);
+        reject(err);
+      }
+    });
+  });
+};
+
+let p1 = Promise.resolve("Promise1 resolved");
+let p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 2 resolved after 2 seconds");
+  }, 1000);
+});
+let p3 = Promise.reject("Promise Rejected")
+Promise.all([p1, p2, p3]).then(
+  (res) => {
+    console.log("Response => ", res);
+    document.write("<b>Response => </b>" + res);
+  },
+  (err) => {
+    console.log("error =>", err);
+  }
+);
+======================================================================================================================================================================
 
