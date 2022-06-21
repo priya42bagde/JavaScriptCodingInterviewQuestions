@@ -30,7 +30,7 @@ function removeDuplicates(){
    let result = string.split('').reverse().join('').split(' ').reverse().join(' ')
    return result
 }
-console.log(removeDuplicates())
+console.log(removeDuplicates()) 
 output = "aidnI si ym yrtnuoc"
 ================================================================================================================================================================================
 Code 5:String reverse with reversing of individual words
