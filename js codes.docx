@@ -2357,6 +2357,41 @@ let promises = [
   new Promise((resolve, reject) => setTimeout(resolve, 400, 67)),
 ];
 
-Promise.allSettled(promises).then((result) => console.log(result));
+Promise.allSettled(promises).then((result) => console.log(result)); 
+/*[{
+  status: "fulfilled",
+  value: 2
+}, {
+  reason: "This is rejected",
+  status: "rejected"
+}, {
+  status: "fulfilled",
+  value: 67
+}]*/
 ===========================================================================================================================================================================
+Polyfill of promises.allsettled:
+Promise.allSettled = function (arrayOfPromises = []) {
+  return new Promise(function promiseIterator(resolve, reject) {
+    let result = [];
+    arrayOfPromises.forEach((item) => {
+      item
+        .then((value) => {
+          result.push({ status: "fulfilled", value: value });
+          if (arrayOfPromises.length === result.length) resolve(result);
+        })
+        .catch((err) => {
+          result.push({ status: "rejected", reason: `${err}` });
+          if (arrayOfPromises.length === result.length) resolve(result);
+        });
+    });
+  });
+};
 
+let promises = [
+  Promise.resolve(2),
+  Promise.reject('This is rejected'),
+  new Promise((resolve, reject) => setTimeout(resolve, 400, 67)),
+];
+
+Promise.allSettled(promises).then((result) => console.log(result));
+=======================================================================================================================================================================
