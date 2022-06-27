@@ -2487,3 +2487,114 @@ var newStudent ={
 }
 console.log(newStudent)
 ====================================================================================================================================================================
+Callback, Promise and Async/await :-
+const data = [ //array of object
+  {name: "priya", role: "software developer"},
+  {name: "riya", role: "software developer"},
+  {name: "supriya", role: "software developer"}
+];
+
+function getData(){
+   setTimeout(()=>{
+   let output ="";
+   data.forEach((item)=>{
+    output +=`<li> ${item.name}</li>`
+   })    
+   document.body.innerHTML = output;
+ }, 1000)  //use 5000 instead of 1000 then we get a name of "dhanupriya".
+}
+function createData(dataInput){
+setTimeout(()=>{data.push(dataInput)}, 2000) 
+}
+createData({name: "dhanupriya", role: "software developer"})
+getData()
+=====================================================================
+Callback:
+const data = [ //array of object
+  {name: "priya", role: "software developer"},
+  {name: "riya", role: "software developer"},
+  {name: "supriya", role: "software developer"}
+];
+
+function getData(){
+   setTimeout(()=>{
+   let output ="";
+   data.forEach((item)=>{
+    output +=`<li> ${item.name}</li>`
+   })    
+   document.body.innerHTML = output;
+ }, 1000)  
+}
+function createData(dataInput, callback){
+   setTimeout(()=>{
+        data.push(dataInput) 
+        callback(); //getdata function will get call once we push the new dataInput
+   },2000) 
+}
+createData({name: "dhanupriya", role: "software developer"}, getData) //we are passing getData function as a callback
+====================================================================
+Promises:
+const data = [ //array of object
+  {name: "priya", role: "software developer"},
+  {name: "riya", role: "software developer"},
+  {name: "supriya", role: "software developer"}
+];
+
+function getData(){
+   setTimeout(()=>{
+   let output ="";
+   data.forEach((item)=>{
+    output +=`<li> ${item.name}</li>`
+   })    
+   document.body.innerHTML = output;
+ }, 1000)  //use 5000 instead of 1000 then we get a name of "dhanupriya".
+}
+function createData(dataInput){
+return new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+        data.push(dataInput);
+        let error = false; //if trure then went to catch block
+        if(!error) resolve();
+        else reject("Error!!!!");
+   },2000) 
+})
+   
+}
+createData({name: "dhanupriya", role: "software developer"})
+.then(getData)
+.catch(err => console.log("Errors !"))
+====================================================================
+Async/Await:
+const data = [ //array of object
+  {name: "priya", role: "software developer"},
+  {name: "riya", role: "software developer"},
+  {name: "supriya", role: "software developer"}
+];
+
+function getData(){
+   setTimeout(()=>{
+   let output ="";
+   data.forEach((item)=>{
+    output +=`<li> ${item.name}</li>`
+   })    
+   document.body.innerHTML = output;
+ }, 1000)  //use 5000 instead of 1000 then we get a name of "dhanupriya".
+}
+function createData(dataInput){
+return new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+        data.push(dataInput);
+        let error = false; //if trure then went to catch block
+        if(!error) resolve();
+        else reject("Error!!!!");
+   },2000) 
+})   
+}
+
+async function start(){ //using sync and await
+await createData({name: "dhanupriya", role: "software developer"});
+getData();
+}
+start();
+======================================================================================================================================================================
+
