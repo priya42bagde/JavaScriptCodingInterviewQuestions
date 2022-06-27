@@ -2440,3 +2440,50 @@ var c= new Promise((resolve) => resolve(5));
 var d= Promise.letsBuildAnAny([a,b,c]);
 d.then(result=>console.log(result))
 ===========================================================================================================================================================================
+Rest Parameter in Array : 
+function addSum(a,b,c, ...rest){ // ...rest indicating combination of those arguments which are left(rest).
+  console.log(...rest) //6,7
+  console.log(rest) //[6,7]
+  console.log(arguments) //ES5 //{"0":2, "1":3, "2":4, "3":6, "4":7}
+  return a+b+c+rest[0]+rest[1];
+}
+console.log(addSum(2,3,4,6,7)) //22
+======================================================================================================================================================================
+//Spread Operator  in Array:
+function getNames(name1, name2, name3){
+  console.log(name1,name2, name3);
+}
+var names =["priya", "riya", "supriya"]
+getNames(names[0], names[1], names[2]); //"priya" "riya" "supriya"
+getNames(...names) //spread operator here used to spread the individual arguments //best approach because here we are passing all the arguments but we can use some of the arguments inside function without an error. Other approaches will gives an error to pass those arguments which are used in function.
+getNames(names)
+=========================================================================================================================================================================
+Rest Spread in object: 
+var student ={
+  name: "priya",
+  age : 100,
+  hobbies : ["cooking", "dancing"]
+}
+
+//const age = student.age; //earlier we like this
+//console.log(age) //10
+
+//const {age, ...rest} = student; //using destructuring
+//console.log(age, rest) //100 {"name": "priya", "hobbies":["cooking", "dancing"]}
+
+const {...rest} = student;
+console.log(rest) //{"name": "priya", "age": 100, "hobbies":["cooking", "dancing"]}
+=====================================================================================================================================================================
+//spread operator in object: (Change the value of age)
+var student ={
+  name: "priya",
+  age : 100,
+  hobbies : ["cooking", "dancing"]
+}
+
+var newStudent ={
+  ...student, //coping one object to another object
+  age : 101
+}
+console.log(newStudent)
+====================================================================================================================================================================
