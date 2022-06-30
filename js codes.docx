@@ -2597,4 +2597,26 @@ getData();
 }
 start();
 ======================================================================================================================================================================
+Callback:
+var sum = function(a,b,c){
+  return{
+    sumOfTwo: function(){return a+b},
+    sumOfThree:function(){return a+b+c}
+  }
+}
 
+var store = sum(2,3,4);
+console.log(store)
+console.log(store.sumOfTwo())
+console.log(store.sumOfThree())
+--------------------------------------------------
+var sum = function(a){
+     var c=4;
+     return function(b){
+       return a+b+c;
+     }
+}
+var store = sum(2);
+console.log(store)
+console.log(store(5))
+=========================================================================
