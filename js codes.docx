@@ -2676,4 +2676,36 @@ printDetail.call(userDetails2, "India");
 printDetail.apply(userDetails2, ["India"]); 
 let bindfunc= printDetail.bind(userDetails2, "India"); //creating a copy and invoke whenever require //don't call the diectly here like call function
 bindfunc();
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+========================================================================================================================================================================
+Foreach:
+const Data=[
+{name:"Google", category:"Product Based"},
+{name:"Accenture", category:"service Based"},
+{name:"Amazon", category:"Product Based"}
+];
+
+for(let i=0; i<Data.length; i++){
+  console.log(Data[i])
+}
+
+//foreach is HOF which take callback 
+Data.forEach((item)=>{ console.log(item) })
+=====================================================================================================================================================================
+Filter:
+const Age=[1,2,3,4,5,6,7,8,9,0]
+for(var i=0;i<Age.length;i++){
+  if(Age[i]>5){
+    console.log(Age[i])
+  }
+}
+
+const UpdatedAge= Age.filter(function(item){
+  if(item>5){
+    return true;
+  }
+})
+console.log(UpdatedAge)
+
+const UpdatedAge= Age.filter((item)=>(item>5))
+console.log(UpdatedAge)
+=====================================================================================================================================================================
