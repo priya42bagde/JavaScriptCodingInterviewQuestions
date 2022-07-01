@@ -2709,3 +2709,33 @@ console.log(UpdatedAge)
 const UpdatedAge= Age.filter((item)=>(item>5))
 console.log(UpdatedAge)
 =====================================================================================================================================================================
+sort:-
+const Data =[11,44,2,66,3,7,22,3]
+const sorted= Data.sort((a,b)=>{
+  if(a>b) return 1;
+  else return -1;
+})
+console.log(sorted) //prefer for object
+//a<b //[66,44,22,11,7,3,3,2]
+//a>b //[2,3,3,7,11,22,44,66]
+
+
+const sorted1= Data.sort((a,b)=>b-a)
+console.log(sorted1) //prefer for arrays
+//b-a //[66,44,22,11,7,3,3,2]
+//a-b //[2,3,3,7,11,22,44,66]
+======================================================================================================================================================================
+Reduce:
+const Data =[11,44,2,66,3,7,22,3]
+var updatedData=0;
+for(var i=0; i<Data.length; i++){
+  updatedData=updatedData+Data[i]
+}
+console.log(updatedData)
+----------------
+const updated= Data.reduce((acc, item)=>{
+  return acc+item
+},0)
+
+console.log(updated)
+======================================================================================================================================================================
