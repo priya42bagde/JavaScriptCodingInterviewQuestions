@@ -2620,3 +2620,60 @@ var store = sum(2);
 console.log(store)
 console.log(store(5))
 =========================================================================
+Call, apply and bind:
+var userDetails ={
+  name: "Priya",
+  age: 100,
+  role: "Software Developer",
+  printDetail : function(){
+    console.log(this)// this representing userDetails whole object 
+  }
+}
+userDetails.printDetail();
+
+var userDetails2 ={
+  name: "Riya",
+  age: 101,
+  role: "Software Developer"
+}
+
+userDetails.printDetail.call(userDetails2); //if i want line 6th "this" should point to userDetails2 then use call function.
+-----------------------------------------------------------------------------------
+var userDetails ={
+  name: "Priya",
+  age: 100,
+  role: "Software Developer"
+}
+let printDetail =  function(){
+    console.log(this.name)
+}
+printDetail.call(userDetails); // if function is independented of object.
+
+var userDetails2 ={
+  name: "Riya",
+  age: 101,
+  role: "Software Developer"
+}
+printDetail.call(userDetails2); 
+--------------------------------------------------------------------------------
+var userDetails ={
+  name: "Priya",
+  age: 100,
+  role: "Software Developer"
+}
+let printDetail =  function(country){
+    console.log(this.name+" "+country)
+}
+printDetail.call(userDetails, "India"); // if function is independented of object.
+
+var userDetails2 ={
+  name: "Riya",
+  age: 101,
+  role: "Software Developer"
+}
+
+printDetail.call(userDetails2, "India"); 
+printDetail.apply(userDetails2, ["India"]); 
+let bindfunc= printDetail.bind(userDetails2, "India"); //creating a copy and invoke whenever require //don't call the diectly here like call function
+bindfunc();
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
