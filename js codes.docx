@@ -2739,3 +2739,4 @@ const updated= Data.reduce((acc, item)=>{
 
 console.log(updated)
 ======================================================================================================================================================================
+ProtoType: If we can inherit the property of the one class to other class called as Inheritence. 
