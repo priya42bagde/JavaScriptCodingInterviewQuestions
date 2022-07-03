@@ -2740,3 +2740,26 @@ const updated= Data.reduce((acc, item)=>{
 console.log(updated)
 ======================================================================================================================================================================
 ProtoType: If we can inherit the property of the one class to other class called as Inheritence. 
+
+const objName = {
+ name : "priya",
+ getName : function(){
+   return this.name; //wanted to access above name inside block so we used "this"
+ }
+}
+console.log("1",objName.getName()); 
+
+const objState = {
+  //name: "riya",
+  state : "pune",
+  __proto__ : objName
+}
+console.log("2",objState.getName()); //if will find in current object, if not available then it move to upper object continuously. If still not found then it will give undefined.
+
+const objCountry = {
+  name: "supriya",
+  country : "india",
+  __proto__ : objState
+}
+console.log("3", objCountry.getName() ,objCountry.state)
+-----------------------------------------------------------------
