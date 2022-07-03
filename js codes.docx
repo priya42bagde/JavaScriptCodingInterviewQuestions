@@ -2783,7 +2783,7 @@ const myproto = myProtoType("priya")
 console.log(myproto);
 console.log(myproto.getName());
 ==========================================================================================================================================================================
-Set: It contains only unique values.
+Set: It contains only unique values. Can iterate.
 let arr =[1,2,3]
 let obj = new Set(arr) //set takesarray, string, object etc
 obj.add(4)
@@ -2794,7 +2794,7 @@ var obj1={name:"priya"}
 obj.add(obj1)
 console.log(obj)
 ======================================================================================================================================================================
-Map: store in key value pair
+Map: store in key value pair. Can iterate.
 let myMap = new Map([["a1", "priya"],["a2","riya"]])
 myMap.set("a2","supriya")
 console.log(myMap.get("a2"))// will get last value which we will assign
@@ -2802,3 +2802,4 @@ for(let [key,value] of myMap){
   console.log(`keys ${key}, value ${value}`)
 }
 =======================================================================================================================================================================
+WeakSet: only store object, can't iterate
