@@ -2763,3 +2763,24 @@ const objCountry = {
 }
 console.log("3", objCountry.getName() ,objCountry.state)
 -----------------------------------------------------------------
+
+Array.prototype.convertToObject = function(){
+  let newObj ={}
+  this.forEach( ele =>{
+            newObj[ele]= ele;
+        }      
+  )
+  return newObj;
+}
+const arr =["priya"];
+console.log(arr.convertToObject()); //array to object conversion with prototype
+------------------------------------------------------------------
+function myProtoType(name){
+ return this.name=name;
+}
+myProtoType.prototype=objName;
+const myproto = myProtoType("priya")
+console.log(myproto);
+console.log(myproto.getName());
+==========================================================================================================================================================================
+
