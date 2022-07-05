@@ -2811,6 +2811,6 @@ WeakMap: It's similar to WeakSet where can't able to iterate and only stores an 
 ======================================================================================================================================================================
 Hoisting : Its related to memory management.
 Global execution context having 2 component. In memory componenet variable and functions will store. Variable store with undefined and function store with prototype
-of function.
+of function. Var or functions will push to Callstack and then pop.
 
 
