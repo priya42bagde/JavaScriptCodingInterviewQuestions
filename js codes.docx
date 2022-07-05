@@ -2802,4 +2802,11 @@ for(let [key,value] of myMap){
   console.log(`keys ${key}, value ${value}`)
 }
 =======================================================================================================================================================================
-WeakSet: only store object, can't iterate
+WeakSet: only store object, can't iterate with for/foreach
+let ws = new WeakSet()
+const obj={"name":"priya"}
+ws.add(obj)
+console.log(ws.has(obj));
+WeakMap: It's similar to WeakSet where can't able to iterate and only stores an object
+======================================================================================================================================================================
+
