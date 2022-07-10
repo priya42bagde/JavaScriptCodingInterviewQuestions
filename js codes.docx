@@ -2813,7 +2813,7 @@ Hoisting : Its related to memory management.
 Global execution context having 2 component. In memory componenet variable and functions will store. Variable store with undefined and function store with prototype
 of function. Var or functions will push to Callstack and then pop.
 ============================================================================================================================================================================
-2 ways of Curring function with closures:
+2 ways of Currying function with closures:
   
   
 *****Using Normal Function******
@@ -2838,5 +2838,20 @@ function sum(num1) {
         }
     }
 console.log('Sum :', sum(1)(2)(3)(4)(5)(6)(7)(8)()) //"Sum :", 36
+
+*****Using Arrow ShortHand Function******
+const sum = (a) => (b) => (c) => (d) => a+b+c+d
+console.log('Sum :', sum(1)(2)(3)(4))
+
+*****Using Partial Function******
+function sum(...a){
+  return function(...b){
+    if(b?.length){
+      return sum([...a,...b].reduce((acc, curr)=>acc+curr,0))
+    }
+    return a;
+  }
+}
+console.log('Sum :', sum(1,2,3)(4,5)(6,7,8,9)()) //"Sum :", 36
 =====================================================================================================================================================================
 
