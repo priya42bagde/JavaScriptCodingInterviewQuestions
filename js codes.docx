@@ -2854,4 +2854,24 @@ function sum(...a){
 }
 console.log('Sum :', sum(1,2,3)(4,5)(6,7,8,9)()) //"Sum :", 36
 =====================================================================================================================================================================
+How to Remove All Falsy Values from an Array in JavaScript:
+*************Using Filter Auto Coercion*************
+
+[1, 2, 'b', 0, {}, '', NaN, 3, undefined, null, 5].filter(a => a);
+
+*************Using !!*************
+
+[1, 2, 'b', 0, {}, '', NaN, 3, undefined, null, 5].filter(a => !!a);
+
+*************Using Boolean*************
+
+[1, 2, 'b', 0, {}, '', NaN, 3, undefined, null, 5].filter(a => Boolean(a));
+ 
+*************Using Boolean directly*************
+  
+[1, 2, 'b', 0, {}, '', NaN, 3, undefined, null, 5].filter(Boolean); 
+
+//This works because Boolean itself is a function, and the arguments filter supplies are passed directly to it.
+//Boolean() is also a function that returns truthy when true and falsy when false!
+========================================================================================================================================================================
 
