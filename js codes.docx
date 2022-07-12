@@ -1770,7 +1770,7 @@ ClearInterval:
 1. This method is used to cancel a setInterval().  Inside the method you have to reference the intervalID.
 clearInterval(timerId)
 ================================================================================================================================================================================
-Debouncing and Throttling in JavaScript:
+Debouncing and Throttling in JavaScript: using in search box, scrolling or resize the widow size
 1. Create impact on performance of your website, but also prevent unnecessary API calls and load on the server.
 2. Debouncing and throttling techniques are used to limit the number of times a function can execute. ke button click, mouse move, search bar, window scrolling 
    and window resize allow the user to decide when to execute.
