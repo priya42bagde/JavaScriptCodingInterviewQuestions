@@ -2874,4 +2874,66 @@ How to Remove All Falsy Values from an Array in JavaScript:
 //This works because Boolean itself is a function, and the arguments filter supplies are passed directly to it.
 //Boolean() is also a function that returns truthy when true and falsy when false!
 ========================================================================================================================================================================
+Memo Function:
 
+********************Memoizing functions**********************
+  
+const add = (n) => (n + 10);
+add(9);
+// a simple memoized function to add something
+const memoizedAdd = () => {
+  let cache = {};
+	return (n) => {
+		if (n in cache) {
+			console.log('Fetching from cache');
+			return cache[n];
+		}
+		else {
+			console.log('Calculating result');
+			let result = n + 10;
+			cache[n] = result;
+			return result;
+		}
+	}
+}
+// returned function from memoizedAdd
+const newAdd = memoizedAdd(); 
+console.time(); console.log(newAdd(9)); console.timeEnd();// calculated
+console.time(); console.log(newAdd(9)); console.timeEnd();	// cached
+console.time(); console.log(newAdd(9)); console.timeEnd();	// cached
+//output:
+//Calculating result    19    default: 0.38427734375 ms
+//Fetching from cache   19    default: 0.30810546875 ms
+//Fetching from cache   19    default: 0.27612304687 ms
+
+********************Memoizing recursive functions**********************
+  
+// a simple pure function to get a value adding 10
+const add = (n) => (n + 10);
+// a simple memoize function that takes in a function and returns a memoized function
+const memoize = (fn) => {
+  let cache = {};
+  return (...args) => {
+    let n = args[0];  // just taking one argument here
+    if (n in cache) {
+      console.log('Fetching from cache');
+      return cache[n];
+    }
+    else {
+      console.log('Calculating result');
+      let result = fn(n);
+      cache[n] = result;
+      return result;
+    }
+  }
+}
+// creating a memoized function for the 'add' pure function
+const memoizedAdd = memoize(add);
+console.time(); console.log(memoizedAdd(3)); console.timeEnd();// calculated
+console.time(); console.log(memoizedAdd(3)); console.timeEnd();	// cached
+console.time(); console.log(memoizedAdd(3)); console.timeEnd();	// cached
+//output:
+//Calculating result     13      default: 0.45068359375 ms
+//Fetching from cache    13      default: 0.16674804687 ms
+//Fetching from cache    13      default: 0.161865234375 ms
+========================================================================================================================================================================
