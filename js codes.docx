@@ -2937,3 +2937,47 @@ console.time(); console.log(memoizedAdd(3)); console.timeEnd();	// cached
 //Fetching from cache    13      default: 0.16674804687 ms
 //Fetching from cache    13      default: 0.161865234375 ms
 ========================================================================================================================================================================
+*********************Using Custom function with Recursion*****************
+const age=[1,2,
+           [12,23,[75,34,[2,34]],[32,45]],
+           [3,456],
+           [56,[5]]]
+var result=[]
+function flattenArray(inputArray)
+{
+  inputArray.map((value)=>{
+    if(Array.isArray(value))
+    { 
+      flattenArray(value)
+    }
+    else{
+      result.push(value)
+    }})
+  }
+flattenArray(age)
+console.log(result) ////[1,2,12,23,75,34,2,34,32,45,3,456,56,5]
+
+*********************Using One Line Arrow function*****************
+var result=[]
+const flattenArray = (inputArray) => {
+  inputArray.map((value)=> Array.isArray(value) ?  flattenArray(value) :  result.push(value))
+}
+flattenArray(age)
+console.log(result) //[1,2,12,23,75,34,2,34,32,45,3,456,56,5]
+
+*********************Using Flat*****************
+const age=[1,2,
+           [12,23,[75,34,[2,34]],[32,45]],
+           [3,456],
+           [56,[5]]]
+var updatedArr= age.flat(Infinity);
+console.log(updatedArr) //[1,2,12,23,75,34,2,34,32,45,3,456,56,5]
+  
+*********************Using Reducer****************
+function flatDeep(arr, d = 1) {
+   return d > 0 ? arr.reduce((acc, val) => 
+                             acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
+                : arr.slice();
+};
+console.log(flatDeep(arr, Infinity)) //[1,2,12,23,75,34,2,34,32,45,3,456,56,5]
+=======================================================================================================================================================================
