@@ -2981,3 +2981,35 @@ function flatDeep(arr, d = 1) {
 };
 console.log(flatDeep(arr, Infinity)) //[1,2,12,23,75,34,2,34,32,45,3,456,56,5]
 =======================================================================================================================================================================
+Regular Expression(Regex):
+A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
+
+Regular expressions are normally case-sensitive so the regular expression The would not match the string the
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
