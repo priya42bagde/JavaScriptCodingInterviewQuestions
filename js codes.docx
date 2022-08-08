@@ -2985,7 +2985,24 @@ Regular Expression(Regex):
 A regular expression is a group of characters or symbols which is used to find a specific pattern in a text.
 
 Regular expressions are normally case-sensitive so the regular expression The would not match the string the
+=======================================================================================================================================================================
+Multiple functions:
+var arr = [];
+const checkSort =(a)=>{
+  if(!arr.includes(a) && Number.isInteger(a)){
+    arr.push(a)
+  }
+  return console.log(arr.sort((a,b)=>a-b));
+}
+checkSort(5);
+checkSort(4);
+checkSort(2);
+checkSort("abc");
+checkSort("44");
+checkSort(-44);
 
+//output: [-44,2,4,5]
+==================================================================================================================================================================
 
 
 
