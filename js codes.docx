@@ -2,6 +2,9 @@ For JavaScript Theorytical questions: "https://github.com/sudheerj/javascript-in
 For Reactjs theory questions: https://github.com/sudheerj/reactjs-interview-questions/tree/master/.github/workflows
 For Google, Facebook, Microsoft coding challenges: https://youtube.com/c/KevinNaughtonJr
 Jest: https://github.com/sapegin/jest-cheat-sheet
+
+https://learnersbucket.com/javascript-sde-cheat-sheet/
+
 ================================================================================================================================================================================
 Code 1: Remove Duplicate characters from String
 function removeDuplicateCharacters() {
@@ -3008,9 +3011,36 @@ checkSort(-44);
 "priya".split('')
 // ['p', 'r', 'i', 'y', 'a']
 ===================================================================================================================================================================
+Deep Copy and Shallow Copy:
+A deep copy means that "all of the values of the new variable" are copied and disconnected from the original variable. It makes a copy of all the members of X, allocates different memory location for Y and then assigns the copied members to Y to achieve deep copy. In this way, if X vanishes Y is still valid in the memory.
+A shallow copy means that certain (sub-)values are still connected to the original variable. It is primarily utilized for copying One Dimensional array elements, where it only copies the elements present at the first level.
+
+A deep copying means that value of the new variable is disconnected from the original variable 
+while a shallow copy means that some values are still connected to the original variable.
+
+addresses of X and Y will be the same i.e. they will be pointing to the same memory location.
+
+To copy an object in JavaScript, you have three options. Both spread (...) and Object.assign() perform a shallow copy while the JSON methods carry a deep copy.
+--->Assignment operator “=”
+--->Use the spread (...) syntax
+--->Use the Object.assign() method
+--->Use the JSON.stringify() and JSON.parse() methods --where the stringify() method converts a particular JavaScript object to a string, and then the parse() method performs the parsing operation and returns an object.
+
+For a primitive value, you just simply use a simple assignment:The important takeaway here is that you can quickly copy a primitive data type’s exact value 
+in a separate memory space by creating and assigning another variable to the variable being copied. Take note of how it is instantiated — const will not 
+allow later changes.
+
+let counter = 1;
+let copiedCounter = counter;
+copiedCounter = 2; //And when you change the value of the copied variable, the value of the original remains the same.
+console.log(counter); 
+Output: 1
 
 
+However, if you use the assignment operator for a reference value, it will not copy the value. Instead, both variables will reference the same object in the memory:
 
+ JS objects (as non-primitive data types) differ because they have reference values and those values are mutable. This means they share a memory address when shallow copied.
+ 
 
 
 
