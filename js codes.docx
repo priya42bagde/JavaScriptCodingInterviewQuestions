@@ -3061,7 +3061,7 @@ greeting(); //Hi greeting
 greeting1(); //Hey greeting1
 greeting2(); //Hello greeting2
 -----------------------------------------------------------------------
-console.log(x); //undefined
+console.log(x); //undefined //1
 greeting(); //function body will assign before executing //Hi greeting- as output post execution
 //greeting1(); //Uncaught TypeError: greeting1 is not a function because its treeting like a variable not a function, so rather then storing a function body it's storing undefined by default.
 //greeting2(); ////Uncaught TypeError: greeting1 is not a function because its treeting like a variable not a function, so rather then storing a function body it's storing undefined by default.
