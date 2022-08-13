@@ -1839,7 +1839,8 @@ Hoisting:
 4. Note: JavaScript only hoists declarations, not the initializations.
 5. JavaScript allocates memory for all variables and functions defined in the program before execution.
 6. Due to the concept of hoisting in JavaScript, we can call a function even before we define the function definition in our program's code.
-7. Variables defined with let and const are hoisted to the top of the block, but not initialized.
+7. Variables defined with let and const are hoisted to the top of the block, but not initialized.Let and const are also hoisted but we cant access them 
+until they are assigned because they are in Temporal dead zone.To avoid Temporal deadzone we need to declare let and const to the top of our program!
 
 Examples:
 1. Hoisting Function: If i write below code then JS compiler auto move declaration first then call of a function.
@@ -1875,6 +1876,46 @@ console.log(x) //call //7
 const x; //declaration 
 console.log(x) //call //Missing initializer in const declaration 
 x=7; //assignment
+
+-------------------------------------------------------------------------------------
+Hoisting:
+var x = 1;
+
+function greeting(){
+  console.log("Hi greeting");
+}
+
+var greeting1 = function (){
+  console.log("Hey greeting1");
+}
+
+var greeting2 = () =>{
+  console.log("Hello greeting2");
+}
+
+console.log(x); //1
+greeting(); //Hi greeting
+greeting1(); //Hey greeting1
+greeting2(); //Hello greeting2
+-----------------------------------------------------------------------
+console.log(x); //undefined //1
+greeting(); //function body will assign before executing //Hi greeting- as output post execution
+//greeting1(); //Uncaught TypeError: greeting1 is not a function because its treeting like a variable not a function, so rather then storing a function body it's storing undefined by default.
+//greeting2(); ////Uncaught TypeError: greeting1 is not a function because its treeting like a variable not a function, so rather then storing a function body it's storing undefined by default.
+
+var x = 1;
+
+function greeting(){
+  console.log("Hi greeting");
+}
+
+var greeting1 = function (){
+  console.log("Hey greeting1");
+}
+
+var greeting2 = () =>{
+  console.log("Hello greeting2");
+}
 ================================================================================================================================================================================
 Window and This:
 
@@ -3041,44 +3082,7 @@ However, if you use the assignment operator for a reference value, it will not c
 
  JS objects (as non-primitive data types) differ because they have reference values and those values are mutable. This means they share a memory address when shallow copied.
 =========================================================================================================================================================================
-Hoisting:
-var x = 1;
 
-function greeting(){
-  console.log("Hi greeting");
-}
-
-var greeting1 = function (){
-  console.log("Hey greeting1");
-}
-
-var greeting2 = () =>{
-  console.log("Hello greeting2");
-}
-
-console.log(x); //1
-greeting(); //Hi greeting
-greeting1(); //Hey greeting1
-greeting2(); //Hello greeting2
------------------------------------------------------------------------
-console.log(x); //undefined //1
-greeting(); //function body will assign before executing //Hi greeting- as output post execution
-//greeting1(); //Uncaught TypeError: greeting1 is not a function because its treeting like a variable not a function, so rather then storing a function body it's storing undefined by default.
-//greeting2(); ////Uncaught TypeError: greeting1 is not a function because its treeting like a variable not a function, so rather then storing a function body it's storing undefined by default.
-
-var x = 1;
-
-function greeting(){
-  console.log("Hi greeting");
-}
-
-var greeting1 = function (){
-  console.log("Hey greeting1");
-}
-
-var greeting2 = () =>{
-  console.log("Hello greeting2");
-}
 ==========================================================================================================================================================================
 
 
