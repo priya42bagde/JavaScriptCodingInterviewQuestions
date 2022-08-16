@@ -1843,6 +1843,10 @@ Hoisting:
 until they are assigned because they are in Temporal dead zone.To avoid Temporal deadzone we need to declare let and const to the top of our program!
 ***when const gets hoisted it will be defined undefined,and further processing will get assigned the value , this violated the meaning of const , this is the fundamental reason why const doesn't get hoisted and let just got tagged along with this feature.
 
+-- Can able to access variable and function before initialise. Can able to access it without any error.
+-- console.log(getName); without parenthisis -- print the body of function.
+
+
 Examples:
 1. Hoisting Function: If i write below code then JS compiler auto move declaration first then call of a function.
 hello() //call
