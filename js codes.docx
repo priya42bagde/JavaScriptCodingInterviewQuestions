@@ -1847,7 +1847,9 @@ until they are assigned because they are in Temporal dead zone.To avoid Temporal
 
 -- Can able to access variable and function before initialise. Can able to access it without any error.
 -- console.log(getName); without parenthisis -- print the body of function.
-
+-- if we remove var x=7 then it will get as refrennce error: x is not defined because x is not present at all and we are trying to access it.
+-- with arrow and function expression 
+-- callstack 
 
 Examples:
 1. Hoisting Function: If i write below code then JS compiler auto move declaration first then call of a function.
