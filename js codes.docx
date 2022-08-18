@@ -1852,6 +1852,16 @@ until they are assigned because they are in Temporal dead zone.To avoid Temporal
 -- callstack
 -- console.log(greetingName) //print the body  of a function
 
+JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, 
+before execution of the code.
+This is a complete textbook type definition (thanks to MDN Docs for this), but what does it mean in simple words.
+Hoisting simply means that we can access variables, before their initialisation & functions, before their declaration.
+it gives us an advantage that no matter where functions and variables are declared, they are moved to the top of their scope 
+regardless of whether their scope is global or local
+
+
+
+
 Examples:
 1. Hoisting Function: If i write below code then JS compiler auto move declaration first then call of a function.
 hello() //call
