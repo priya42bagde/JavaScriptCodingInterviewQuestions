@@ -3200,6 +3200,21 @@ var frequencySort = function(nums) {
  return hash    
 };
 console.log(frequencySort([1,1,2,2,2,3]))
+--------------------------------------------------------------
+var frequencySort = function(nums) {
+    let map = new Map();
+    for (const i of nums) {
+        if (map.has(i)) {
+            map.set(i, map.get(i) + 1);
+        } else {
+            map.set(i, 1);
+        }
+    }
+    console.log(map);
+    return map;
+
+};
+console.log(frequencySort([1,1,2,2,2,3]))
 ==========================================================================================================================================================================
 
 
