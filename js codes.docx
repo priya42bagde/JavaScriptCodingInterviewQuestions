@@ -3104,6 +3104,19 @@ However, if you use the assignment operator for a reference value, it will not c
 =========================================================================================================================================================================
 Airbus Interview Question:
 function countOccurance(arr){
+  let map ={}, sortedArr = arr.sort((a,b)=>a-b);
+  for(var item of sortedArr){
+    if(map[item]){
+        map[item]++
+    }else{
+        map[item] = 1; 
+    }
+  }
+  return map;
+}
+console.log(countOccurance([1, 4, 91, 21, 91, 0, 32, 4, 11, 3, 54, 34, 21]))
+--------------------------------------------------------------------------------
+function countOccurance(arr){
  let map ={}, sortedArr = arr.sort((a,b)=>a-b);
   for(var item of sortedArr){
     if(!(item in map)){ map[item] = 0}
