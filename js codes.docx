@@ -3189,6 +3189,17 @@ function countOccurance(arr){
   return map
 }
 console.log(countOccurance([1, 4, 91, 21, 91, 0, 32, 4, 11, 3, 54, 34, 21]))
+-------------------------------------------------------------------
+var frequencySort = function(nums) {
+  const hash={}
+    for(let item of nums){
+      hash[item] 
+          ?hash[item]++
+          :hash[item]=1
+    }
+ return hash    
+};
+console.log(frequencySort([1,1,2,2,2,3]))
 ==========================================================================================================================================================================
 
 
