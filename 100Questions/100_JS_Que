@@ -104,7 +104,32 @@ console.log("smile" === "smile"); //true
 JSON.parse ?
 Parse JSON object to a JavaScript value // converting data into js object
 -------------------------------------------------
-
+let name  = "priya";
+function getName(){
+  console.log(name); //Uncaught ReferenceError: Cannot access 'name' before initialization 
+  let name = "supriya";
+}
+getName();
+//Explaination : Hoisting used here. If we use VAR the can use variable before declare. But in LET we can't do that. LET/CONST need declaration first then can use it.
+--------------------------------------------------
+let name  = "priya";
+function getName(){
+  console.log(name); //priya
+}
+getName();
+//Explaination : Let is a block scope.Because of closures we can able to access name which is outside of a function with LET.
+--------------------------------------------------
+console.log((x => x)('I love')) //"I love"
+console.log(`${(x => x)('I love')} to program`) //"I love to program"
+//Explaination : Template Literal used here. We use here arrow function which is returning a string 
+----------------------------------------------------
+function sumValues(x,y,z){
+  return x+y+z;
+}
+sumValues(...[2,3,4]) //how to call a function so that output will be 9
+//Explaination : we can't do like this sumValues(2,3,4).
+----------------------------------------------------
+Que: 26:
 
 
 
