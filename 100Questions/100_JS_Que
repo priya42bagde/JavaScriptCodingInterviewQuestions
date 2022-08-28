@@ -83,4 +83,50 @@ const name = "priya"
 console.log(name()); //Error: name is not a function
 //Explaination : Function we are calling but it's not present so it will an error.
 --------------------------------------------
+const result = false || {} || 20 || null;
+console.log(result); //20
+//Explaination : OR operator will find first positive value. Null is a falsy value by default. {} is a positive value. It didn't reach till 20 and null.
+--------------------------------------------
+const result = null || false || '';
+console.log(result); //''
+//Explaination : OR operator will find first positive value. It will print '' because any of the true value didn't found so it will pick last value always.
+-------------------------------------------
+const result = [] || 0 || true;
+console.log(result); //[]
+//Explaination : OR operator will find first positive value. It will print [] because empty array/object is a positive.
+-------------------------------------------------
+console.log(Promise.resolve(5)); //Promise {<fulfilled>: 5}
+//Explaination : While doing resolve(), itself here a promise. If we pass number/string etc then it will print fulfilled.
+------------------------------------------------
+console.log("smile" === "smile"); //true
+//Explaination : Each emojy contain unicode where we are compairing unicode not the emojy so it's true
+-------------------------------------------------
+JSON.parse ?
+Parse JSON object to a JavaScript value // converting data into js object
+-------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
