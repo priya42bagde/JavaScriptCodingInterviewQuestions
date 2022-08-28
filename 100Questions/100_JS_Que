@@ -1,0 +1,6 @@
+let a = [];
+let b = [];
+console.log(a==b); //false
+console.log(a===b); //false
+//Explaination : Here we are comparing memory location, not an array. Memory location of 2 arrays are not same.
+--------------------------
