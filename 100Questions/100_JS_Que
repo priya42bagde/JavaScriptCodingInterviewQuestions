@@ -4,3 +4,83 @@ console.log(a==b); //false
 console.log(a===b); //false
 //Explaination : Here we are comparing memory location, not an array. Memory location of 2 arrays are not same.
 --------------------------
+let a = [];
+let b = a;
+console.log(a==b); //true
+console.log(a===b); //true
+//Explaination : Here we are assigning a to b, where memory location is now same.
+---------------------------
+let a = [1];
+let b = [1];
+console.log(a[0]==b[0]); //true
+console.log(a[0]===b[0]); //true
+//Explaination : Here we are comparing elements inside an array, not a memory location. We specify the index so that's why element get compared.
+-----------------------------
+let z= [1,2,3]
+let a ={name: "priya"}
+console.log(...z); // 1 2 3 
+//Explaination : ...z means destructing happened i.e, all the elements are come out from an array/object.
+------------------------------
+console.log(typeof NaN); //number
+//Explaination : If we divide "priya"/2 then it will give NaN. 
+--------------------------------
+let data = 10 - -10;
+console.log(data); //20
+//Explaination : Minus minus will become plus so 10+10=20
+---------------------------------
+const set = new Set([1,1,2,2,3,4,5])
+console.log(set) //{1,2,3,4,5}
+//Explaination : It will remove duplicate values.
+---------------------------------
+let data ={name: "priya"}
+console.log(delete data.name); //true
+console.log(data)//{}
+//Explaination : delete will return either true or false.
+-----------------------------------
+let data ={name: "priya"}
+console.log(delete data); //false
+//Explaination : We can delete the object property only. We can't able to delete the object(i.e, data).
+------------------------------------
+const data = ["piya", "priya", "supriya"];
+const [y] = data;
+console.log(y); //"priya"
+//Explaination : We are doing destructuring here. y is representing the first index only
+-------------------------------------
+const data = ["piya", "priya", "supriya"];
+const [y,z] = data;
+console.log(y,z); //"priya", "priya"
+//Explaination : We are doing destructuring here. y is representing the first index only and z representing the second index.
+--------------------------------------
+const data = ["piya", "priya", "supriya"];
+const [,m] = data; // way to access any specific element here at second position
+console.log(m); //"priya"
+//Explaination : To access any element without taking previous values, we can do just write comma.
+--------------------------------------
+const data ={name:"priya"}
+const {name} = data; //how to get the name property without . dot operator
+console.log(name);//priya
+//Explaination : Here we did object destructuring.It's not store in continuos memory location but array store in continuoes memory location so that's why we used comma in an array.
+--------------------------------------
+let data ={name:"priya"}
+let data1={city:"ABC"}
+data = {...data, ...data1} //merge 2 objects
+console.log(data); // {name:"priya", age:"ABC"}
+//Explaination : using spread operator we use to merge the 2 objects. Three dots will pop out the property from an object and assign inside curly brackets.
+-----------------------------------------
+let data ={name:"priya"}
+let data1={city:"ABC"}
+data = {data, ...data1} //merge 2 objects
+console.log(data); // { "data" : {name:"priya"}, "city": "ABC"}
+//Explaination :Three dots will pop out the property from an object and assign inside curly brackets. If we didn't do destructing or spread operator then key will be object name(i.e, data) and assign the value as whole object into it.
+------------------------------------------
+let data ={name:"priya"}
+let data1={city:"ABC", name: "supriya"}
+data = {...data, ...data1} //merge 2 objects
+console.log(data); // { name:"supriya", "city": "ABC"}
+//Explaination : If we have same keys while merging then the position of the property will remain same but the value get updated with new value. Because in an objects Keys hould be unique.
+-------------------------------------------
+const name = "priya"
+console.log(name()); //Error: name is not a function
+//Explaination : Function we are calling but it's not present so it will an error.
+--------------------------------------------
+
