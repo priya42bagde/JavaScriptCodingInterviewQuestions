@@ -261,8 +261,110 @@ navigator.plateform we can use it. //win32
 let for = 100; //Error
 //Explaination : For is a reserved keyword.
 -------------------------------------------------------------------------------
-Que: 51
-
+function fruit(){
+  console.log(name); //undefined
+  console.log(price); //Error
+  var name = "priya";
+  let price = 1000;
+}
+fruit()
+//Explaination : Hoisting concept used here. Error because in LET declaration first then only we can use it. but in var we can use brfore its declaration.
+-------------------------------------------------------------------------------
+for(var i=0; i<3; i++){ //i=0 //1 //2 //3
+  setTimeout(()=>console.log(i),1) // 3,3,3
+}
+//Explaination : Var is a global variable. Firstly Sync code get executed then async code will start to execute. so i value incremented from 0 to 3 when pointer reaches to setTimeout so it will print 3 thrice time.
+---------------------------------------------------
+for(let i=0; i<3; i++){ //i=0 //1 //2 //3
+  setTimeout(()=>console.log(i),1) //0 //1 //2
+}
+//Explaination : LET is a block scope. so it will print 0,1,2. Its having own islocated scope.
+----------------------------------------------------
+console.log(+true); //1
+console.log(typeof +true); //number
+//Explaination : if we write + in front of anything then it will convert into a number.
+----------------------------------------------------
+console.log(!"priya"); //false
+console.log(typeof ("priya")); //string
+//Explaination : ! will give either true/false.! means false and !! means true.
+----------------------------------------------------
+let data = "size";
+const bird = {size : "small"}
+console.log(bird[data]); //small
+console.log(bird["size"]); //small
+console.log(bird.size); //small
+console.log(bird.data); //undefined
+//Explaination : If we wants to access variable with object then use [] notation(. notation will not work).
+------------------------------------------------------
+let c = {name  : "priya"};
+let d;
+d=c;
+c.name = "supriya";
+console.log(d.name); //supriya
+//Explaination : Using assignment operator we are accessing the same memory allocation. 
+-------------------------------------------------------
+var x;
+var x=10;
+console.log(x); //10
+//Explaination : Can be declare multiple times.
+---------------------------------------------------------
+var x;
+let x=10;
+console.log(x); //Error
+//Explaination : Can't be declare multiple times with LET.
+----------------------------------------------------------
+let a = 3;
+let b = new Number(3);
+console.log(a == b); //true
+console.log(a === b); //false
+console.log(typeof b); //object
+//Explaination : === will give false because a will give number but b will give an object.
+-------------------------------------------------------
+let name;
+nmae ={}; //wrong variable name i wrote
+console.log(name); //undefined
+//Explaination : by default it wil be undefined if we declare first.
+---------------------------------------------------------
+function first(){
+  console.log("Woof!!"); //Woof!!
+}
+first.name = "apple";
+first();
+//Explaination : To add the property with a function then it will not create a impact.
+----------------------------------------------------------
+function sum(a,b){
+  return a+b;
+}
+console.log(sum(1, "2")); //12
+//Explaination : 2 is passed as a string so it will get concat. num+string = string
+------------------------------------------------------------
+let num = 0;
+console.log(num++); //0
+console.log(++num); //2
+console.log(num); //2
+//Explaination : ++ will increase the value by 1. preincrement and postincrement used here.
+--------------------------------------------------------------
+function getAge(...args){ //[1000]
+  console.log(typeof args); //object
+}
+getAge(1000);
+//Explaination : typeof args means typeof an array means typeof [] is object.
+--------------------------------------------------------------
+function getAge(){ 
+ age = 1000;
+ console.log(age); //1000
+}
+getAge();
+//Explaination : if we didn't declare with Var/Let/const then by default it will become as a Var.
+------------------------------------------------------------------
+function getAge(){ 
+  'use strict'
+ age = 1000;
+ console.log(age); //error
+}
+getAge();
+//Explaination : Use strict wil give a error because it forces to use a proper way of the variable declaration.
+----------------------------------------------------------------------
 
 
 
