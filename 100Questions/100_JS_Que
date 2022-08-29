@@ -229,9 +229,39 @@ console.log(a === b); //true
 console.log(a == b); //true
 //Explaination : Doble code and backticks both are same.
 --------------------------------------------------------------------------
-
-
-
+let a =1;
+let c =2;
+console.log(--c === a); //true
+//Explaination : --c will be 1 so thats why true.
+--------------------------------------------------------------------------
+let a =1;
+let b =1;
+let c =2;
+console.log(a === b === -c); //false
+//Explaination : a===b gives True. true === -c(number) gives false.
+---------------------------------------------------------------------------
+console.log(3*3); //9
+console.log(3**3); //27
+//console.log(3***3); //error
+//Explaination : *** doesn't exist in js.
+----------------------------------------------------------------------------
+console.log(a); //undefined
+var a;
+//Explaination : We can use VAR variable before its declaration. We didn't assign any value but still by default "undefined" will be store in it.undefined means declared but value didn't initialised.
+-----------------------------------------------------------------------------
+console.log(a); //not defined
+//Explaination : Not defined means variable didn't even declared.Also value is not assogned.
+-----------------------------------------------------------------------------
+console.log([[[]]]); //[[[]]]
+//Explaination : It will print the nested array. We will get 3 nested array and each one have 1 element but at the last array will be empty.
+------------------------------------------------------------------------------
+How to find Operating system name?
+navigator.plateform we can use it. //win32
+-------------------------------------------------------------------------------
+let for = 100; //Error
+//Explaination : For is a reserved keyword.
+-------------------------------------------------------------------------------
+Que: 51
 
 
 
