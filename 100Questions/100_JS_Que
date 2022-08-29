@@ -129,7 +129,156 @@ function sumValues(x,y,z){
 sumValues(...[2,3,4]) //how to call a function so that output will be 9
 //Explaination : we can't do like this sumValues(2,3,4).
 ----------------------------------------------------
-Que: 26:
+const name = "priya is a girl.";
+console.log(typeof name); //string
+console.log(!typeof name); //false
+console.log(!typeof name === 'object'); //false
+console.log(!typeof name === 'string'); //false
+console.log(!typeof name === false); //true
+//Explaination : We are using negation mark(!) which will return either true or false only.
+----------------------------------------------------
+const name = "priya";
+const age ="10000";
+console.log(isNaN(name)); //true
+console.log(isNaN(age)); //false
+//Explaination : If it's not a number then return True. If it's a number then return false.
+-----------------------------------------------------
+let person = {name: "priya"};
+Object.seal(person); //post seal, how can you modify the person object
+person.age ="1000";
+person.name ="supriya";
+console.log(person); //{name : "supriya"}
+//Explaination : Onceyou use Seal we can't able to add the more keys with values into it.But you can modigy the existing key.
+-------------------------------------------------------
+let data = [2,9,0,10];
+data.shift();//remove first element
+console.log(data); //[9,0,10]
+data.pop(); //remove last element
+console.log(data);//[9,0]
+//Explaination : shift and pop use to remove the elements from first and last index.
+--------------------------------------------------------
+//check the value is even or odd
+let a =10;
+console.log(a%2===0 ? true : false); //true
+//Explaination : Need to divide by 2 and then checking if reminder is zero/one.
+----------------------------------------------------------
+let data ={ name : "priya"};
+delete data.name;
+console.log(data); //{}
+//Explaination : delete always work with object properties not a object itself.
+---------------------------------------------------------
+let data ="true";
+//convert data into boolean false value
+console.log(!data); //false
+console.log(typeof !data); //boolean
+//Explaination : ! will make boolean value(or opposite value). 
+---------------------------------------------------------
+let data ="true";
+//convert data into boolean true value
+console.log(!!data); //true
+console.log(typeof !!data); //boolean
+//Explaination : ! will make boolean value(or opposite value). 
+---------------------------------------------------------
+Diff between Map and foreach: Map will return new thing but Foreach didn't return anything.
+---------------------------------------------------------
+let data = ["piya", "priya", "supriya"];
+delete data[1];
+console.log(data); //["piya",,"supriya"] //["piya",empty,"supriya"]
+console.log(data.length); //3
+//Explaination : Whenever element deleted from an object it will create a empty space. Array length will always reain same.
+-------------------------------------------------------------
+//merge 2 arrays
+const a =[1,2,3];
+const b =[4,5,6];
+const c =[...a, ...b]
+console.log(c); //[1,2,3,4,5,6]
+//Explaination : using spread operator
+----------------------------------------------------------------
+const a =[1,2,3];
+const b =[3,4,5,6];
+const c =[...a, ...b]
+console.log(c); //[1,2,3,3,4,5,6]
+//Explaination : using spread operator still we can merge and both values will be present in arrays. But in an object, it will take the lates value and assigned to the 1st position of that key.
+-------------------------------------------------------------------
+let c = 3**3;
+console.log(c); //27
+console.log(3*3); //9
+//Explaination : 3 square 3 means 3*3*3
+---------------------------------------------------------------------
+let a=2;
+setTimeout(()=>{
+  console.log(a); //100
+},0)
+a=100;
+//Explaination : Here we are using zero time interval. setTimeout is async function so it will execute at last. Firstly all the sync code will get execute. so that's why 100 is assigned to a.
+------------------------------------------------------------------------
+let a =2;
+let A =30;
+console.log(A); //30
+//Explaination : a and A both are diff variables.
+------------------------------------------------------------------------
+let A10="hello";
+let 10A ="hi";
+console.log(A10); //hello
+//console.log(10A); //error
+//Explaination : Variable can't start with a number.
+------------------------------------------------------------------------
+let a="hello";
+let b =`hello`;
+console.log(a === b); //true
+console.log(a == b); //true
+//Explaination : Doble code and backticks both are same.
+--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
