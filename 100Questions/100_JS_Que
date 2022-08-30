@@ -482,10 +482,93 @@ console.log(typeof (3+4+'5')); //"75" //string
 console.log(typeof (3+4+  +'5'));//number
 //Explaination: To find out the typeof when the all the operation get complete thrn have to enclose in paranethisis. If we add + plus sign to any string it will convert to a number.
 ----------------------------------------------------------------------------------------
-que 91
+let data = [1,2,3].map( num =>{
+  if (typeof num === 'number') return;
+  return num*2;
+})
+console.log(data); //[undefined,undefined,undefined]
+//Explaination: If jusr return then it will print undefined.
 ----------------------------------------------------------------------------------------
+function getInfo(member){
+  member.name = "priya";
+}
+const person = {name : "supriya"}
+getInfo(person);
+console.log(person); //{"name":"priya"}
+//Explaination: If we pass an object as argument it will have call by refrence, means having same memory location.
 ----------------------------------------------------------------------------------------
+function Car(){
+  this.make = "tata";
+  return {make: "kia"};
+}
+const myCar = new Car();
+console.log(myCar.make); //kia
+//Explaination: return will overrite the property.If we didn't return then it will print tata.
 ----------------------------------------------------------------------------------------
+(()=>{
+  let x = (y = 10);
+})()
+console.log(typeof x, y); //"undefined" //10
+//Explaination: x is a block scope, and we are trying to console x outside of x so that's why undefined.
+-----------------------------------------------------------------------------------------
+(()=>{
+  let x = y = 10;
+})()
+console.log(typeof y); //number
+//Explaination: x is a block scope, and y is a var because y is not declared so by default it will be var.
+----------------------------------------------------------------------------------------
+(()=>{
+  let x = 10;
+})();
+(()=>{
+  let x = 10;
+})();
+console.log(typeof x); //undefined
+//Explaination: x is a block scope.
+---------------------------------------------------------------------------------------
+(()=>{
+  let x = y = 10;
+})();
+(()=>{
+  let x = y = 20;
+})();
+console.log(y); //20
+//Explaination: y is a var scope so it will overrite from 10 to 20
+-----------------------------------------------------------------------------------------
+let x =100;
+(()=>{
+  var x = 10;
+})();
+console.log(x); //100
+//Explaination: x=10 contain inside a block because we already declare with 100 outside so it will print 100.
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
