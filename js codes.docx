@@ -3232,7 +3232,27 @@ console.log(frequencySort([1,1,2,2,2,3]))
 
 
 
+-------
+Dassault Systems:
+const inputArray = ["INDIA:[Delhi,Mumbai,Chennai]"]; //1
+const extepctedOutputArray = ["INDIA:[Delhi]", "OR", "INDIA:[Mumbai]", "OR", "INDIA:[Chennai]"];
 
+
+//GENERIC JS FUNCTION --> String with  comma will split as separate Items in new ARRAY and separated with OR between each
+
+function convertToORBasedExpression (arr){
+ var outputArray =[];
+ var temp = arr[0].split(":")[1]; //"[Delhi,Mumbai,Chennai]"
+ var tmp = temp.slice(1,21).split(",") //["Delhi","Mumbai","Chennai"]
+ for (let item of tmp){
+   //console.log("INDIA:"+item)
+   outputArray.push("INDIA:"+item)
+ }
+// console.log(temp.slice(1,21).split(","))
+  
+ return outputArray; //5
+}
+convertToORBasedExpression(inputArray)
 
 
 
