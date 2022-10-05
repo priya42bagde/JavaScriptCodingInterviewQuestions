@@ -3257,7 +3257,8 @@ else
 	"not anagram of each other");
 
 ========================================================================================================================================================================
-// How can you make a linkedlist nodes in javascript
+// How can you make a linkedlist nodes in javascript and 
+// hpw to check linkedlist is cyclic or not.
 
 class LinkedList {
   constructor(data){
@@ -3280,6 +3281,16 @@ D.next = A; //it will be circluar linked list
 //D.next = null; //it will be single linked list
 
 //output : 10 -> 20 -> 30 -> 40 -> Null
+
+function floyedCycleDetection(){
+  let fast = head, slow = head;
+  while(fast && fast.next){
+    slow = slow.next;
+    fast = fast.next.next;
+    if(slow == fast) return true;
+  }
+  return false
+}
 =======================================================================================================================================================================
 
 
