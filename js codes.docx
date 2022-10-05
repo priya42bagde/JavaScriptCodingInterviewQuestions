@@ -3257,6 +3257,30 @@ else
 	"not anagram of each other");
 
 ========================================================================================================================================================================
+// How can you make a linkedlist nodes in javascript
+
+class LinkedList {
+  constructor(data){
+    this.data = data;
+    this.next = null;
+  }
+}
+
+let head = new LinkedList(10);
+let A = new LinkedList(20);
+let B = new LinkedList(30);
+let C = new LinkedList(40);
+let D = new LinkedList(50);
+
+head.next = A;
+A.next = B;
+B.next = C;
+C.next = D;
+D.next = A; //it will be circluar linked list
+//D.next = null; //it will be single linked list
+
+//output : 10 -> 20 -> 30 -> 40 -> Null
+=======================================================================================================================================================================
 
 
 
