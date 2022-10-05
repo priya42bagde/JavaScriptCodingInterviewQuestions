@@ -3292,7 +3292,85 @@ function floyedCycleDetection(){
   return false
 }
 =======================================================================================================================================================================
+This: This is a keyword from where it gets belongs to. This is a current object. In javascript, this behave in diff manner, it depends in the env where it's getting
+invoked. (https://www.youtube.com/watch?v=wp-NEcAck1k&t=427s)
 
+In IIFE : this is pointing to Window 
+In object : if normal function then pointing to block scope. if arrow function pointing to window.
+In function constructor : pointing to function 
+If we didn't invoked properly(without paranthesis) then it will give undefined.
+=======================================================================================================================================================================
+function curryingWithRecursion(a){
+  return function(b) {
+    return  b ? curryingWithRecursion(a+b) : a
+  }
+}
+console.log(curryingWithRecursion(1)(2)(3)(4)(5)()) //always use at last empty parenthesis
+======================================================================================================================================================================
+How can you optimise the multiple of times API calls - using debaouncing, we can restrict the function calls ..
+Check code implementation:
+function debounce(func, a){
+  let timer;
+  return ()=>{
+    clearTimeout(timer);
+    timer = setTimeout(()=>{
+      func();
+    }, a)
+  }
+}
+const printName = () => {
+  console.log("Priya"); 
+}
+
+debounce(printName(), 8000)()
+======================================================================================================================================================================
+
+function maxSumSubArray(arr){
+  let max = 0;
+  for(let i=0; i<arr.length; i++){
+    let currMax = 0;
+    for(let j=i; j<arr.length; j++){
+        currMax += arr[j]
+        if(currMax > max){ //or max = Math.max(max, currMax)
+          max = currMax
+        }
+    }
+  }
+  return max
+}
+
+console.log(maxSumSubArray([1,2,-1,3,-2]))
+======================================================================================================================================================================
+function hello(){
+  for(var i=0; i<=3; i++){
+    setTimeout(()=>{
+      console.log(i)
+    }, 1000)
+  }
+}
+hello() //4 4 4 4
+
+function hello(){
+  for(let i=0; i<=3; i++){ //using let getting new refrences
+    setTimeout(()=>{
+      console.log(i)
+    }, 1000)
+  }
+}
+hello() //0 1 2 3
+
+function hello(){
+  for(let i=0; i<=3; i++){ //alternative of let i.e closures and passing indexes
+   function hi(i){
+      setTimeout(()=>{
+      console.log(i)
+    }, 1000)
+   }
+   hi(i)
+  }
+}
+hello() //0 1 2 3
+=========================================================================================================================================================================
 
 
 
