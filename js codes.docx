@@ -3216,6 +3216,47 @@ var frequencySort = function(nums) {
 };
 console.log(frequencySort([1,1,2,2,2,3]))
 ==========================================================================================================================================================================
+Anagram:O(N) 
+let NO_OF_CHARS = 256;
+function areAnagram(str1, str2)
+{
+	// Create a count array and initialize all values as 0
+	let count = new Array(NO_OF_CHARS).fill(0);
+	let i;
+
+  if (str1.length != str2.length) return false;
+	for(i = 0; i < str1.length; i++)
+	{
+		  count[str1[i].charCodeAt(0)]++;
+      count[str2[i].charCodeAt(0)]--;
+	}
+
+	// See if there is any non-zero value in count array
+	for(i = 0; i < NO_OF_CHARS; i++)
+	if (count[i] != 0)
+	{
+		return false;
+	}
+	return true;
+}
+
+// Driver code
+let str1 =
+"priya".split("");
+let str2 =
+"riyap".split("");
+
+// Function call
+if (areAnagram(str1, str2))
+	document.write(
+	"The two strings are " +
+	"anagram of each other");
+else
+	document.write(
+	"The two strings are " +
+	"not anagram of each other");
+
+========================================================================================================================================================================
 
 
 
@@ -3254,6 +3295,7 @@ function convertToORBasedExpression (arr){
 }
 convertToORBasedExpression(inputArray)
 
+---------------------------------
 
 
 
