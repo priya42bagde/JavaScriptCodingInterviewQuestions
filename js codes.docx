@@ -2047,6 +2047,9 @@ Polyfill:
 along with our own logic.
 3. A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.
 
+Polyfill: Sometimes array push, pop or filter methods and some window's functions like window.localstorage and window.sessionstorage these functions are not supported
+by browser, so in this case we can provide our own fallback support or own code that it replace the native functions
+
 Example for bind:
 With Bind-
 let name ={
