@@ -605,11 +605,86 @@ console.log(func);
 output: 5
 //delete keyword only use with object properties. here a is a variable so it will not work the variable. //delete user.age 
 ------------------------------------------------------------------------------------------
+Dynamic property of object :
+const property = "firstName";
+const name = "Priya";
+
+const user = {
+  property : name //{"property" : "Priya"}
+}
+console.log(user);
+
+const user1 = {
+  [property] : name //dynamic property required [] //{"firstName" : "Priya"}
+}
+console.log(user1);
+------------------------------------------------------------------------------------------
+const user ={
+  name : "priya",
+  age : 100
+}
+
+//iterate through keys
+for(let item in user){
+  console.log(item) //name age
+}
+//iterate through values
+for(let item in user){
+  console.log(user[item]) //priya 100
+}
+------------------------------------------------------------------------------------------
+const user ={
+  name : "priya",
+  age : 100
+}
+
+//double the age as 200 //iterate through keys
+for(let item in user){
+ if(typeof user[item] === "number"){
+   user[item]*=2
+ }
+}
+
+console.log(user)
+------------------------------------------------------------------------------------------
+const a = {}
+const b = {key : "b"}
+const c = {key : "c"}
+
+a[b] = 123;
+a[c] = 456;
+console.log(a[b]); //456
+
+//console.log(a) //{"[object Object]" : 456}
+//here object is not converted into a string so printing key as object Object.
+//so for both it will be 
+//a["[object Object]"] = 123;
+//a["[object Object]"] = 456;
+//it get override by 456.
+------------------------------------------------------------------------------------------
+const user = {
+  name :"priya",
+  age : 100
+}
+//convert into a string
+const str = JSON.stringify(user)
+console.log(str)//{'name':'priya','age':100}"
+
+//convert string onto an object
+console.log(JSON.parse(str)) //{ name : "priya, "age":100}
 
 
+*****************
+Real Usecases : Storing in local storage. We can't store the object as a value so require to convert into a string.
+const user = {
+  name :"priya",
+  age : 100
+}
+console.log(JSON.stringify(user)) //convert into a string
+console.log(JSON.parse(JSON.stringify(user)))  //convert into an object
 
-
-
+localStorage.setItem("testAsKey", JSON.stringify(user))
+------------------------------------------------------------------------------------------
 
 
 
