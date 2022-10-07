@@ -729,6 +729,34 @@ const {fullName : {first}} = user;
 console.log(first); //"Priya"
 //Destructuring at deep nested
 -------------------------------------------------------------------------------------------
+let c = {greeting : "Hey!"}
+let d;
+
+d=c;
+c.greeting = "Hello"
+console.log(d.greeting); //Hello
+//We are passing the refrence not the propertues of an object so when we changge the roperty of any object it will reflect in both objects
+-------------------------------------------------------------------------------------------
+let person = {name : "priya"}
+const members = [person]
+person = null
+console.log(members);// [{"name":"priya"}]
+
+let person = {name : "priya"}
+const members = [person]
+person.name = null
+console.log(members);// [{"name":null}]
+//because we are modifying the property of object
+-------------------------------------------------------------------------------------------
+Ways to make deep copy:
+1. object.assign
+2. {...obj}
+3. JSON.parse(JSON.stringyfy(obj))
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------
 
