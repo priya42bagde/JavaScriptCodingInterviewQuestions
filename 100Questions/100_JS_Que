@@ -596,7 +596,15 @@ let x =100;
 console.log(x); //100
 //Explaination: x=10 contain inside a block because we already declare with 100 outside so it will print 100.
 -------------------------------------------------------------------------------------------
+const func = (function(a){
+                   delete a;
+                   return a;
+               } )(5)
+console.log(func);
 
+output: 5
+//delete keyword only use with object properties. here a is a variable so it will not work the variable.
+------------------------------------------------------------------------------------------
 
 
 
