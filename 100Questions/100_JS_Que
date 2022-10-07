@@ -688,9 +688,49 @@ localStorage.setItem("testAsKey", user) //[object Object] beacuse we are forcefu
 
 JSON.parse(localStorage.getItem("testAsKey")) //will get as a object
 ------------------------------------------------------------------------------------------
+const user = {
+  name :"priya",
+  age : 100
+}
+console.log(JSON.stringify(user,["name"])) //"{'name':'priya'}"
 
+//wheen we pass as a array then it will convernt only those properties and ignore rest of the proerties
+------------------------------------------------------------------------------------------
+const shape = {
+  radius : 10,
+  diameter(){
+    return this.radius*2; //this pointing to shape
+  }
+ parimeter : () => 2*Math.PI*this.radius; //this pointing to window where it's not exist
+}
+console.log(shape.diameter()) //20
+//console.log(shape.parimeter()) //Nan
+-------------------------------------------------------------------------------------------
+let user = {
+  name : "Priya",
+  age : 100
+}
 
+const name = "Supriya";
+//const {name} = user; //Identifier 'name' has already been declared 
+const {name : myName} = user;
 
+console.log(myName) //Priya
+-------------------------------------------------------------------------------------------
+let user = {
+  age : 100,
+  fullName : {
+    first : "Priya",
+    last : "Bagde"
+  }
+}
+
+const {fullName : {first}} = user;
+console.log(first); //"Priya"
+//Destructuring at deep nested
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
 
 
 
