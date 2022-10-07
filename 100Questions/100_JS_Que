@@ -685,6 +685,8 @@ console.log(JSON.parse(JSON.stringify(user)))  //convert into an object
 
 localStorage.setItem("testAsKey", JSON.stringify(user)) {"name":"priya","age":100}
 localStorage.setItem("testAsKey", user) //[object Object] beacuse we are forcefully trying to convert in a string
+
+JSON.parse(localStorage.getItem("testAsKey")) //will get as a object
 ------------------------------------------------------------------------------------------
 
 
