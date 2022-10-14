@@ -198,6 +198,19 @@ function longestCommonString(){
   return arr[0].substring(0,i)
 }
 longestCommonString() 
+--------------------------------------------------------------------
+function longestCommonString(){
+ let array=["go","google","gosh"]
+  var arr = array.sort((a,b)=>a.length-b.length)
+  let result =""
+  for(let i=0; i<arr[0].length; i++){
+    if(arr[0][i]===arr[arr.length-1][i]){
+      result+=arr[0][i]
+    }
+  }
+  return result
+}
+console.log(longestCommonString())
 ================================================================================================================================================================================
 Code 17: To find vowels and its count in a given string
 function vowelCounts(){
