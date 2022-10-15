@@ -3444,7 +3444,31 @@ function flatArray(arr){
 }
 console.log(flatArray([1,2,3,[4,[5,[6,7,[8]]]]]))
 =======================================================================================================================================================================
-
+Merge 2 sorted array:
+function mergedTwoArrays(arr1,arr2){
+   let mergedArray= [];
+   let i = 0, j=0;
+   while((i < arr1.length)&&(j< arr2.length)){
+     if(arr1[i]<arr2[j]){
+         mergedArray.push(arr1[i]);
+         i++;  
+      }
+      else{
+         mergedArray.push(arr2[j]);
+         j++;
+      }   
+    }
+   if(i<=(arr1.length-1)){    
+     arr1.splice(0,i);
+     mergedArray=mergedArray.concat(arr1);
+   }
+   else if(j<=(arr2.length-1)){
+     arr2.splice(0,j);
+     mergedArray=mergedArray.concat(arr2);  
+   }
+   return mergedArray;
+}
+console.log(mergedTwoArrays([1,2,3,4], [2,5,6]))
 =======================================================================================================================================================================
 
 =======================================================================================================================================================================
