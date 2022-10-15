@@ -454,7 +454,7 @@ uniqueElements([1,2,3,4,4],[2,3,4,5,6])
 Code 33: Find first duplicate element from an array
 function firstDuplicate() {
     let arr = [1,2,2,5,5];
-    let data = [];
+    let data = {};
     for (var item of arr) {
         if (data[item]) {
             return item
