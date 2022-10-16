@@ -37,6 +37,21 @@ function removeDuplicates(){
 }
 console.log(removeDuplicates()) 
 output = "aidnI si ym yrtnuoc"
+------------------------------------------
+var reverseWords = function(s) {
+    let res = '';
+    let word = '';
+    for (let c of s) {
+        if (c === ' ') {
+            res += word + c;
+            word = '';
+        } else {
+            word = c + word;
+        }
+    }
+    return res + word;
+};
+console.log(reverseWords("priya bagde"))
 ================================================================================================================================================================================
 Code 5:String reverse with reversing of individual words
 function withoutReverse(){
