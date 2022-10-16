@@ -1286,6 +1286,19 @@ function frequencySort(str) {
    return res;
 };
 console.log(frequencySort("cCaaAAbbbBBB")); //"bbbBBBaaAAcC"
+-------------------------------------------------------------------
+function frequencySort(str) {
+ let map = {}, res = "", sortedArr;
+ for (const letter of str)map[letter]=(map[letter] || 0) + 1; 
+ sortedArr = Object.keys(map).sort((a, b) => map[b] - map[a]);
+ for (let letter of sortedArr) {
+      for (let count = 0; count < map[letter]; count++) {
+         res += letter
+      }
+ }
+ return res;
+};
+console.log(frequencySort("cCaaAAbbbBBB"));
 ================================================================================================================================================================================
 Code 88: To find the OCCURANCE of the character
 function frequencySort(str) {
