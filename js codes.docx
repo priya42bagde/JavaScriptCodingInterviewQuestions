@@ -1631,6 +1631,21 @@ function findTriplets(arr, n) {
 }
 var arr = [-1, -4, -9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 findTriplets(arr, 0);
+------------------------------------------------------------------------
+function findTriplets(arr, n) {
+ arr.sort((a, b) => a - b);
+ for (let i = 0; i < arr.length - 2; i++) {
+  for (let j = i + 1; j < arr.length - 1; j++) {
+   for (let k = j + 1; k < arr.length; k++) {
+    if (arr[i] + arr[j] + arr[k] === 0) {
+     console.log(`${arr[i]}, ${arr[j]}, ${arr[k]}`);
+    }
+   }
+  }
+ }
+}
+let arr = [1, 2, 5, 3, -2, 0, 1, -1, 5, 6, -2, -1];
+findTriplets(arr, 0);
 ================================================================================================================================================================================
 Convert Array into object:-
 const arr = ["John", "Peter", "Sally", "Jane"];
