@@ -1528,6 +1528,20 @@ stringCompression(''); //Please enter valid string.
 stringCompression('aaaa'); //a4
 stringCompression('aaaabbc'); //a4b2c1
 stringCompression('aaaabbcaabb'); //a4b2c1a2b2
+---------------------------------------------------------------
+function stringCompression (str) {
+  var output = '';
+  var count = 0; 
+  for (var i = 0; i < str.length; i++){
+    count++;
+    if (str[i] != str[i+1]) {
+      output += str[i] + count; 
+      count = 0; 
+    }
+  }
+  console.log(output);
+}
+stringCompression('aaaab');
 ================================================================================================================================================================================
 Code 102: Given the roots of two binary trees root and subRoot, return true if there is a subtree of root with the same structure and node values of subRoot and false otherwise.
 A subtree of a binary tree tree is a tree that consists of a node in tree and all of this node's descendants. The tree tree could also be considered as a subtree of itself.
