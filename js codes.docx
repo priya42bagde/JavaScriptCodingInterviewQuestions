@@ -1167,6 +1167,21 @@ function findAllSubsetsoOfGivenSet(arr)
   return result
 }
 console.log(findAllSubsetsoOfGivenSet([8,9]));
+--------------------------------------------------------
+function findAllSubsets(arr){
+  var result = []
+  for(var item of arr){
+    let tempSub = [...result]
+    for(var curr of tempSub){
+      result.push([...curr, item])
+    }
+    result.push([item])
+  }
+  result.push([])
+  return result
+}
+
+console.log(findAllSubsets([1,2]))
 ================================================================================================================================================================================
 Code 82: To find the maximum repetation of the character in a string  
  function maxRepeating(str)
