@@ -521,6 +521,11 @@ console.log(setInterval(()=>console.log('Hi'), 1000));
 console.log(setInterval(()=>console.log('Hi'), 1000));
 console.log(setInterval(()=>console.log('Hi'), 1000));
 //Explaination: setInterval will give uniques id to stop. It will give like 1,2,3. so it will print 1,2,3,Hi,Hi, Hi, Hi, Hi, .....so on.
+------------------------------------------------------------------------------
+console.log(setTimeout(()=>console.log('Hi'), 1000));
+console.log(setTimeout(()=>console.log('Hi'), 1000));
+console.log(setTimeout(()=>console.log('Hi'), 1000));
+//Explaination : it will print 1,2,3,Hi,Hi, Hi.
 -------------------------------------------------------------------------------
 console.log([..."priya"]); //["p","r","i","y","a"]
 //Explaination: It will convert into an array.
