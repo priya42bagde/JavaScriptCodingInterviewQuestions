@@ -168,6 +168,28 @@ getName();
 --------------------------------------------------
 let name  = "priya";
 function getName(){
+  console.log(name); //Uncaught ReferenceError: Cannot access 'name' before initialization 
+  let name = "supriya";
+}
+getName();
+------------------------------------------------------------------------------
+let name  = "priya";
+function getName(){ 
+  let name;
+  console.log(name); //undefined
+  name = "supriya";
+}
+getName();
+------------------------------------------------------------------------------
+let name  = "priya";
+function getName(){ 
+  let name = "supriya";
+  console.log(name); //supriya    
+}
+getName();
+------------------------------------------------------------------------------
+let name  = "priya";
+function getName(){
   console.log(name); //priya
 }
 getName();
