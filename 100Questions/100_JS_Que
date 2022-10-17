@@ -207,7 +207,7 @@ sumValues(...[2,3,4]) //how to call a function so that output will be 9
 ----------------------------------------------------
 const name = "priya is a girl.";
 console.log(typeof name); //string
-console.log(!typeof name); //false
+console.log(!typeof name); //false //"priya is a good girl" is a string means thruthy value. Nagation of thruthy is falsy value.
 console.log(!typeof name === 'object'); //false
 console.log(!typeof name === 'string'); //false
 console.log(!typeof name === false); //true
