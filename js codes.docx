@@ -3640,6 +3640,8 @@ const sum = (a,b,c,d) => a+b+c+d;
 const totalSum = currying(sum)
 console.log(totalSum(1)(2)(3)(4))
 =======================================================================================================================================================================
+Destructuring in nested object:
+
 const obj = {
   name : "John",
   address : {
@@ -3651,7 +3653,7 @@ const obj = {
 }
 
 const {address} = obj;
-console.log(address) //{country : "India"}
+console.log(address) //{country : "India", "add": {"city" : "India"}}
 
 const {address:{country}} = obj;
 console.log(country) //India
