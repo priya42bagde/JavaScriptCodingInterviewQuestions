@@ -3662,7 +3662,26 @@ console.log(country) //India
 const {address:{add:{city}}} = obj;
 console.log(city) //Delhi
 =======================================================================================================================================================================
+Caching:
+function memo(fn){
+  let cache ={}
+  return (...value)=>{
+   if(cache[value]){
+     console.log("Cache!!.....", cache[value]);
+     return cache[value];
+   }else{
+     let result = fn(...value);
+     cache[value] = result;
+     console.log("Caculated!!!......", result)
+     return result;
+   }
+  }
+}
 
+const sum = (a,b) => a+b;
+let memoise = memo(sum);
+memoise(1,2) //"Caclculated"
+memoise(1,2) //"Cache"
 =======================================================================================================================================================================
 
 =======================================================================================================================================================================
