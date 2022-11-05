@@ -821,5 +821,16 @@ promises.then((res)=>console.log(res))
 .catch((err)=>console.log(err))
 //resoled!!....
 -------------------------------------------------------------------------------------------
+console.log(1);
 
+const data = new Promise((resolve, reject)=>{
+  console.log(2);
+  resolve(3);
+})
+
+data.then((res)=>{
+  console.log(res)
+})
+
+console.log(4); //1 2 4 3
 -------------------------------------------------------------------------------------------
