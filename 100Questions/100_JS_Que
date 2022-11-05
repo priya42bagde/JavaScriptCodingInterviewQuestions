@@ -807,7 +807,19 @@ print("Priya", (value)=>{
 });
 console.log(2);
 -------------------------------------------------------------------------------------------
-
+let promises = new Promise((resolve, reject)=>{
+  setTimeout(()=>{
+    let state = true;
+    if(state){
+      resolve("Resolved Promises!!...");
+    }else{
+      reject("Rejected Promises!!...");
+    }  
+  }, 1000)
+})
+promises.then((res)=>console.log(res))
+.catch((err)=>console.log(err))
+//resoled!!....
 -------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------
