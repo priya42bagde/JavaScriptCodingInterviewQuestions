@@ -834,3 +834,16 @@ data.then((res)=>{
 
 console.log(4); //1 2 4 3
 -------------------------------------------------------------------------------------------
+console.log(1);
+
+const data = new Promise((resolve, reject)=>{
+  console.log(2);
+  //resolve(3);
+})
+
+data.then((res)=>{
+  console.log(res)
+})
+
+console.log(4); //1 2 4 
+If we are not returning anything it will not print anything .
