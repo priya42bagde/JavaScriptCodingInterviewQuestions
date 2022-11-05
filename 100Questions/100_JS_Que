@@ -782,7 +782,30 @@ Ways to make deep copy:
 2. {...obj}
 3. JSON.parse(JSON.stringyfy(obj))
 -------------------------------------------------------------------------------------------
+console.log(1);
 
+function print(name){
+  setTimeout(()=>{
+    return `${name}`
+  },1000)
+}
+let value = print("Priya");
+console.log(value)
+
+console.log(2);
+Reason : It run the code quickly and it will not wait for setTimeout so value will be undefined
+---------------------------------------------------
+Above code can be fix by callback:
+console.log(1);
+function print(name, cb){
+  setTimeout(()=>{
+     cb(`${name}`)
+  },1000)
+}
+let value = print("Priya", (value)=>{
+  console.log(value)
+});
+console.log(2);
 -------------------------------------------------------------------------------------------
 
 -------------------------------------------------------------------------------------------
