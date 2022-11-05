@@ -802,7 +802,7 @@ function print(name, cb){
      cb(`${name}`)
   },1000)
 }
-let value = print("Priya", (value)=>{
+print("Priya", (value)=>{
   console.log(value)
 });
 console.log(2);
