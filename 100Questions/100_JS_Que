@@ -847,3 +847,180 @@ data.then((res)=>{
 
 console.log(4); //1 2 4 
 If we are not returning anything it will not print anything .
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+let a = "true";
+setTimeout(()=>{
+  a=false;
+}, 2000)
+
+while(a){
+  console.log("1")
+} 
+
+Reason: 1, 1, 1,...... 
+Explanation: Event loop will add setTimeout callback in Macrotask queue and will push it to call stack for execution only when the main thread finishes executing.
+
+Here, since 'a' is true and isn't being set to false anywhere in main thread, the while loop will run infinitely, and setTimeout callback will never get a chance to run.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function run(value, time){
+  return new Promise((resolve)=>{
+    setTimeout(()=>{
+      resolve(value)
+    }, time)
+  })
+}
+async function task(){
+  let a = await run(1, 1000); //1value //1 sec
+  let b = run(2, 2000); //2value //2 sec
+  let c = run(3, 1000);  //3value //execute before b so will not take extra time
+  console.log(a + await b+ await c);
+}
+task()
+
+6 'in 3Sec'
+
+Explanation: In line 10, a setTimeout() timer of 1 sec will be triggered and due to 'await', it will wait for the timer to expire, and after 1 sec, value of a is 1. 
+
+Then since there is no 'await' in line 11 and 12, the 2 timers of 2 sec and 1 sec will be triggered simultaneously. Then in line 14, since b hasn't been resolved, due to await, it will wait for another 2 sec, and since the 2 timers started simultaneously, the other 1 sec timer would already have expired. 
+
+So, after another 2 sec, value of b will be 2, and then immediately after that, value of c will be 3. 
+
+👉 Output : 1 + 2 + 3 = 6
+👉 Total time: 1 (line 10) + 2 (await b, in line 14) + 0 (await c, in line 14) = 3 sec
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const fetchData = function(){
+  return new Promise((res, reject)=>{
+    reject("Error!!")
+  })
+}
+
+fetchData()
+.then(null, (err)=>{
+  console.log("First");
+  console.log(err);
+})
+.catch(()=>{
+  console.log("Second");
+  console.log(err)
+})
+
+Explaination : "First" "Error!!"
+reject("Error!!") gives string value so it will go to THEN block rather than CATCH block.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+displayName();
+var displayName = function(){
+  console.log("Priya")
+} 
+function displayName(){
+  console.log("dolly")
+}
+displayName();
+
+//Explaination : dolly priya
+
+Normal function will get execute before, because of function Hoisting concept, then function expression wil get execute.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const inc = async(x) => {
+  x = x + await 1; //2
+  return x;
+}
+
+const increment = async(x) =>{ 
+  x = x+1; //2+1
+  return x; //3
+}
+inc(1)
+.then((x)=>{ //2
+  increment(x) //2
+  .then((x)=>console.log(x)) //3
+})
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const p1 = Promise.resolve("First");
+const p2 = Promise.reject("Second");
+const p3 = Promise.resolve("Third");
+const runPromise = async() =>{
+  try{
+    const res = await Promise.all([p1,p2,p3]);
+    console.log(res);
+  }
+  catch(err){
+    console.log(err)
+  }
+}
+runPromise();
+
+//output : Second
+
+Promise.all() returns array of resolved promises values and if either any of the promise is rejected, then it directly returns the rejected promise value through catch block.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+console.log("start");
+
+async function getData(){
+  console.log("priya");
+  return "Dolly";
+}
+
+getData()
+.then((res)=> console.log(res));
+
+console.log("end");
+//start priya end Dolly
+//all the console will print first then aync and setTimeout
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const promise = () => Promise.resolve("Success");
+function first(){
+  promise().then((res)=> console.log(res)); //async
+  console.log("First"); //sync
+}
+async function second(){
+  const res = await promise(); 
+  console.log(res); //async
+  console.log("Second"); //sync
+}
+first();
+second();
+
+// First Sucess success second
+// sync(console) run hen async(promise)
+//await pause the line of execution
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const person1 = {
+  name : "Priya"
+}
+const person2 = {
+  name : "Dolly"
+}
+const person = Object.assign(person1, person2);
+
+console.log(person); //{"name" : "Dolly"}
+console.log(person.name); //Dolly
+console.log(person1.name); //Dolly
+console.log(person2.name); //Dolly
+
+//Having same key name so, the value is override and it will be "Dolly"
+
+Explanation : As Object.assign() method will add all the key values of person2 to person1 and return the reference of person1 to person and if same key are there they'll be overwritten.
+Basically person1 and person are referring to same object.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+const calc=(a)=>{
+  return (b)=>{
+    if(b) return calc(a+b);
+    return a;
+  }
+}
+console.log(calc(1)(2)(3)(4)()) //10 currying
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
