@@ -3865,8 +3865,7 @@ function freq(arr){
 console.log(freq(arr));
 //output : {"a":3, "b":1, "m":2, "i":1, "n":1, "x":1}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
+adidas: https://codesandbox.io/s/counter-async-example-forked-ysfsic?file=/src/features/counter/counterSlice.js
 
 
 
