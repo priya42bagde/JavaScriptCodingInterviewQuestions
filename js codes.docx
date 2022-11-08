@@ -3760,7 +3760,55 @@ export default App;
 
 ReactDOM.render(<App />, document.getElementById("root"));
 //Adidas
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+let dummyObject =[
+{id:0,fname:'a'},{id:0,mname:'b'},{id:0,lname:'c'},
+{id:1,fname:'a1'},{id:1,mname:'b1'},{id:1,lname:'c1'},
+{id:2,fname:'a2'},{id:2,mname:'b2'},{id:2,lname:'c2'}]
 
+output:
+[{id:0,fname:'a',mname:'b',lname:'c'},
+{id:1,fname:'a1',mname:'b1',lname:'c1'},
+{id:2,fname:'a2',mname:'b2',lname:'c2'},
+]
+
+-------------- 1st way -----------------------------------
+let res = {};
+dummyObject.forEach(a => res[a.id] = {...res[a.id], ...a});
+res = Object.values(res);
+console.log(res);
+
+-------------- 2nd way -----------------------------------
+
+const clubArray = (arr) => {
+   return arr.reduce((acc, curr) => {
+      const index = acc.findIndex(el => el.id === curr.id);
+      if(index !== -1){
+             acc[index] = { ...acc[index],...curr}
+      } else {
+         acc.push(curr);
+      };
+      return acc;
+   }, []);
+};
+console.log(clubArray(dummyObject))
+  
+-------------- 3rd way -----------------------------------
+  
+const clubArray = (arr) => {
+   return arr.reduce((acc, curr) => {
+      const index = acc.findIndex(el => el.id === curr.id);
+      if(index !== -1){ 
+         const key = Object.keys(curr)[1];
+         acc[index][key] = curr[key];
+      } else {
+         acc.push(curr);
+      };
+      return acc;
+   }, []);
+};
+console.log(clubArray(dummyObject))
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
