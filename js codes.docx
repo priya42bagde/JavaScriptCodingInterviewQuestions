@@ -3825,6 +3825,18 @@ function freq(arr){
 }
 console.log(freq(arr));
 //output : {"a":3, "b":1, "m":2, "i":1, "n":1, "x":1}
+------------------------------------------------------------
+var arr = ['aAb','min','Max'];
+function freq(arr){
+  let res = arr.join('');
+  let map = {}
+  for (const letter of res.toLowerCase()) {
+      map[letter] = (map[letter] || 0) + 1; 
+  };
+  return map;
+}
+console.log(freq(arr));
+//output : {"a":3, "b":1, "m":2, "i":1, "n":1, "x":1}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
