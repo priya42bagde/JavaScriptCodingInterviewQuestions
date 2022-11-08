@@ -3690,6 +3690,32 @@ const playlist = [
 {"songName":"Test4",duration: 7000}
 ]
 
+let totalDuration = 0;
+const displayDetails = ({ songName, duration }) => {
+ totalDuration += duration;
+ setTimeout(()=> {
+     console.log(songName);
+ }, totalDuration);
+};
+
+playlist.forEach((song) => displayDetails(song));
+------------------------------------------------------------------------------
+const displayDetails = ({ songName, duration }) => {
+ return new Promise((resolve, reject) => {
+   setTimeout(() => {
+      resolve(songName);
+    }, duration);
+ });
+};
+
+async function display () {
+ for (song of playlist) {
+ const result = await displayDetails(song);
+ console.log(result);
+ }
+}
+display();
+-------------------------------------------------------------------
 function displayDetails(play){
  play.map((item)=>{
      setTimeout(()=>{
@@ -3705,6 +3731,7 @@ displayDetails(playlist);
 //Now: Test1 Test3 Test2 Test4
 //Expected output: Test1 Test2 Test3 Test4 
 //Airtel
+
 =======================================================================================================================================================================
 Can you optimise the below code ??
 
