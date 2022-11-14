@@ -3865,14 +3865,7 @@ function freq(arr){
 console.log(freq(arr));
 //output : {"a":3, "b":1, "m":2, "i":1, "n":1, "x":1}
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-adidas: https://codesandbox.io/s/counter-async-example-forked-ysfsic?file=/src/features/counter/counterSlice.js
-
-
-
-
-
-
-
+Adidas: https://codesandbox.io/s/counter-async-example-forked-ysfsic?file=/src/features/counter/counterSlice.js
 -------
 Dassault Systems:
 const inputArray = ["INDIA:[Delhi,Mumbai,Chennai]"]; //1
@@ -3894,9 +3887,21 @@ function convertToORBasedExpression (arr){
  return outputArray; //5
 }
 convertToORBasedExpression(inputArray)
-
 ---------------------------------
+Adobe:
+1. Frequency Count in an array.
+2. /*Your task is to write a function that, given a list of words and a string, finds and returns the word in the list that is scrambled up inside the string, if any exists. There will be at most one matching word. The letters don't need to be in order or next to each other. The letters cannot be reused.*/
+//array //string
 
+const words = ["cat", "baby", "dog", "bird", "car", "ax"];
+const string1 = "tcabnihjs";
+const string2 = "tbcanihjs";
+const string3 = "baykkjl";
+const string4 = "bbabylkkj";  
+const string5 = "ccc";
+const string6 = "breadmaking";
+const string7 = "tcabnihjsbbabylkkj";
+3. Sort araay of objects based on age.
 
 
 
