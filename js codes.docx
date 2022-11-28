@@ -3239,7 +3239,6 @@ However, if you use the assignment operator for a reference value, it will not c
 
  JS objects (as non-primitive data types) differ because they have reference values and those values are mutable. This means they share a memory address when shallow copied.
 =========================================================================================================================================================================
-Airbus Interview Question:
 function countOccurance(arr){
   let map ={}, sortedArr = arr.sort((a,b)=>a-b);
   for(var item of sortedArr){
