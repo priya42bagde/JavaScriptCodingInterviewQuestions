@@ -99,7 +99,7 @@ console.log(delete data); //false
 ------------------------------------
 const data = ["piya", "priya", "supriya"];
 const [y] = data;
-console.log(y); //"priya"
+console.log(y); //"piya"
 //Explaination : We are doing destructuring here. y is representing the first index only
 -------------------------------------
 const data = ["piya", "priya", "supriya"];
