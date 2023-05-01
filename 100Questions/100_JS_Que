@@ -120,7 +120,7 @@ console.log(name);//priya
 let data ={name:"priya"}
 let data1={city:"ABC"}
 data = {...data, ...data1} //merge 2 objects
-console.log(data); // {name:"priya", age:"ABC"}
+console.log(data); // {name:"priya", city:"ABC"}
 //Explaination : using spread operator we use to merge the 2 objects. Three dots will pop out the property from an object and assign inside curly brackets.
 -----------------------------------------
 let data ={name:"priya"}
@@ -140,7 +140,7 @@ console.log(name()); //Error: name is not a function
 //Explaination : Function we are calling but it's not present so it will an error.
 --------------------------------------------
 const result = false || {} || 20 || null;
-console.log(result); //20
+console.log(result); // {}
 //Explaination : OR operator will find first positive value. Null is a falsy value by default. {} is a positive value. It didn't reach till 20 and null.
 --------------------------------------------
 const result = null || false || '';
@@ -205,7 +205,7 @@ function sumValues(x,y,z){
   return x+y+z;
 }
 sumValues(...[2,3,4]) //how to call a function so that output will be 9
-//Explaination : we can't do like this sumValues(2,3,4).
+//Explaination : ...[2,3,4] will turn it into 2 3 4 as three parameters for our function (spread operator).
 ----------------------------------------------------
 const name = "priya is a girl.";
 console.log(typeof name); //string
@@ -346,7 +346,7 @@ function fruit(){
   let price = 1000;
 }
 fruit()
-//Explaination : Hoisting concept used here. Error because in LET declaration first then only we can use it. but in var we can use brfore its declaration.
+//Explaination : Hoisting concept used here. Error because in LET declaration first then only we can use it. but in var we can use before its declaration.
 -------------------------------------------------------------------------------
 for(var i=0; i<3; i++){ //i=0 //1 //2 //3
   setTimeout(()=>console.log(i),1) // 3,3,3
@@ -401,7 +401,7 @@ console.log(typeof b); //object
 let name;
 nmae ={}; //wrong variable name i wrote
 console.log(name); //undefined
-//Explaination : by default it wil be undefined if we declare first.
+//Explaination : by default it wil be undefined if we only declare and not initialize it with a value.
 ---------------------------------------------------------
 function first(){
   console.log("Woof!!"); //Woof!!
@@ -545,7 +545,7 @@ let person = {name: "priya"};
 const numbers = [person];
 person = null;
 console.log(numbers, person); // [{name : "priya"}] //null
-//Explaination: We try to empty the objecti,e person, but still an array i.e, numbers conatin value so it will not create an impact while assigning null to person.
+//Explaination: We try to empty the object i,e person, but still an array i.e, numbers conatin value so it will not create an impact while assigning null to person.
 ----------------------------------------------------------------------------------
 const person = {name: "priya", age: 1000};
 for(const item in person){
