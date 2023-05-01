@@ -3239,6 +3239,18 @@ Output: 1
 However, if you use the assignment operator for a reference value, it will not copy the value. Instead, both variables will reference the same object in the memory:
 
  JS objects (as non-primitive data types) differ because they have reference values and those values are mutable. This means they share a memory address when shallow copied.
+
+📝 What is shallow vs Deep copy in javascript?
+
+As we know in javascript there are two data types, one is primitive and the other is non-primitive. The primitive data type is immutable while non-primitive is mutable.
+
+✏️ In Shallow copy, when we assign a variable to another variable using the assignment operator, We are actually assigning its reference to another variable, which means both variables point to the same memory location. If we change any of them, it will be reflected in both. All non-primitive data types are shallow copied.
+
+✏️ In Deep copy, when we assign a variable to another variable using the assignment operator, We are actually assigning only value and both of these variables are pointing to different locations which means if I change one, then it will not get reflected in both. All primitive data types are deep copied.
+
+
+
+
 =========================================================================================================================================================================
 function countOccurance(arr){
   let map ={}, sortedArr = arr.sort((a,b)=>a-b);
