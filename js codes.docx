@@ -3822,7 +3822,41 @@ On the other hand, Promise.race resolves or rejects as soon as any of the promis
 Now, for scenarios where we need all promises to succeed before proceeding, we have Promise.all. It resolves only if all promises resolve, and it rejects if any of them fail. This is valuable when aggregating data from various sources and ensuring a comprehensive success criterion. 
 
 Lastly, Promise.allSettled is beneficial when we want to wait for all promises to settle, regardless of whether they resolve or reject. It returns an array of result objects, each indicating the status and value. This method is particularly useful for scenarios where we need to process all outcomes, successful or not, such as logging API responses for auditing purposes."
+=============================================================================================================================================
+Memoisation:
 
+Write a memoization for computing the Fibonacci series".
+
+Taking a moment to collect my thoughts, I explained the below points, but did i missed any other point here. 
+
+✍ Memoization is a performance optimization technique where the results of expensive function calls are 𝐜𝐚𝐜𝐡𝐞𝐝 𝐚𝐧𝐝 𝐫𝐞𝐮𝐬𝐞𝐝 when the same inputs occur again. 
+✍ This helps to avoid 𝐫𝐞𝐝𝐮𝐧𝐝𝐚𝐧𝐭 𝐜𝐨𝐦𝐩𝐮𝐭𝐚𝐭𝐢𝐨𝐧𝐬, improving the overall efficiency of the program. 
+✍ The key is to store the results of function calls based on their inputs and check the cache before performing a potentially expensive computation.
+✍ There are different ways to implement memoization, including manual 𝐜𝐚𝐜𝐡𝐢𝐧𝐠 𝐰𝐢𝐭𝐡 𝐨𝐛𝐣𝐞𝐜𝐭𝐬, 𝐮𝐬𝐢𝐧𝐠 𝐡𝐢𝐠𝐡𝐞𝐫-𝐨𝐫𝐝𝐞𝐫 𝐟𝐮𝐧𝐜𝐭𝐢𝐨𝐧𝐬, 𝐮𝐬𝐢𝐧𝐠 𝐜𝐥𝐨𝐬𝐮𝐫𝐞𝐬, 𝐨𝐫 𝐥𝐞𝐯𝐞𝐫𝐚𝐠𝐢𝐧𝐠 𝐛𝐮𝐢𝐥𝐭-𝐢𝐧 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐥𝐢𝐤𝐞 𝐭𝐡𝐞 𝐌𝐚𝐩 𝐨𝐛𝐣𝐞𝐜𝐭. 
+✍ For example, consider a function that computes the 𝐧𝐭𝐡 𝐅𝐢𝐛𝐨𝐧𝐚𝐜𝐜𝐢 𝐧𝐮𝐦𝐛𝐞𝐫. Without memoization, the function might repeatedly calculate the same Fibonacci numbers, leading to unnecessary overhead. By implementing memoization, we can store previously computed results in a cache, preventing redundant calculations.
+
+
+// Function with memoization for Fibonacci
+function fibonacciWithMemoization(n, memo = {}) {
+  // Check if the result is already memoized
+  if (memo[n] !== undefined) {
+    return memo[n];
+  }
+
+  // Base cases
+  if (n <= 1) {
+    return n;
+  }
+
+  // Recursive calls with memoization
+  memo[n] = fibonacciWithMemoization(n - 1, memo) + fibonacciWithMemoization(n - 2, memo);
+
+  return memo[n];
+}
+
+// Example usage
+const result = fibonacciWithMemoization(5);
+console.log(result); // Output: 5
 
 
 
