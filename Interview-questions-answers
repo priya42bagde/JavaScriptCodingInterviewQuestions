@@ -104,7 +104,10 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
    5. setState is a asyn so immediately not getting a updated value.
    6. second parameneter of the setState contain the updated value, which we can take with arrow function, i.e called a callback function.
 -----------------------------------------------------------------
-
+13. Functional Component in Reactjs:
+    1. In Functional Component, state introduced by Hooks.
+    2. Hooks are used to state and the life cycle methods in a functional component.
+    3. In functional component, we have multiple states, but in class component we have single state in which the one object contain multiple values.
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
