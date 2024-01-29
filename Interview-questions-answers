@@ -86,9 +86,23 @@ function which take the second parameter and return anonymous function
 which take the third parameter and return multiplication of arguments
 which is being passed in successive
 -----------------------------------------------------------------
-
+11. Class Component in Reactjs:
+    1. We can initiatise the state inside a constructor function.
+    2. Super() method or function is used to execute the parent class constructor.
+    3. The constructor is called during the component creation and before mounting.
+    4. The constructor is also used to bind the event handlers.
+    5. this.state scope is not in any of the block, it's inside class component.
+Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssCwHy8GaxHa&index=3
 -----------------------------------------------------------------
-
+12. Why is it require to have a callback function at onClick in Reactjs, such as, onClick={()=>this.increment()}
+   1. If we call like onClick={this.increment()}, then it will not wait for any user's action like click. As soon as page refresh it also get render.Then it will be a infinite loop.
+   2. In lexical scopping we need to use the arrow function(callback function) at OnClick, otherwise it will give an error that setState() is undefined.
+   3. There are 2 ways to create a arrow function while onClick.
+      3.a onClick={()=> handleClick()} OR
+      3.b increment = () => {}
+   4. If we don't want to use the callaback(Arrow function then we can use conventional way i.e, with .bind() inside the constructor.
+   5. setState is a asyn so immediately not getting a updated value.
+   6. second parameneter of the setState contain the updated value, which we can take with arrow function, i.e called a callback function.
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
