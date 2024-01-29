@@ -109,7 +109,21 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
     2. Hooks are used to state and the life cycle methods in a functional component.
     3. In functional component, we have multiple states, but in class component we have single state in which the one object contain multiple values.
 -----------------------------------------------------------------
-
+14. What is state and Props ?
+    1. State is an object where you store the property that belongs to the component.
+    2. Props are the properties which are passed to the components externally.
+    3. "Props" contains all the props value so we can directly destructure at the function firts line like
+       const MyComponent = ({name, age}) =>{}
+       or 
+       const MyComponent = (props) =>{
+         const {name, age} = props;
+       }
+    4. In class based component, we can access like {this.props.name}.
+    5. To access the props in class based component then we need to pass the props at constructor() and super() method.
+    6. Stae is inside the component, while props are outside the component.
+    7. With Props, we are making the components reusable.
+    8. State controls the component internally, while props do externally.
+    9. State can be change inside the component, but props can't change/modified at inside the component.
 -----------------------------------------------------------------
 
 -----------------------------------------------------------------
