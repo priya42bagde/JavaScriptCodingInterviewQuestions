@@ -145,4 +145,10 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
        - ComponentDidCatch
     5. Will receive exceptions in the development mode only, not an prod.
 ----------------------------------------------------------------
-18.
+18. 4 ways of styling:
+    - Inline styling
+    - External styling
+    - Style component
+    - Module styling- This will help when we have a same class name for more than 2 classes then it will not allow to override the class properties to all the classes.
+----------------------------------------------------------------
+19. 
