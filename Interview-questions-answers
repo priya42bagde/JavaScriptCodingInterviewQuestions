@@ -131,3 +131,18 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
 16. Can we use setstate in componentWillUnmount()?
     1. No, because the component will never be re-rendered. Once a component instance is unmounted, it will never be mounted again.
 -----------------------------------------------------------------
+17. What's Error Boundaries.
+    1. If we have an error at one part then it should not break the whole app.
+    2. It's a React Component that catches JS errors anywhere in their child component tree,
+       log those errors and display a fallback UI instead of the component tree that crashed.
+    3. It do not catch an error for:
+       - Event handlers
+       - Asyn Code(setTimeout)
+       - SSR
+       - Error thrown in the error bounary itself(rather than it's children)
+    4. Two methods:
+       - getDerivedStateFromError
+       - ComponentDidCatch
+    5. Will receive exceptions in the development mode only, not an prod.
+----------------------------------------------------------------
+18.
