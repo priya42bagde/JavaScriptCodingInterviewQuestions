@@ -125,7 +125,9 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
     8. State controls the component internally, while props do externally.
     9. State can be change inside the component, but props can't change/modified at inside the component.
 -----------------------------------------------------------------
-
+15. What's getSnapshotBeforeUpdate()?
+    This method is invoked just before the DOM is being rendered. It is used to store the previous values of the state after the DOM is updated.
 -----------------------------------------------------------------
-
+16. Can we use setstate in componentWillUnmount()?
+    1. No, because the component will never be re-rendered. Once a component instance is unmounted, it will never be mounted again.
 -----------------------------------------------------------------
