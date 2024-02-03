@@ -152,3 +152,10 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
     - Module styling- This will help when we have a same class name for more than 2 classes then it will not allow to override the class properties to all the classes.
 ----------------------------------------------------------------
 19. 
+    - Package.json : Its a json file which contains project dependencies means those packages are required, where we are maintaing the versions. This is used by the npm(package manager) and it
+      will get details of dependencies and its version.
+    - npm : It manage the packages and its dependencies. These dependencies are storing at node_module folder.
+     - example==> 
+         "version": "carotsymbo2.1.0" means it will allow to download everything before 3.1.0(major dependencies)
+          "version": "~2.1.0" means it will allow to download everything before 2.2.0(minor dependencies)
+     - package.lock.json- actual project deendencies with its version in it.
