@@ -161,3 +161,9 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
      - package.lock.json- actual project deendencies with its version in it.
      - index.html- It has the root element of the project. Adiv that render our application.
      - index.js- It access the root element and render the whole app.
+----------------------------------------------------------------
+20. What's createRoot?
+   - It create a root to Display the React Components inside a browser DOM node. 
+   - ReactDOM: Its a package to manage efficiently html. It provide many methods to manage the DOM.
+   - Babel: It transpile or compiel the code into js code.
+    
