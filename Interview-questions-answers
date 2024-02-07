@@ -194,5 +194,7 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
   3. Connect()
   - Drawbacks:
   1. Prop Colliasion
+     - We can fix with Render Props or using Custom Hooks.
+  2. We can wrap with muktiple HOC so difficult to debug it
 ----------------------------------------------------------------
 23. 
