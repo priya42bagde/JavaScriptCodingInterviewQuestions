@@ -179,4 +179,4 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
    - React is SPA. how ?- We ahve a single page where we are changing the content only.
    - React router don is used for the navigation between urls.
    - Link vs NavLink
-   - 
+   - Nested and Dynamic Route?
