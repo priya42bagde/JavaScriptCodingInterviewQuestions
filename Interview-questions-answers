@@ -197,4 +197,10 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
      - We can fix with Render Props or using Custom Hooks.
   2. We can wrap with muktiple HOC so difficult to debug it
 ----------------------------------------------------------------
-23. 
+23. Memoisation:
+  - It means caching.
+  - using closure, we can implement it.
+  - React.memo- its a HOC, wrapper component. If we are passing the same props again then it won't calculate it, rerender the previous result. It's used in functional component.
+  - In class componenet, we have shouldCoponentUpdate() and Pure component for this.
+  - useMemo- Its hook, it will call inside a componenet and check whether have we calculated/store the value. When it rerender again, with the same arguments are same or not, if same then won't recalculate it.
+    
