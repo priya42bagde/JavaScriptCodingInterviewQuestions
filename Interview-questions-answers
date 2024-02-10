@@ -208,7 +208,7 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
   - When we have 2 objects/arrays, we are comparing by memory reference, not by the values.
   - Don't use useCallback: when we are not passing through the data.
 ---------------------------------------------------------------
-25 Interviewer: What're the React 18 new features?
+25 Interviewer: What're the React 18 new features? https://react.dev/blog/2022/03/29/react-v18#new-suspense-features
 
 These examples would definitely boost your explanation during interview. :
 
