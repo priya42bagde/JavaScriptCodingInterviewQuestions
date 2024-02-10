@@ -208,5 +208,17 @@ Link: https://www.youtube.com/watch?v=JiO0dXP3YLA&list=PLsuIm95J7Lco58PVaz6c1ssC
   - When we have 2 objects/arrays, we are comparing by memory reference, not by the values.
   - Don't use useCallback: when we are not passing through the data.
 ---------------------------------------------------------------
-25
+25 Interviewer: What're the React 18 new features?
+
+These examples would definitely boost your explanation during interview. :
+
+1. Automatic Batching: Automatic batching is like waiting until you have a bunch of tasks to do before doing them all at once, instead of doing each task immediately as it comes up.
+Example: 𝑰𝒎𝒂𝒈𝒊𝒏𝒆 𝒚𝒐𝒖'𝒓𝒆 𝒃𝒂𝒌𝒊𝒏𝒈 𝒄𝒐𝒐𝒌𝒊𝒆𝒔 𝒊𝒏 𝒚𝒐𝒖𝒓 𝒌𝒊𝒕𝒄𝒉𝒆𝒏. 𝑰𝒏𝒔𝒕𝒆𝒂𝒅 𝒐𝒇 𝒕𝒖𝒓𝒏𝒊𝒏𝒈 𝒐𝒏 𝒕𝒉𝒆 𝒐𝒗𝒆𝒏 𝒆𝒗𝒆𝒓𝒚 𝒕𝒊𝒎𝒆 𝒚𝒐𝒖 𝒇𝒊𝒏𝒊𝒔𝒉 𝒑𝒓𝒆𝒑𝒂𝒓𝒊𝒏𝒈 𝒐𝒏𝒆 𝒄𝒐𝒐𝒌𝒊𝒆, 𝒚𝒐𝒖 𝒘𝒂𝒊𝒕 𝒖𝒏𝒕𝒊𝒍 𝒚𝒐𝒖'𝒗𝒆 𝒑𝒓𝒆𝒑𝒂𝒓𝒆𝒅 𝒂 𝒘𝒉𝒐𝒍𝒆 𝒃𝒂𝒕𝒄𝒉 𝒐𝒇 𝒄𝒐𝒐𝒌𝒊𝒆 𝒅𝒐𝒖𝒈𝒉. 𝑻𝒉𝒆𝒏, 𝒚𝒐𝒖 𝒕𝒖𝒓𝒏 𝒐𝒏 𝒕𝒉𝒆 𝒐𝒗𝒆𝒏 𝒂𝒏𝒅 𝒃𝒂𝒌𝒆 𝒂𝒍𝒍 𝒕𝒉𝒆 𝒄𝒐𝒐𝒌𝒊𝒆𝒔 𝒂𝒕 𝒐𝒏𝒄𝒆.
+
+2. Concurrent rendering: It is like being an efficient cook in your kitchen. When React renders a component tree, it may have multiple tasks to perform, such as updating the UI, handling user interactions, and fetching data from an API. With concurrent rendering, React can work on these tasks concurrently, switching between them as needed to make progress on all fronts.
+Example: 𝑰𝒎𝒂𝒈𝒊𝒏𝒆 𝒚𝒐𝒖'𝒓𝒆 𝒄𝒐𝒐𝒌𝒊𝒏𝒈 𝒅𝒊𝒏𝒏𝒆𝒓 𝒊𝒏 𝒚𝒐𝒖𝒓 𝒌𝒊𝒕𝒄𝒉𝒆𝒏. 𝒀𝒐𝒖 𝒉𝒂𝒗𝒆 𝒎𝒖𝒍𝒕𝒊𝒑𝒍𝒆 𝒅𝒊𝒔𝒉𝒆𝒔 𝒕𝒐 𝒑𝒓𝒆𝒑𝒂𝒓𝒆, 𝒃𝒖𝒕 𝒚𝒐𝒖 𝒄𝒂𝒏 𝒐𝒏𝒍𝒚 𝒖𝒔𝒆 𝒐𝒏𝒆 𝒃𝒖𝒓𝒏𝒆𝒓 𝒂𝒕 𝒂 𝒕𝒊𝒎𝒆. 𝑯𝒐𝒘𝒆𝒗𝒆𝒓, 𝒚𝒐𝒖'𝒓𝒆 𝒂𝒏 𝒆𝒇𝒇𝒊𝒄𝒊𝒆𝒏𝒕 𝒄𝒐𝒐𝒌, 𝒔𝒐 𝒚𝒐𝒖 𝒔𝒕𝒂𝒓𝒕 𝒃𝒐𝒊𝒍𝒊𝒏𝒈 𝒘𝒂𝒕𝒆𝒓 𝒇𝒐𝒓 𝒑𝒂𝒔𝒕𝒂 𝒘𝒉𝒊𝒍𝒆 𝒄𝒉𝒐𝒑𝒑𝒊𝒏𝒈 𝒗𝒆𝒈𝒆𝒕𝒂𝒃𝒍𝒆𝒔 𝒇𝒐𝒓 𝒔𝒂𝒍𝒂𝒅. 𝒀𝒐𝒖 𝒔𝒘𝒊𝒕𝒄𝒉 𝒃𝒆𝒕𝒘𝒆𝒆𝒏 𝒕𝒂𝒔𝒌𝒔 𝒂𝒔 𝒏𝒆𝒆𝒅𝒆𝒅, 𝒎𝒂𝒌𝒊𝒏𝒈 𝒑𝒓𝒐𝒈𝒓𝒆𝒔𝒔 𝒐𝒏 𝒎𝒖𝒍𝒕𝒊𝒑𝒍𝒆 𝒅𝒊𝒔𝒉𝒆𝒔 𝒄𝒐𝒏𝒄𝒖𝒓𝒓𝒆𝒏𝒕𝒍𝒚, 𝒆𝒗𝒆𝒏 𝒕𝒉𝒐𝒖𝒈𝒉 𝒚𝒐𝒖'𝒓𝒆 𝒐𝒏𝒍𝒚 𝒂𝒄𝒕𝒊𝒗𝒆𝒍𝒚 𝒘𝒐𝒓𝒌𝒊𝒏𝒈 𝒐𝒏 𝒐𝒏𝒆 𝒕𝒂𝒔𝒌 𝒂𝒕 𝒂 𝒕𝒊𝒎𝒆.
+
+3. Transition: The transition feature in React allows you to animate changes in the UI when certain conditions are met, such as when a component mounts or updates. It provides a smooth and visually appealing way to transition between different states of your application.
+Example: 𝑰𝒎𝒂𝒈𝒊𝒏𝒆 𝒚𝒐𝒖 𝒉𝒂𝒗𝒆 𝒂 𝒄𝒐𝒎𝒑𝒐𝒏𝒆𝒏𝒕 𝒕𝒉𝒂𝒕 𝒅𝒊𝒔𝒑𝒍𝒂𝒚𝒔 𝒂 𝒎𝒐𝒅𝒂𝒍 𝒅𝒊𝒂𝒍𝒐𝒈. 𝑾𝒉𝒆𝒏 𝒕𝒉𝒆 𝒎𝒐𝒅𝒂𝒍 𝒊𝒔 𝒐𝒑𝒆𝒏𝒆𝒅 𝒐𝒓 𝒄𝒍𝒐𝒔𝒆𝒅, 𝒚𝒐𝒖 𝒘𝒂𝒏𝒕 𝒊𝒕 𝒕𝒐 𝒔𝒎𝒐𝒐𝒕𝒉𝒍𝒚 𝒇𝒂𝒅𝒆 𝒊𝒏 𝒐𝒓 𝒐𝒖𝒕, 𝒓𝒂𝒕𝒉𝒆𝒓 𝒕𝒉𝒂𝒏 𝒂𝒃𝒓𝒖𝒑𝒕𝒍𝒚 𝒂𝒑𝒑𝒆𝒂𝒓𝒊𝒏𝒈 𝒐𝒓 𝒅𝒊𝒔𝒂𝒑𝒑𝒆𝒂𝒓𝒊𝒏𝒈.
+---------------------------------------------------------------
     
