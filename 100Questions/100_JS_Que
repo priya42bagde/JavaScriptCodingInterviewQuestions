@@ -99,12 +99,12 @@ console.log(delete data); //false
 ------------------------------------
 const data = ["piya", "priya", "supriya"];
 const [y] = data;
-console.log(y); //"priya"
+console.log(y); //"piya"
 //Explaination : We are doing destructuring here. y is representing the first index only
 -------------------------------------
 const data = ["piya", "priya", "supriya"];
 const [y,z] = data;
-console.log(y,z); //"priya", "priya"
+console.log(y,z); //"piya", "priya"
 //Explaination : We are doing destructuring here. y is representing the first index only and z representing the second index.
 --------------------------------------
 const data = ["piya", "priya", "supriya"];
