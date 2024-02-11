@@ -140,7 +140,7 @@ console.log(name()); //Error: name is not a function
 //Explaination : Function we are calling but it's not present so it will an error.
 --------------------------------------------
 const result = false || {} || 20 || null;
-console.log(result); //20
+console.log(result); //{} 
 //Explaination : OR operator will find first positive value. Null is a falsy value by default. {} is a positive value. It didn't reach till 20 and null.
 --------------------------------------------
 const result = null || false || '';
@@ -205,7 +205,7 @@ function sumValues(x,y,z){
   return x+y+z;
 }
 sumValues(...[2,3,4]) //how to call a function so that output will be 9
-//Explaination : we can't do like this sumValues(2,3,4).
+//Explaination : we can't do like this sumValues(2,3,4). // we can also call through spread operator
 ----------------------------------------------------
 const name = "priya is a girl.";
 console.log(typeof name); //string
@@ -498,7 +498,7 @@ function sayHi(){
   return ()=>0;
 }
 console.log(typeof sayHi()); //function
-console.log(typeof sayHi()()); //function
+console.log(typeof sayHi()()); //number 
 //Explaination : sayHi will return anonymous arrow function/IIFE, where we didn't invole the arroe function so it will return function.
 -----------------------------------------------------------------------------
 console.log(typeof typeof 1); //string
