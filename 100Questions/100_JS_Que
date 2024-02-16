@@ -477,7 +477,7 @@ baz();
      </button>
   </div>
 </div>
-//Explaination : button, second div, first div. Even bubbling happened here.
+//Explaination : button, second div, first div. Event bubbling happened here.
 ---------------------------------------------------------------------------
 const person = {name:'priya'};
 function sayHi(age){
