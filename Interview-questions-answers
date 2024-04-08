@@ -224,4 +224,22 @@ Example: 𝑰𝒎𝒂𝒈𝒊𝒏𝒆 𝒚𝒐𝒖 𝒉𝒂𝒗𝒆 𝒂 𝒄�
 4. Suspense: Imagine you're building a webpage, and part of it relies on fetching some data from an API before it can be shown to the user. Now, traditionally, in React, handling this kind of asynchronous data loading has been a bit clunky. You might have used loading spinners or conditional rendering to manage the waiting time. But with Suspense, React gives us a more elegant solution. It's like telling React, "Hey, hold up for a sec while I fetch this data." Suspense allows components to suspend rendering while waiting for some asynchronous operation, like data fetching or code splitting, to complete.
 Example: Let's say you have a social media feed in your app, and each post includes comments from other users. Instead of waiting for all the comments to load before showing the post, you can use Suspense. This means the post will render right away, and Suspense will take care of loading the comments in the background.
 ---------------------------------------------------------------
-    
+26. 𝐈𝐦𝐦𝐮𝐭𝐚𝐛𝐥𝐞 𝐢𝐧 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭: const vs Object.freeze() Explained!
+
+Here is my answer...
+
+☀ const: When declare a variable with const, the variable cannot be reassigned to a new value after its initial assignment.
+It applies to bindings(variables). 
+It create an immutable binding.
+It can't assign a new value to the binding.
+
+Example:
+You put a diamond ring in the safe deposit box (the diamond ring represents an object with properties). Even though you can't replace the diamond with another item (because the box is locked with a const key), you can still polish or clean the diamond to improve its appearance (changing the properties of the object).
+
+☀ Object.freeze(): Object.freeze() making the object properties immutable. Once an object is frozen using Object.freeze(), you can't add, delete, or modify its properties.
+It works on object values.
+It create an immutable object.
+It can't change its properties.
+
+Example:
+You put a diamond ring in the safe deposit box and lock it with a special lock that prevents any changes. Now, not only can you not replace the diamond or change its appearance, but you also can't add a necklace to the box or take the diamond out to wear it.    
