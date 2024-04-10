@@ -243,3 +243,20 @@ It can't change its properties.
 
 Example:
 You put a diamond ring in the safe deposit box and lock it with a special lock that prevents any changes. Now, not only can you not replace the diamond or change its appearance, but you also can't add a necklace to the box or take the diamond out to wear it.    
+-----------------------------------------------------------------
+Can we commit 🏹 .env file at GitHub ?
+
+The .env files in a React project are environment files that provide a way to store configuration settings and variables that should not be committed to the source code. These files are used to set environment variables for your application at build time.
+
+The .env file is a file that contains key-value pairs. The key-value pairs defined in the .env file can be accessed in your React application by prefixing the key with REACT_APP_. For example, if you have a variable called API_URL in your .env file, you can access it in your React application as process.env.REACT_APP_API_URL.
+
+Note: React only exposes variables prefixed with REACT_APP_ to the JavaScript code. This is a security measure to prevent accidentally exposing sensitive information such as API keys.
+
+Here's an example of what a .env file could look like:
+REACT_APP_API_URL=https://api.example.com
+REACT_APP_API_KEY=myapikey
+In your React component or script, you would access these values like so:
+const apiUrl = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_KEY;
+
+Remember, the .env file should not be used to store sensitive information like secrets or passwords, as these files are generally included in the version control system and can be accessed by anyone with access to the repository.
