@@ -58,7 +58,7 @@ for (var i = 1; i < 5; i++) {
     console.log(i);
   }, 1000);
 }
-Answer: The output will be five instances of the number 5.
+Answer: The output will be four instances of the number 5.
 -----------------------------------------------------------------
 8. How to empty an array in javascript?
   1. array=[]
