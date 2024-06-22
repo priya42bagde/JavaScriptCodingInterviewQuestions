@@ -260,3 +260,4 @@ const apiUrl = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
 
 Remember, the .env file should not be used to store sensitive information like secrets or passwords, as these files are generally included in the version control system and can be accessed by anyone with access to the repository.
+
