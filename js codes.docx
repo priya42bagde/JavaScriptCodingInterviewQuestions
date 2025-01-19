@@ -261,7 +261,7 @@ vowelCounts()
 Code 18:To find character occurance fro the string
 function characterOccurance(str,letter){
    let count =0;
-  for(var i=0; i<str.length-1; i++){
+  for(var i=0; i<str.length; i++){
     if(str.charAt(i)===letter)
       {
         count++
