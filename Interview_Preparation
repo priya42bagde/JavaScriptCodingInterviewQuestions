@@ -1,0 +1,358 @@
+🔥 Topics You Should Prepare (Frontend Developer – 8 Years Experience)
+1. HTML Topics
+HTML Syntax & Structure (doctype, html, head, body)
+
+Semantic HTML (header, footer, article, section, main, aside, nav)
+
+Accessibility (a11y)
+
+ARIA roles
+
+Tab order
+
+Screen readers support
+
+Forms
+
+Form controls (input, select, textarea)
+
+Form validation attributes (required, pattern)
+
+Handling forms with JavaScript
+
+SEO Best Practices
+
+Meta tags (title, description, viewport, robots)
+
+Open Graph and Twitter Cards
+
+Media Elements
+
+Audio, Video, Picture, Source, Track
+
+HTML APIs
+
+Geolocation
+
+Web Storage (localStorage, sessionStorage)
+
+Drag and Drop API
+
+Web Workers
+
+WebSockets (basics)
+
+Performance in HTML
+
+Lazy loading images
+
+preload, prefetch links
+
+Cross-Browser Compatibility
+
+2. CSS Topics
+Selectors
+
+Basic, Combinators, Attribute, Pseudo-classes, Pseudo-elements
+
+Box Model
+
+Positioning and Display
+
+Static, Relative, Absolute, Fixed, Sticky
+
+Flexbox (deeply)
+
+Grid Layout (deeply)
+
+Responsive Design
+
+Media queries
+
+Fluid grids
+
+Mobile-first design
+
+CSS Architecture
+
+BEM (Block-Element-Modifier)
+
+SMACSS, OOCSS basics
+
+SASS/SCSS
+
+Nesting
+
+Variables
+
+Mixins
+
+Partials and Modules
+
+Animations
+
+CSS transitions
+
+Keyframe animations
+
+Theming
+
+CSS Variables (Custom Properties)
+
+Dark Mode Implementation
+
+Best Practices
+
+Avoiding specificity wars
+
+Naming conventions
+
+Performance Optimization
+
+Critical CSS
+
+Minification
+
+3. JavaScript Topics
+Core Concepts
+
+Variables (var, let, const)
+
+Data types (primitive and reference types)
+
+Type coercion
+
+Equality checks (== vs ===)
+
+Functions
+
+Function declarations vs expressions
+
+Arrow functions
+
+IIFE
+
+Closures (deep understanding)
+
+Currying
+
+Memoization
+
+Scopes and Hoisting
+
+this Keyword
+
+call, apply, bind
+
+Promises, Async/Await
+
+Event Loop, Microtasks, Macrotasks
+
+DOM Manipulation
+
+Traversing, Modifying, Event Handling
+
+ES6+ Features
+
+Destructuring
+
+Spread and Rest operators
+
+Template literals
+
+Optional chaining
+
+Nullish coalescing operator
+
+Modules
+
+import/export
+
+Dynamic imports
+
+Error Handling
+
+try-catch-finally
+
+Custom errors
+
+Memory Management
+
+Garbage collection
+
+Memory leaks
+
+Design Patterns
+
+Singleton, Factory, Observer, Module Pattern
+
+Functional Programming Concepts
+
+Unit Testing in JavaScript
+
+Jest basics
+
+4. React Topics
+JSX Syntax
+
+Functional Components vs Class Components
+
+State and Props
+
+React Hooks (Master them!)
+
+useState
+
+useEffect
+
+useMemo
+
+useCallback
+
+useRef
+
+useContext
+
+Custom Hooks
+
+Component Lifecycle
+
+React Router
+
+Nested Routes
+
+Redirects
+
+Forms in React
+
+Controlled vs Uncontrolled Components
+
+Validation (Formik, Yup)
+
+State Management
+
+Lifting State Up
+
+Context API
+
+Redux (Actions, Reducers, Middleware, Thunks)
+
+Zustand or Recoil (optional)
+
+Performance Optimization
+
+React.memo
+
+useMemo, useCallback
+
+Code Splitting (React.lazy, Suspense)
+
+List virtualization (react-window, react-virtualized)
+
+Error Handling
+
+Error Boundaries
+
+Server-Side Rendering
+
+Next.js basics
+
+getStaticProps, getServerSideProps
+
+Testing in React
+
+React Testing Library
+
+Jest
+
+Accessibility in React
+
+Handling Side Effects
+
+Using useEffect efficiently
+
+Working with APIs
+
+Fetch/axios
+
+React Query basics
+
+Authentication in React
+
+Token Storage
+
+Private Routes
+
+5. Additional Technologies & Concepts (Important)
+These are must-know at your level even if they are not part of core HTML/CSS/JS/React:
+
+Webpack and Bundlers
+Webpack basic config
+
+Loaders, Plugins
+
+Code Splitting
+
+Tree Shaking
+
+Vite/Rollup (overview)
+
+TypeScript (Optional but Huge Plus)
+Interfaces
+
+Generics
+
+Typing Props and State in React
+
+Testing
+Unit Testing
+
+Integration Testing
+
+End-to-End Testing (Cypress basics)
+
+GraphQL
+Basics of queries, mutations
+
+Apollo Client in React
+
+Micro-Frontend Architecture
+Module Federation basics
+
+When and how to use micro frontends
+
+CI/CD Basics
+Deployment pipelines
+
+GitHub Actions overview
+
+Netlify, Vercel deployment
+
+Browser Internals
+How Browsers Render Pages (CRP - Critical Rendering Path)
+
+Paint, Composite, Layout cycles
+
+Performance Monitoring
+
+Security Best Practices
+XSS (Cross Site Scripting)
+
+CSRF (Cross Site Request Forgery)
+
+CORS Policy
+
+Content Security Policy (CSP)
+
+❗ Important:
+If your interviewers expect 8 years of experience, they will test both your depth and breadth:
+
+Deep questions like "Explain closure with a real-world example."
+
+Architecture-level questions like "How would you structure a scalable React application?"
+
+Debugging skills
+
+Performance optimization
+
+Code quality best practices
