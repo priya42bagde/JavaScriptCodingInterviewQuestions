@@ -18,7 +18,7 @@ Only take up as much width as necessary.
 Cannot contain block-level elements directly.
 Example: <span>, <a>, <strong>, <img>.
 4. What is the difference between <head> and <body>?
-A: <head> contains metadata, links, and scripts. <body> contains visible content.
+A: <head> contains metadata, links, and scripts & is not displayed on the webpage. <body> contains visible content.
 5. What are void (self-closing) elements?
 A: Elements like <img>, <input>, <br> that do not have a closing tag.
 ________________________________________
