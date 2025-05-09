@@ -20,7 +20,9 @@ Example: <span>, <a>, <strong>, <img>.
 4. What is the difference between <head> and <body>?
 A: <head> contains metadata, links, and scripts & is not displayed on the webpage. <body> contains visible content.
 5. What are void (self-closing) elements?
-A: Void elements, also known as self-closing elements, are HTML elements that do not require a closing tag. They represent empty entities in the document structure and should always be written with a forward slash at the end of the opening tag. This notation indicates that the element does not contain any content.
+A: Void elements are HTML elements that do not require a closing tag.
+They should always be written with a forward slash (/) at the end of the opening tag.
+This notation indicates that the element does not contain any content.
 ________________________________________
 🔹 2. HTML Elements & Tags
 6. What is the difference between <section>, <article>, and <div>?
