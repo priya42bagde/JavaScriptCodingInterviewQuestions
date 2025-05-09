@@ -62,8 +62,6 @@ A: Gives an element (e.g., a <div>) the semantic role of a button for assistive 
 ________________________________________
 🔹 6. Media & Embedding
 26. How do you embed a video in HTML5?
-html
-CopyEdit
 <video controls>
   <source src="video.mp4" type="video/mp4">
 </video>
