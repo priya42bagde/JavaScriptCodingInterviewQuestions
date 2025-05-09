@@ -2,7 +2,7 @@ HTML, CSS, JS, React
 
 🔹 1. HTML Structure & Syntax
 1. What is HTML?
-A: HTML (HyperText Markup Language) is used for creating web pages and applications. It defines the structure and content of a web page like headings, paragraphs, links, images, and more.
+A: HTML (HyperText Markup Language) is used for creating structure and content of a web pages and applications like headings, paragraphs, links, images, and more.
 2. What is the purpose of <!DOCTYPE html>?
 A: It tells the browser to render the page in standards mode using HTML5.
 3. What’s the difference between block-level and inline elements?
