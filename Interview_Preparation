@@ -1,208 +1,127 @@
-# 🗓️ **30-Day Detailed Learning Plan**
+HTML, CSS, JS, React
 
----
-### 📚 Day 1–2 (HTML - Basics to Advanced)
+🔹 1. HTML Structure & Syntax
+1. What is HTML?
+A: HTML (HyperText Markup Language) structures web pages using elements like headings, paragraphs, links, images, and more.
+2. What is the purpose of <!DOCTYPE html>?
+A: It tells the browser to render the page in standards mode using HTML5.
+3. What’s the difference between block-level and inline elements?
+A: Block-level elements (e.g., <div>, <p>) occupy the full width. Inline elements (e.g., <span>, <a>) flow within content.
+4. What is the difference between <head> and <body>?
+A: <head> contains metadata, links, and scripts. <body> contains visible content.
+5. What are void (self-closing) elements?
+A: Elements like <img>, <input>, <br> that do not have a closing tag.
+________________________________________
+🔹 2. HTML Elements & Tags
+6. What is the difference between <section>, <article>, and <div>?
+A: <section> and <article> are semantic; <div> is non-semantic and used as a generic container.
+7. When should you use <main>?
+A: To represent the dominant content of the document, excluding headers, nav, and sidebars.
+8. Can you nest a <div> inside a <p>?
+A: No. Block-level elements cannot be inside a paragraph tag.
+9. What’s the purpose of the <meta> tag?
+A: Defines metadata such as character encoding, viewport settings, and page description.
+10. What does meta charset="UTF-8" mean?
+A: It specifies the character encoding as UTF-8, supporting most languages and characters.
+________________________________________
+🔹 3. Forms & Inputs
+11. List some new input types introduced in HTML5.
+A: email, url, tel, date, range, color, search, number.
+12. How does the required attribute work in forms?
+A: It forces users to fill out a field before submission.
+13. What is the pattern attribute used for?
+A: Specifies a regex pattern for input validation.
+14. How does the placeholder attribute differ from value?
+A: placeholder is a hint shown when the field is empty; value sets a default value.
+15. What is the difference between name and id in form inputs?
+A: name is used in form submission data; id is used for linking with labels or scripting.
+________________________________________
+🔹 4. Semantics & SEO
+16. What are semantic HTML elements?
+A: Tags like <article>, <nav>, <aside>, which describe their content meaningfully.
+17. How does semantic HTML benefit SEO?
+A: It helps search engines better understand content structure and hierarchy.
+18. What’s the purpose of the <strong> and <em> tags?
+A: They indicate importance and emphasis, respectively, with semantic meaning (not just style).
+19. How do you define document structure with headings?
+A: Use heading tags <h1> to <h6> in a hierarchical, logical order.
+20. What is the difference between <b> vs <strong>, and <i> vs <em>?
+A: <strong> and <em> are semantic; <b> and <i> are purely visual.
+________________________________________
+🔹 5. Accessibility (a11y)
+21. What does ARIA stand for?
+A: Accessible Rich Internet Applications — used to improve screen reader accessibility.
+22. How do you label a form input for accessibility?
+A: Use <label for="id"> or aria-label.
+23. What is tabindex?
+A: Controls the tab navigation order of focusable elements.
+24. What are landmark elements in HTML?
+A: Elements like <main>, <nav>, <header>, <footer> help screen readers navigate the page.
+25. What does role="button" do?
+A: Gives an element (e.g., a <div>) the semantic role of a button for assistive tech.
+________________________________________
+🔹 6. Media & Embedding
+26. How do you embed a video in HTML5?
+html
+CopyEdit
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+</video>
+27. What’s the difference between <iframe> and <embed>?
+A: <iframe> embeds HTML documents; <embed> is used for multimedia or plugins.
+28. How do you embed responsive images?
+A: Use <picture> or srcset to serve different images for various screen sizes.
+29. What is the alt attribute for images used for?
+A: Provides alternative text for screen readers and when the image fails to load.
+30. What does the <canvas> element do?
+A: Provides a space for drawing graphics via JavaScript (charts, games, etc.).
+________________________________________
+🔹 7. HTML5 APIs & Storage
+31. What is the difference between localStorage and sessionStorage?
+A: localStorage persists even after browser close; sessionStorage lasts only during the tab session.
+32. What is the <template> element in HTML?
+A: Holds HTML fragments that are not rendered until accessed via JavaScript.
+33. What is the data-* attribute used for?
+A: Used to store custom data attributes on elements, accessible via dataset in JavaScript.
+34. What is Web Storage in HTML5?
+A: Allows storage of key-value data in the browser through localStorage and sessionStorage.
+35. What is the Drag and Drop API?
+A: An HTML5 API that lets users drag and drop elements using native browser events.
+________________________________________
+🔹 8. Performance & Optimization
+36. How can you improve HTML page load time?
+A: Use async/defer for scripts, minify HTML, use CDNs, compress images, and reduce DOM size.
+37. What’s the use of defer and async in scripts?
+A: defer loads script after HTML parsing; async runs it as soon as it's ready.
+38. How do you lazy load images in HTML?
+A: Use loading="lazy" on <img> to defer loading until they’re in the viewport.
+39. What is the use of the <link rel="preload"> tag?
+A: It instructs the browser to preload assets (fonts, images, scripts) for faster rendering.
+40. How does DOM size affect performance?
+A: Larger DOM trees slow rendering and reflows; reducing depth and count improves performance.
+________________________________________
+🔹 9. Security & Best Practices
+41. What is cross-site scripting (XSS) and how does HTML relate to it?
+A: XSS occurs when unescaped user input is rendered in HTML. Prevent it by sanitizing input.
+42. Why should you avoid inline JavaScript in HTML?
+A: It reduces maintainability, makes debugging harder, and increases XSS risks.
+43. What is rel="noopener noreferrer" used for on links?
+A: Prevents security vulnerabilities when opening links in new tabs by not passing window.opener.
+44. Why should HTML be validated?
+A: Ensures proper structure, accessibility, and prevents browser rendering issues.
+45. How do you handle legacy browser support in HTML5?
+A: Use polyfills, fallbacks, and graceful degradation techniques.
+________________________________________
+🔹 10. Advanced & Miscellaneous
+46. Can a single page have multiple <h1> tags?
+A: Yes, if used within distinct sections or articles.
+47. What’s the difference between innerHTML and textContent?
+A: innerHTML parses and returns HTML; textContent only deals with plain text.
+48. What is progressive enhancement in HTML?
+A: Building with baseline functionality first, then enhancing for modern browsers.
+49. Can HTML be used without CSS or JS?
+A: Yes, but it will be unstyled and static. CSS adds styling; JS adds interactivity.
+50. What is the difference between noscript and script?
+A: <noscript> provides fallback content when JavaScript is disabled or unsupported.
 
-- HTML Document Structure
-- Semantic HTML5 elements
-- Forms and Validation attributes
-- Accessibility (ARIA roles, Tabindex)
-- SEO-friendly HTML (Meta tags, Open Graph)
-- Media (Audio, Video, Picture tags)
-- Web Storage API (localStorage, sessionStorage)
-- Drag and Drop API basics
-- Interview Questions Practice (HTML)
 
----
-### 📚 Day 3–5 (CSS - Basics to Intermediate)
-
-- CSS Syntax, Selectors (Basic → Advanced)
-- Box Model
-- Positioning (static, relative, absolute, fixed, sticky)
-- Display types (block, inline-block, inline, none)
-- Flexbox (deep dive)
-- Grid Layout (deep dive)
-- Responsive Design (Mobile-First, Media Queries)
-- Units in CSS (px, rem, em, vh, vw, %)
-- Typography Best Practices (responsive text)
-- Interview Questions Practice (CSS)
-
----
-### 📚 Day 6–7 (CSS - Advanced)
-
-- CSS Variables (Custom properties)
-- CSS Animations and Transitions
-- Transform, Translate, Scale
-- Critical CSS
-- Theming (Light/Dark mode switch)
-- SASS/SCSS basics
-- Naming Conventions (BEM methodology)
-- Best Practices for Maintainable CSS
-- Interview Questions Practice (Advanced CSS)
-
----
-### 📚 Day 8–9 (JavaScript - Foundation)
-
-- Data Types, Variables (var, let, const)
-- Hoisting and Temporal Dead Zone
-- Scope, Block Scope, Lexical Scope
-- Functions and Arrow Functions
-- Closures (deep dive)
-- Currying and Function Composition
-- Interview Questions Practice (JS Basics)
-
----
-### 📚 Day 10–11 (JavaScript - Intermediate)
-
-- this keyword
-- call, apply, bind methods
-- Prototypes and Prototypal Inheritance
-- ES6+ Features:
-  - Destructuring
-  - Spread/Rest operators
-  - Template Literals
-  - Default parameters
-  - Optional chaining
-- Interview Questions Practice (Medium JS)
-
----
-### 📚 Day 12–13 (JavaScript - Advanced)
-
-- Promises
-- Async/Await
-- Event Loop, Microtask Queue
-- Memory Management (Garbage Collection, Memory leaks)
-- Throttling and Debouncing
-- Error Handling (try-catch-finally, custom errors)
-- Web APIs (DOM, Fetch API)
-- Interview Questions Practice (Advanced JS)
-
----
-### 📚 Day 14–15 (DOM and Events)
-
-- DOM Traversal
-- Event Handling (addEventListener, Event Delegation)
-- Event Bubbling and Capturing
-- Form Handling
-- Creating elements dynamically
-- Virtual DOM concept (Preparation for React)
-
----
-### 📚 Day 16–18 (React - Core Concepts)
-
-- Introduction to React and JSX
-- Components (Functional vs Class Components)
-- Props and State
-- Lists and Keys
-- Conditional Rendering
-- Handling Forms (Controlled vs Uncontrolled)
-- React Router Basics (Navigation, Parameters)
-- Interview Questions Practice (React Basics)
-
----
-### 📚 Day 19–20 (React - Intermediate)
-
-- React Hooks:
-  - useState
-  - useEffect (dependencies, cleanup)
-  - useRef
-  - useContext
-- Lifting State Up
-- Context API for state management
-- Error Boundaries
-- Interview Questions Practice (React Medium)
-
----
-### 📚 Day 21–22 (React - Advanced)
-
-- Advanced Hooks:
-  - useMemo
-  - useCallback
-  - Custom Hooks
-- Code Splitting (React.lazy, Suspense)
-- React.memo, PureComponent
-- Handling API Requests (Fetch/Axios)
-- Optimistic UI updates
-- Interview Questions Practice (React Advanced)
-
----
-### 📚 Day 23–24 (State Management)
-
-- Redux Core Concepts (Store, Actions, Reducers)
-- Redux Toolkit
-- Middleware (Thunk basics)
-- Comparing Context API vs Redux
-- Zustand/Recoil basics (optional but modern)
-- Interview Questions Practice (State Management)
-
----
-### 📚 Day 25–26 (Testing Basics)
-
-- Introduction to Testing
-- Unit Testing with Jest
-- React Testing Library
-- Mocking APIs
-- Snapshot Testing
-- Test Cases for Components and Hooks
-
----
-### 📚 Day 27 (Performance Optimization + Advanced Topics)
-
-- Browser Rendering (CRP - Critical Rendering Path)
-- Minimize Reflows and Repaints
-- Virtualization (react-window)
-- Lazy Loading Images and Components
-- Webpack Basics (bundle splitting, tree shaking)
-
----
-### 📚 Day 28 (Security and Best Practices)
-
-- XSS and how to prevent it
-- CSRF basics
-- CORS handling
-- Content Security Policy (CSP)
-- Secure Authentication Practices
-- Secure Local Storage Usage
-
----
-### 📚 Day 29 (Mock Interviews + Coding Practice)
-
-- Take mock interviews (live if possible)
-- Solve 5–10 frontend-specific coding problems
-- Build a mini project (e.g., Todo App with React Hooks + Redux)
-
----
-### 📚 Day 30 (Final Review and Relax)
-
-- Review Flashcards
-- Revise Weak Areas
-- Relax and build confidence before your interview
-
----
-
-# 📋 **Topic Summary**
-
-| Level       | HTML                              | CSS                               | JavaScript                        | React                                  |
-|-------------|-----------------------------------|-----------------------------------|-----------------------------------|----------------------------------------|
-| Basic       | Structure, Semantic, Forms        | Box Model, Selectors              | Variables, Functions, Scope       | JSX, Components, Props, State         |
-| Intermediate| Accessibility, SEO                | Flexbox, Grid, Responsive Design  | Closures, this, Promises           | useState, useEffect, Routing          |
-| Advanced    | HTML APIs (Web Storage, Drag-Drop) | Animations, Variables, BEM        | Async/Await, Event Loop, Memory Mgmt| Custom Hooks, Context, Code Splitting |
-| Expert      | SEO + Accessibility               | Critical CSS, Dark Mode           | Web APIs, Microtasks, Optimization | Performance Tuning, SSR, Testing      |
-
----
-
-# 🚀 Bonus Tips:
-- **Every Weekend**: Do 1 small project or clone (e.g., Instagram login page, Netflix UI).
-- **Every Evening**: Revise the day’s topic by explaining it out loud or writing a summary.
-- **Mock Interviews**: Take 2–3 before your real interview if possible.
-
----
-
-# ✅ Next Step
-If you want, I can also prepare:
-- Printable **30-day checklist** 📋
-- Word file 📄
-- Excel tracking sheet 📈
-
-Would you like me to prepare any of these too? 🚀  
-(Just tell me: "Checklist", "Word File", or "Excel Plan")
