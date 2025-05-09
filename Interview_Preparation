@@ -4,7 +4,7 @@ HTML, CSS, JS, React
 1. What is HTML?
 A: HTML (HyperText Markup Language) is used for creating structure and content of a web pages and applications like headings, paragraphs, links, images, and more.
 2. What is the purpose of <!DOCTYPE html>?
-A: It tells the browser to render the page in standards mode using HTML5.
+A: The <!DOCTYPE html> declaration specifies the version of HTML used in a document and helps browsers render the page according to the correct standards. It should be the first element in an HTML file to ensure proper parsing and compatibility.
 3. What’s the difference between block-level and inline elements?
 A: Block-level elements (e.g., <div>, <p>) occupy the full width. Inline elements (e.g., <span>, <a>) flow within content.
 4. What is the difference between <head> and <body>?
