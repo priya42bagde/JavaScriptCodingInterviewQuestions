@@ -23,6 +23,8 @@ A: <head> contains metadata, links, and scripts & is not displayed on the webpag
 A: Void elements are HTML elements that do not require a closing tag.
 They should always be written with a forward slash (/) at the end of the opening tag.
 This notation indicates that the element does not contain any content.
+Example: <br/>, <hr/>, <h1>, <input/>, <img>.
+
 ________________________________________
 🔹 2. HTML Elements & Tags
 6. What is the difference between <section>, <article>, and <div>?
