@@ -29,6 +29,8 @@ ________________________________________
 🔹 2. HTML Elements & Tags
 6. What is the difference between <section>, <article>, and <div>?
 A: <section> and <article> are semantic; <div> is non-semantic and used as a generic container.
+<section>: Groups related content.
+<article>: Standalone piece of content.
 7. When should you use <main>?
 A: To represent the dominant content of the document, excluding headers, nav, and sidebars.
 8. Can you nest a <div> inside a <p>?
