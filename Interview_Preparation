@@ -32,7 +32,7 @@ A: <section> and <article> are semantic; <div> is non-semantic and used as a gen
 <section>: Groups related content.
 <article>: Standalone piece of content.
 7. When should you use <main>?
-A: To represent the dominant content of the document, excluding headers, nav, and sidebars.
+A: The <main> element in HTML is used to define the main content of a document. It should be used once per page to indicate the primary focus of the content.
 8. Can you nest a <div> inside a <p>?
 A: No. Block-level elements cannot be inside a paragraph tag.
 9. What’s the purpose of the <meta> tag?
