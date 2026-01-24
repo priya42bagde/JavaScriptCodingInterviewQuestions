@@ -1734,3 +1734,26 @@ function MCQ24() {
   */
 }
 // MCQ24();
+
+---------------------******------------------------------------------------
+Explain Optional in java with example?
+
+Answer:
+    Optional<String> country = Optional.of("India");
+		Optional<String> emp2 = Optional.empty();
+		
+		System.out.println(country.filter(g->g.equals("india")));
+		System.out.println(country.filter(g->g.equalsIgnoreCase("india")));
+		System.out.println(country.filter(g->g.equals("India")).get());
+		
+		if(country.isPresent()) {
+			System.out.println("country present is "+country);
+		}
+		
+		country.ifPresent(c->System.out.println("country is "+c));
+		System.out.println(country.orElse("No country is present"));
+		
+		emp2.ifPresent(c->System.out.println("country here is "+c));
+		System.out.println(emp2.orElse("No country is present here"));
+
+---------------------******------------------------------------------------
