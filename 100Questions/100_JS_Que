@@ -499,7 +499,7 @@ function sayHi(){
 }
 console.log(typeof sayHi()); //function
 console.log(typeof sayHi()()); //function
-//Explaination : sayHi will return anonymous arrow function/IIFE, where we didn't invole the arroe function so it will return function.
+//Explaination : sayHi will return anonymous arrow function/IIFE, where we didn't invole the arrow function so it will return function.
 -----------------------------------------------------------------------------
 console.log(typeof typeof 1); //string
 //Explaination : typeof 1 is a number and typeof number is a string.
