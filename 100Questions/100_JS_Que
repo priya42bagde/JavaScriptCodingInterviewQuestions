@@ -498,7 +498,7 @@ function sayHi(){
   return ()=>0;
 }
 console.log(typeof sayHi()); //function
-console.log(typeof sayHi()()); //function
+console.log(typeof sayHi()()); //number
 //Explaination : sayHi will return anonymous arrow function/IIFE, where we didn't invole the arroe function so it will return function.
 -----------------------------------------------------------------------------
 console.log(typeof typeof 1); //string
